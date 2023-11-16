@@ -7,7 +7,7 @@ import LandingPageLottieFile from "@/public/lottie/landing page.json";
 export default function LandingPageLottie() {
     const options = {
         animationData:LandingPageLottieFile,
-        className:'xl:w-[550px] lg:w-[300px] w-full h-auto hue-rotate-[30deg] -z-10',
+        className:'xl:w-[550px] lg:w-[300px] w-full h-auto hue-rotate-[20deg] -z-10',
         loop:true
     }
     const { View } = useLottie(options);
