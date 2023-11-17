@@ -88,7 +88,7 @@ export default function LandingPage() {
         </section>
         <section className="w-full py-12 md:py-24 lg:py-32 bg-foreground/[2%] dark:bg-zinc-800">
           <div className="container px-4 md:px-6">
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">Why Choose Us</h2>
+            <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">Meet Our Team</h2>
             {/* <ul className="list-disc ml-5">
               <li className="text-gray-500">Reason 1</li>
               <li className="text-gray-500">Reason 2</li>
