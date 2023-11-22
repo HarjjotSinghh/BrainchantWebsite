@@ -20,7 +20,7 @@ export default async function Profile() {
       <h2>User Profile</h2>
       <code className="highlight">{user.email}</code>
       <div className="heading">Last Signed In:</div>
-      <code className="highlight">{new Date(user?.last_sign_in_at).toUTCString() || ""}</code>
+      <code className="highlight">{new Date(user.last_sign_in_at || 0).toUTCString()}</code>
       <Link className="button" href="/">
         Go Home
       </Link>

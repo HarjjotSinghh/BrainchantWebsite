@@ -15,11 +15,12 @@ export default function AccountForm({ session }: { session: Session | null }) {
   const getProfile = useCallback(async () => {
     try {
       setLoading(true)
+      const userID : string = user?.id || "";
 
       const { data, error, status } = await supabase
         .from('profiles')
         .select(`full_name, username, website, avatar_url`)
-        .eq('id', user?.id)
+        .eq('id', userID)
         .single()
 
       if (error && status !== 406) {
