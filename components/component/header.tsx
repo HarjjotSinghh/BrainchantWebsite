@@ -36,11 +36,11 @@ export default function Header() {
         
         <nav className="ml-auto flex justify-center items-center gap-6 sm:gap-6">
           <div className='flex gap-2'>
-            <Link className="text-sm font-medium hover:underline underline-offset-4" href="/login">
-              <Button variant={"outline"} className='hover:bg-primary px-5 bg-background/0'>Login</Button>
+            <Link className="text-sm font-medium hover:underline underline-offset-4" href="/signin">
+              <Button variant={"outline"} className='hover:bg-primary px-5 bg-background/0'>Sign In</Button>
             </Link>
             <Link className="text-sm font-medium hover:underline underline-offset-4" href="/signup">
-              <Button variant={"outline"} className='hover:bg-primary px-5 bg-background/0'>Signup</Button>
+              <Button variant={"outline"} className='hover:bg-primary px-5 bg-background/0'>Sign Up</Button>
             </Link>
           </div>
           
