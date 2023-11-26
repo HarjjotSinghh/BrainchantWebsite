@@ -63,13 +63,13 @@ export default function SearchBarClient({session} : {session: Session | null}) {
                 <Button type="submit" variant={"default"} className="rounded-l-[0px] ring-0 text-foreground">Search</Button>
             </div>
             {searchResults.length !== 0 && (
-                <div className={cn('group-["search"] absolute w-full shadow-xl shadow-foreground/5 top-[100%] -z-2', (subjectName?.length === 0 ? 'hidden' : ''))}>
+                <div className={cn('group-["search"] absolute w-full shadow-lg shadow-foreground/5 top-[100%] -z-[999]', (subjectName?.length === 0 ? 'hidden' : ''))}>
                 {searchResults.map((subject, index) => (
-                        <div key={index} className='flex-col justify-center items-center w-full border-b-primary border-b-[1px]'>
-                            <p className='text-left ml-3 mt-2'>{subject.name}</p>
-                            <p className="text-xs ml-3 mb-2 text-left">Semester {subject.semester}</p>
-                        </div>
-                        ))}
+                    <div key={index} className='flex-col justify-center items-center w-full border-b-primary border-b-[1px]'>
+                        <p className='text-left ml-3 mt-2'>{subject.name}</p>
+                        <p className="text-xs ml-3 mb-2 text-left">Semester {subject.semester}</p>
+                    </div>
+                ))}
             </div>
             )}
             
