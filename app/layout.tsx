@@ -20,7 +20,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={cn(
-          "min-h-screen bg-background antialiased accent-accent",
+          "min-h-screen antialiased bg-background text-foreground",
           outfit.className
         )}>
           <Header></Header>

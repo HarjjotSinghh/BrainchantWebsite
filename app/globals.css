@@ -7,7 +7,7 @@ html {
 
 ::selection {
   color: hsl(var(--background));
-  background: hsl(var(--foreground));
+  background: hsl(var(--primary));
 }
 
 * {
@@ -48,7 +48,7 @@ html {
     --popover-foreground: 222.2 84% 4.9%;
  
     --primary: 275 90% 71%;
-    --primary-foreground: var(--background);
+    --primary-foreground: var(--foreground);
  
     --secondary: 260 62% 11%;
     --secondary-foreground: var(--background);
@@ -57,7 +57,7 @@ html {
     --muted-foreground: 215.4 16.3% 46.9%;
  
     --accent: 265 91% 41%;
-    --accent-foreground: var(--background);
+    --accent-foreground: var(--foreground);
  
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
@@ -65,7 +65,7 @@ html {
     --border: var(--accent);
     --input: var(--primary);
     --ring: var(--accent);
-    --radius: 0.5rem;
+    --radius: 0.7rem;
 
   }
 

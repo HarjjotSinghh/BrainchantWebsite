@@ -6,6 +6,10 @@ import { cn } from '@/lib/utils';
 import { Field, Form, Formik } from 'formik';
 import Link from 'next/link';
 import * as Yup from 'yup';
+import { redirect } from 'next/navigation';
+import { useRouter } from 'next/navigation';
+import { Button } from '@/components/ui/button';
+import { FcGoogle } from 'react-icons/fc';
 
 const SignInSchema = Yup.object().shape({
   email: Yup.string().email('Invalid email').required('Required'),
@@ -15,68 +19,96 @@ const SignInSchema = Yup.object().shape({
 const SignIn = () => {
   const supabase = createClientComponentClient();
   const [errorMsg, setErrorMsg] = useState('');
+  const router = useRouter();
 
   async function signIn(formData: {email: string, password: string}) {
-    const { error } = await supabase.auth.signInWithPassword({
+    const { error, data } = await supabase.auth.signInWithPassword({
       email: formData.email,
       password: formData.password,
     });
-
     if (error) {
       setErrorMsg(error.message);
+      throw error;
     }
+    router.refresh();
+  }
+  async function signUpGoogle() {
+    await supabase.auth.signInWithOAuth({provider: "google", options: {redirectTo: `${location.origin}/auth/callback`}}).then(() => {router.refresh()}).catch((error) => {console.error(error); throw error;})
   }
 
   return (
-    <div className="card">
-      <h2 className="w-full text-center">Sign In</h2>
-      <Formik
-        initialValues={{
-          email: '',
-          password: '',
-        }}
-        validationSchema={SignInSchema}
-        onSubmit={signIn}
-      >
-        {({ errors, touched }) => (
-          <Form className="column w-full">
-            <label htmlFor="email">Email</label>
-            <Field
-              className={cn('input', errors.email && touched.email && 'bg-red-50')}
-              id="email"
-              name="email"
-              placeholder="jane@acme.com"
-              type="email"
-            />
-            {errors.email && touched.email ? (
-              <div className="text-red-600">{errors.email}</div>
-            ) : null}
-
-            <label htmlFor="email">Password</label>
-            <Field
-              className={cn('input', errors.password && touched.password && 'bg-red-50')}
-              id="password"
-              name="password"
-              type="password"
-            />
-            {errors.password && touched.password ? (
-              <div className="text-red-600">{errors.password}</div>
-            ) : null}
-
-            <Link href="/reset-password" className="link w-full">
-              Forgot your password?
-            </Link>
-
-            <button className="button-inverse w-full" type="submit">
-              Submit
-            </button>
-          </Form>
-        )}
-      </Formik>
-      {errorMsg && <div className="text-red-600">{errorMsg}</div>}
-      <Link href="/sign-up" className="link w-full">
-        Don&apos;t have an account? Sign Up.
-      </Link>
+    <div className='flex justify-center items-center flex-col min-w-screen lg:px-12 px-8 lg:py-24 py-12'>
+      <div className="w-full lg:w-[400px] flex flex-col items-center justify-center shadow-2xl shadow-foreground/5 p-12 rounded-[1em]">
+        <Button variant={"outline"} onClick={signUpGoogle} className='w-full flex flex-row gap-2 hover:bg-background '>
+          <FcGoogle className="w-6 h-6"/>
+          Sign in with Google
+        </Button>
+        <br/>
+        {/* <h2 className="w-full text-center text-5xl">Sign Up</h2> */}
+        <Formik
+          initialValues={{
+            email: '',
+            password: '',
+            college: ''
+          }}
+          validationSchema={SignInSchema}
+          onSubmit={signIn}
+        >
+          {({ errors, touched, isSubmitting }) => (
+            <Form className="w-full flex flex-col gap-2">
+              <label htmlFor="email">Email</label>
+              <Field
+                className={cn('input p-2 rounded-lg', errors.email && touched.email && 'bg-red-50')}
+                id="email"
+                name="email"
+                placeholder="hello@gmail.com"
+                type="email"
+              />
+              {errors.email && touched.email ? (
+                <div className="text-red-600 text-xs w-full text-right">{errors.email}</div>
+              ) : null}
+              <label htmlFor="email">Password</label>
+              <Field
+                className={cn('input p-2 rounded-lg', errors.password && touched.password && 'bg-red-50')}
+                id="password"
+                name="password"
+                type="password"
+                placeholder="********"
+              />
+              {errors.password && touched.password ? (
+                <div className="text-red-600 text-xs w-full text-right">{errors.password}</div>
+              ) : null}
+              {/* <Select>
+                  <SelectTrigger className="w-full rounded-lg text-md text-">
+                    <SelectValue placeholder="Select Your College"  className='opacity-[50%]' />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectGroup>
+                      <SelectLabel>College</SelectLabel>
+                      <SelectItem value="apple">Apple</SelectItem>
+                      <SelectItem value="banana">Banana</SelectItem>
+                      <SelectItem value="blueberry">Blueberry</SelectItem>
+                      <SelectItem value="grapes">Grapes</SelectItem>
+                      <SelectItem value="pineapple">Pineapple</SelectItem>
+                    </SelectGroup>
+                  </SelectContent>
+                </Select> */}
+              <br/>
+              <Button variant={"outline"} className="w-full hover:text-background hover:bg-primary" type="submit" disabled={isSubmitting}>
+                Submit
+              </Button>
+            </Form>
+          )}
+        </Formik>
+        
+        <Link href="/signup" className="link w-full text-center text-sm">
+          <Button variant={"link"} className='p-0 text-foreground'>
+            Do not have an account?
+          </Button>
+        </Link>
+        <br></br>
+        {errorMsg && <div className="text-red-600 text-center">{errorMsg}</div>}
+      </div>
     </div>
   );
 };

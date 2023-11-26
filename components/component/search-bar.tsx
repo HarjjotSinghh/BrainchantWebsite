@@ -3,9 +3,9 @@ import React from 'react'
 import { createServerComponentClient } from '@supabase/auth-helpers-nextjs'
 import { Database } from '@/types/supabase'
 import { cookies } from 'next/headers'
-import HeaderClient from './header-client'
+import SearchBarClient from './search-bar-client'
 
-export default async function Header() {
+export default async function SearchBar() {
   const supabase = createServerComponentClient<Database>({ cookies })
 
   const {
@@ -13,6 +13,6 @@ export default async function Header() {
   } = await supabase.auth.getSession()
   
   return (
-    <HeaderClient session={session}></HeaderClient>
+    <SearchBarClient session={session}></SearchBarClient>
   )
 }

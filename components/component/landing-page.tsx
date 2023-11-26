@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button"
 import Image from "next/image"
 import LandingPageLottie from "./landing-page-lottie"
-import { SearchBar } from "../ui/search-bar"
+import SearchBar from "./search-bar"
 import { Skeleton } from "../ui/skeleton"
 
 export default function LandingPage() {

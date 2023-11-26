@@ -12,17 +12,17 @@ export async function POST(request: Request) {
   const formData = await request.formData()
   const email = String(formData.get('email'))
   const password = String(formData.get('password'))
-  const supabase = createRouteHandlerClient<Database>({ cookies })
+  // const supabase = createRouteHandlerClient<Database>({ cookies })
+  const cookieStore = cookies()
+  const supabase = createRouteHandlerClient({ cookies: () => cookieStore })
 
-  await supabase.auth.signUp({
-    email,
-    password,
-    options: {
-      emailRedirectTo: `${requestUrl.origin}/auth/callback`,
-    },
-  })
+    await supabase.auth.signUp({
+      email,
+      password,
+      options: {
+        emailRedirectTo: `${requestUrl.origin}/auth/callback`,
+      },
+    })
 
-  return NextResponse.redirect(requestUrl.origin, {
-    status: 301,
-  })
+
 }

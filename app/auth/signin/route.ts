@@ -5,21 +5,26 @@ import { NextResponse } from 'next/server'
 
 import type { Database } from '@/types/supabase'
 
-export const dynamic = 'force-dynamic'
-
 export async function POST(request: Request) {
   const requestUrl = new URL(request.url)
   const formData = await request.formData()
   const email = String(formData.get('email'))
   const password = String(formData.get('password'))
-  const supabase = createRouteHandlerClient<Database>({ cookies })
+  const cookieStore = cookies()
+  const supabase = createRouteHandlerClient({ cookies: () => cookieStore })
 
-  await supabase.auth.signInWithPassword({
-    email,
-    password,
-  })
+  const {
+    data: { session },
+  } = await supabase.auth.getSession()
 
-  return NextResponse.redirect(requestUrl.origin, {
-    status: 301,
-  })
+
+    await supabase.auth.signInWithPassword({
+      email,
+      password,
+    })
+  
+    return NextResponse.redirect(requestUrl.origin, {
+      status: 301,
+    })
+  
 }
