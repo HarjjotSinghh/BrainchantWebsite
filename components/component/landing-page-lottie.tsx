@@ -14,6 +14,6 @@ export default function LandingPageLottie() {
 
 
     return (
-        <Lottie animationData={LandingPageLottieFile} className='xl:w-[550px] h-auto hue-rotate-[30deg] -z-10' loop={true}></Lottie>
+        <Lottie animationData={LandingPageLottieFile} className='xl:w-[550px] lg:w-[500px] w-full h-auto hue-rotate-[30deg] -z-10' loop={true}></Lottie>
   )
 }

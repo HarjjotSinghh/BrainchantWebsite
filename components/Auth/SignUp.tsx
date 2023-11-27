@@ -64,8 +64,8 @@ const SignUp = () => {
 
   return (
 
-    <div className='flex justify-center items-center flex-col min-w-screen p-16 lg:py-24 py-12'>
-      <div className="w-full lg:w-[400px] flex flex-col items-center justify-center shadow-2xl shadow-foreground/5 px-12 py-6 rounded-[1em]">
+    <div className='flex justify-center items-center flex-col min-w-screen lg:p-16 lg:py-24 py-16 px-8'>
+      <div className="w-full lg:w-[400px] flex flex-col items-center justify-center shadow-2xl shadow-foreground/5 lg:px-12 lg:py-6 px-4 py-8 rounded-[1em]">
         <Button variant={"outline"} onClick={signUpGoogle} className='w-full flex flex-row gap-2 hover:bg-background '>
           <FcGoogle className="w-6 h-6"/>
           Sign up with Google
@@ -102,7 +102,7 @@ const SignUp = () => {
                 id="college"
                 name="college"
                 type="text"
-                placeholder="BPIT"
+                placeholder="GTBIT"
               >
               </Field>
               {errors.college && touched.college ? (

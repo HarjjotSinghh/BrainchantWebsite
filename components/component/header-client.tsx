@@ -16,7 +16,7 @@ export default function HeaderClient({ session }: { session: Session | null }) {
         <Link className="flex items-center justify-center" href="/">
           <Image src={BrainchantLogoPNG} draggable={false} alt='Brainchant Logo' className='w-10 h-10 invert dark:invert-0 select-none'></Image>
         </Link>
-        <div className='flex gap-8'>
+        <div className='hidden gap-8 lg:flex'>
             <Link className="text-sm font-medium hover:underline underline-offset-4" href="/">
               Home
             </Link>

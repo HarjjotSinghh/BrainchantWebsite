@@ -37,7 +37,7 @@ const SignIn = () => {
   }
 
   return (
-    <div className='flex justify-center items-center flex-col min-w-screen lg:px-12 px-8 lg:py-24 py-12'>
+    <div className='flex justify-center items-center flex-col min-w-screen lg:px-12 px-4 lg:py-24 py-12'>
       <div className="w-full lg:w-[400px] flex flex-col items-center justify-center shadow-2xl shadow-foreground/5 p-12 rounded-[1em]">
         <Button variant={"outline"} onClick={signUpGoogle} className='w-full flex flex-row gap-2 hover:bg-background '>
           <FcGoogle className="w-6 h-6"/>
@@ -49,7 +49,6 @@ const SignIn = () => {
           initialValues={{
             email: '',
             password: '',
-            college: ''
           }}
           validationSchema={SignInSchema}
           onSubmit={signIn}
@@ -78,21 +77,6 @@ const SignIn = () => {
               {errors.password && touched.password ? (
                 <div className="text-red-600 text-xs w-full text-right">{errors.password}</div>
               ) : null}
-              {/* <Select>
-                  <SelectTrigger className="w-full rounded-lg text-md text-">
-                    <SelectValue placeholder="Select Your College"  className='opacity-[50%]' />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectGroup>
-                      <SelectLabel>College</SelectLabel>
-                      <SelectItem value="apple">Apple</SelectItem>
-                      <SelectItem value="banana">Banana</SelectItem>
-                      <SelectItem value="blueberry">Blueberry</SelectItem>
-                      <SelectItem value="grapes">Grapes</SelectItem>
-                      <SelectItem value="pineapple">Pineapple</SelectItem>
-                    </SelectGroup>
-                  </SelectContent>
-                </Select> */}
               <br/>
               <Button variant={"outline"} className="w-full hover:text-background hover:bg-primary" type="submit" disabled={isSubmitting}>
                 Submit
