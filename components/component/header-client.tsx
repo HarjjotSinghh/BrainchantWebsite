@@ -34,7 +34,7 @@ export default function HeaderClient({ session }: { session: Session | null }) {
           (
             <Link className="text-sm font-medium " href="/account">
               <div className='flex'>
-                  <Button variant={"link"} className='text-foreground hover:underline underline-offset-4'>Hello, {user?.user_metadata.full_name}</Button>
+                  <Button variant={"link"} className='text-foreground hover:underline underline-offset-4'>{user?.user_metadata.full_name}</Button>
                   <Avatar className='select-none'>                  
                     <AvatarImage draggable="false" src={user?.user_metadata.avatar_url} alt={user?.user_metadata.full_name} />
                     <AvatarFallback>{user?.user_metadata.full_name.split(' ').map((word : string) => word[0].toUpperCase()).join('')}</AvatarFallback>
