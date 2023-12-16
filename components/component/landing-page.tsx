@@ -27,11 +27,10 @@ export default function LandingPage() {
             <LandingPageLottie></LandingPageLottie>
           </div>
         </section>
-        <section className="w-full py-12 md:py-24 lg:py-32 px-4 lg:px-12 bg-foreground/[2%] dark:bg-zinc-800">
+        {/* <section className="w-full py-12 md:py-24 lg:py-32 px-4 lg:px-12 bg-foreground/[2%] dark:bg-zinc-800">
           <div className="container px-4 md:px-6 space-y-12">
             <h2 className="text-3xl font-bold tracking-tighter lg:text-5xl">Featured Courses</h2>
             <div className="flex flex-wrap gap-12 justify-start items-center">
-              { /*Cards */ }
               <div className="flex flex-col w-full sm:w-1/2 md:w-1/3 lg:w-[270px] xl:w-[300px] p-6 rounded-xl shadow-lg shadow-foreground/5">
                 <Skeleton className="w-full aspect-square rounded-xl"></Skeleton>
                 <h3 className="text-xl font-semibold mt-4">Course 1</h3>
@@ -74,28 +73,13 @@ export default function LandingPage() {
         <section className="w-full py-12 md:py-24 lg:py-32">
           <div className="container px-4 md:px-6">
             <h2 className="text-3xl font-bold tracking-tighter lg:text-5xl">Testimonials</h2>
-            {/* <div className="flex flex-wrap gap-4">
-              <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5">
-                <blockquote>
-                  <p className="text-gray-500">This is a testimonial from a student.</p>
-                  <footer className="mt-2 text-right">
-                    <cite className="text-sm text-gray-700">- Student Name</cite>
-                  </footer>
-                </blockquote>
-              </div>
-            </div> */}
           </div>
         </section>
         <section className="w-full py-12 md:py-24 lg:py-32 bg-foreground/[2%] dark:bg-zinc-800">
           <div className="container px-4 md:px-6">
             <h2 className="text-3xl font-bold tracking-tighter lg:text-5xl">Meet Our Team</h2>
-            {/* <ul className="list-disc ml-5">
-              <li className="text-gray-500">Reason 1</li>
-              <li className="text-gray-500">Reason 2</li>
-              <li className="text-gray-500">Reason 3</li>
-            </ul> */}
           </div>
-        </section>
+        </section> */}
       </main>
     </div>
   )

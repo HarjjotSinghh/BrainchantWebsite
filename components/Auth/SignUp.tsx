@@ -25,7 +25,8 @@ const SignUpSchema = Yup.object().shape({
   email: Yup.string().email('Invalid email').required('Required'),
   password: Yup.string().required('Required'),
   college: Yup.string().required('Required'),
-  name: Yup.string().required('Required')
+  name: Yup.string().required('Required'),
+  semester: Yup.number().required("Required").min(1).max(8)
 });
 
 const colleges : Object = {
@@ -40,13 +41,14 @@ const SignUp = () => {
   const [successMsg, setSuccessMsg] = useState("");
   const router = useRouter();
 
-  async function signUp(formData: {email: string, password: string, college: string, name: string}) {
+  async function signUp(formData: {email: string, password: string, college: string, name: string, semester: number}) {
     const { error } = await supabase.auth.signUp({
       email: formData.email,
       password: formData.password,
       options: {data: {
         'college': formData.college,
-        'full_name': formData.name
+        'full_name': formData.name,
+        'semester': formData.semester
       }, emailRedirectTo: `${location.origin}/auth/callback`}
     });
 
@@ -66,18 +68,19 @@ const SignUp = () => {
 
     <div className='flex justify-center items-center flex-col min-w-screen lg:p-16 lg:py-24 py-16 px-8'>
       <div className="w-full lg:w-[400px] flex flex-col items-center justify-center shadow-2xl shadow-foreground/5 lg:px-12 lg:py-6 px-4 py-8 rounded-[1em]">
-        <Button variant={"outline"} onClick={signUpGoogle} className='w-full flex flex-row gap-2 hover:bg-background '>
+        {/* <Button variant={"outline"} onClick={signUpGoogle} className='w-full flex flex-row gap-2 hover:bg-background '>
           <FcGoogle className="w-6 h-6"/>
           Sign up with Google
         </Button>
-        <br/>
+        <br/> */}
         {/* <h2 className="w-full text-center text-5xl">Sign Up</h2> */}
         <Formik
           initialValues={{
             email: '',
             password: '',
             college: '',
-            name: ''
+            name: '',
+            semester: 1,
           }}
           validationSchema={SignUpSchema}
           onSubmit={signUp}
@@ -107,6 +110,17 @@ const SignUp = () => {
               </Field>
               {errors.college && touched.college ? (
                 <div className="text-red-600 text-xs w-full text-right">{errors.college}</div>
+              ) : null}
+              <label htmlFor="email">Semester</label>
+              <Field
+                className={cn('input p-2 rounded-lg', errors.semester && touched.semester && 'bg-red-50')}
+                id="semester"
+                name="semester"
+                type="number"
+              >
+              </Field>
+              {errors.semester && touched.semester ? (
+                <div className="text-red-600 text-xs w-full text-right">{errors.semester}</div>
               ) : null}
 
               <label htmlFor="email">Email</label>

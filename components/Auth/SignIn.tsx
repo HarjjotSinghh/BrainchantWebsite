@@ -39,11 +39,11 @@ const SignIn = () => {
   return (
     <div className='flex justify-center items-center flex-col min-w-screen lg:px-12 px-4 lg:py-24 py-12'>
       <div className="w-full lg:w-[400px] flex flex-col items-center justify-center shadow-2xl shadow-foreground/5 p-12 rounded-[1em]">
-        <Button variant={"outline"} onClick={signUpGoogle} className='w-full flex flex-row gap-2 hover:bg-background '>
+        {/* <Button variant={"outline"} onClick={signUpGoogle} className='w-full flex flex-row gap-2 hover:bg-background '>
           <FcGoogle className="w-6 h-6"/>
           Sign in with Google
         </Button>
-        <br/>
+        <br/> */}
         {/* <h2 className="w-full text-center text-5xl">Sign Up</h2> */}
         <Formik
           initialValues={{

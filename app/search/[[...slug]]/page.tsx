@@ -6,6 +6,7 @@ import Fuse from "fuse.js"
 import { type } from "os"
 import { Button } from "@/components/ui/button"
 import { TailSpin } from "react-loader-spinner"
+import Link from "next/link"
 
 export default function Search({ params }: { params: { slug: string[] } }) {
     const supabase = createClientComponentClient()
@@ -70,10 +71,12 @@ export default function Search({ params }: { params: { slug: string[] } }) {
                     />
                     {searchResults.length === 0 && !loading && <h1 className="lg:text-2xl text-xl tracking-tighter">Could not find the subject <b>{params.slug[0]}</b></h1>}
                     {searchResults.map((element, index) => (
-                        <Button key={index} className="flex justify-center items-center flex-col p-10 rounded-md hover:text-background" variant={"outline"}>
-                            <div className="lg:text-xl text-base">{element.name}</div>
-                            <div>Semester {element.semester}</div>
-                        </Button>
+                        <Link key={index} href={`/subject/${element.name}`}>
+                            <Button className="flex justify-center items-center flex-col p-10 rounded-md hover:text-background" variant={"outline"}>
+                                <div className="lg:text-xl text-base">{element.name}</div>
+                                <div>Semester {element.semester}</div>
+                            </Button>
+                        </Link>
                     ))}
                 </div>
             </div> 

@@ -1,21 +1,16 @@
-// import { cookies } from 'next/headers'
-// import { createServerActionClient } from '@supabase/auth-helpers-nextjs'
-// export async function generateStaticParams() {
-//   const supabase = createServerActionClient({cookies})
-//   const {data:subjects, error} = await supabase.from('subjects').select("name")
-//   if (error) {
-//     console.error(error)
-//     throw error
-//   }
-//   else {
-//     return subjects.map((subject) => ({
-//       "subject": subject.name,
-//     }))
-//   }
-// }
 
+import { createServerComponentClient } from "@supabase/auth-helpers-nextjs";
+import { cookies } from "next/headers";
+import { Database } from "@/types/supabase";
+import Subject from "./subject";
 
-export default function Subject({ params }: { params: { subject: string } }) {
+export default async function SubjectPage({ params }: { params: { subject: string } }) {
+
+  const supabase = createServerComponentClient<Database>({ cookies })
+
+  const {
+    data: { session },
+  } = await supabase.auth.getSession()
   
-  return <div>Subject: {decodeURI(params.subject)}</div>
+  return <Subject params={params} session={session}></Subject>
 }
