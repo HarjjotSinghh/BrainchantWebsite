@@ -15,15 +15,15 @@ export default async function SubjectPage({ params }: { params: { subject: strin
   return <Subject params={params} session={session}></Subject>
 }
 
-export async function generateStaticParams() {
-  const subjects = await fetch(`${process.env.NEXT_PUBLIC_SUPABASE_URL}/rest/v1/subjects?select=*`, {
-    cache: "force-cache",
-    headers: {
-        Apikey: process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
-    } as HeadersInit,
-}).then((res) => res.json())
+// export async function generateStaticParams() {
+//   const subjects = await fetch(`${process.env.NEXT_PUBLIC_SUPABASE_URL}/rest/v1/subjects?select=*`, {
+//     cache: "force-cache",
+//     headers: {
+//         Apikey: process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
+//     } as HeadersInit,
+// }).then((res) => res.json())
  
-  return subjects.map((subject : any) => ({
-    slug: subject.name,
-  }))
-}
+//   return subjects.map((subject : any) => ({
+//     slug: subject.name,
+//   }))
+// }
