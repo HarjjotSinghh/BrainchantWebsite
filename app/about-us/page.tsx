@@ -1,17 +1,85 @@
+import Link from 'next/link';
 import React from 'react';
 
 const AboutUs = () => {
   return (
-    <div className="min-w-screen flex justify-center items-center py-24 flex-col gap-2 px-4">
+    <div className="min-w-screen flex justify-center items-center py-24 pb-48 flex-col gap-2 md:px-16 px-8">
       <h1 className="md:text-5xl text-4xl tracking-tight">
         About <b>Brainchant</b>
       </h1>
-      <br/>
-      <p className="max-w-4xl text-justify">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Venenatis tellus in metus vulputate. Ultrices mi tempus imperdiet nulla malesuada pellentesque. Nunc lobortis mattis aliquam faucibus purus. Eleifend donec pretium vulputate sapien nec sagittis aliquam. Non tellus orci ac auctor augue. Morbi tincidunt ornare massa eget egestas purus viverra accumsan in. Dignissim suspendisse in est ante in. Pharetra diam sit amet nisl suscipit adipiscing bibendum est. Ultrices in iaculis nunc sed augue lacus. Nibh ipsum consequat nisl vel pretium lectus. Leo a diam sollicitudin tempor id eu nisl nunc. Interdum velit euismod in pellentesque massa placerat duis. Urna molestie at elementum eu. Egestas egestas fringilla phasellus faucibus scelerisque eleifend donec pretium vulputate.
-<br/><br/>
-        Elementum nisi quis eleifend quam. Eget duis at tellus at urna condimentum mattis pellentesque id. Aliquet nec ullamcorper sit amet risus nullam eget felis eget. Sed elementum tempus egestas sed. Purus non enim praesent elementum facilisis leo. Felis eget velit aliquet sagittis. Auctor eu augue ut lectus arcu bibendum. Massa massa ultricies mi quis hendrerit dolor magna eget est. Auctor neque vitae tempus quam pellentesque nec nam aliquam. Neque aliquam vestibulum morbi blandit. Integer feugiat scelerisque varius morbi enim nunc faucibus. Sodales ut etiam sit amet nisl purus in mollis nunc. Aliquam eleifend mi in nulla posuere sollicitudin aliquam ultrices. Nisl nunc mi ipsum faucibus vitae aliquet nec ullamcorper. Magna fermentum iaculis eu non diam. Quisque sagittis purus sit amet volutpat consequat mauris. Praesent elementum facilisis leo vel fringilla. Tellus elementum sagittis vitae et leo duis ut diam. Diam volutpat commodo sed egestas. Sit amet venenatis urna cursus eget nunc scelerisque viverra.
-      </p>
+
+      <div className="max-w-4xl text-lg flex flex-col gap-4">
+        <p className="text-center">
+          <span className="text-center w-full text-xl">
+            Brainchant is an E-Learning platform, and a one stop solution for
+            all your academic problems.
+          </span>
+          <br />
+        </p>
+        <p>
+          <h1 className="font-semibold text-2xl mb-2 capitalize">
+            What do we provide you?
+          </h1>
+          <ul className="list-disc">
+            <li>
+              We provide <b>authentic notes</b> by university toppers.
+            </li>
+
+            <li>
+              We provide <b>recorded lectures</b> and <b>crash courses</b>,
+              again, by the university toppers.
+            </li>
+
+            <li>
+              We have <b>WhatsApp groups</b> wherein you can collaborate with
+              others to seek guidance and clear your doubts. We provide PYQs and
+              important information on the daily basis.{' '}
+              <Link href={'https://linktr.ee/BrainChant'} className="underline">
+                <b>Click here</b>
+              </Link>{' '}
+              to get join them.
+            </li>
+
+            <li>
+              We provide <b>one-to-one assistance</b> if needed.
+            </li>
+          </ul>
+        </p>
+        <div>
+          <h1 className="font-semibold text-2xl mb-2 capitalize">
+            Our Achievements
+          </h1>
+          Talking about our achievements, we have
+          <ul className="list-disc">
+            <li>
+              Secured our position in <b>top 10 startups</b> in shark tank held by
+              ggsiup.
+            </li>
+
+            <li>Secured <b>1st position</b> in shark tank at BVCOE (IEEE)</li>
+
+            <li>
+              Secured position in <b>top 9 startups</b> among 150+ teams at BYOB held
+              at IIT mandi
+            </li>
+
+            <li>
+              We provided crash courses during the midsems, due to that many
+              students were able to score really <b>good marks</b> in their
+              examination.
+            </li>
+          </ul>
+        </div>
+        <div>
+        <h1 className="font-semibold text-2xl mb-2 capitalize">
+            Our Aim
+          </h1>
+        Our motive is to provide the best quality education. We believe
+        in quality rather than quantity. And we want that support and guidance
+        we didnt get at our time shall be provided to you at the click of your
+        button.
+        </div>
+      </div>
     </div>
   );
 };

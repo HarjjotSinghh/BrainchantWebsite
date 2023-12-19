@@ -10,7 +10,7 @@ const outfit = Outfit({variable: "--font-outfit", subsets:["latin"]});
 export const metadata: Metadata = {
   title: 'Brainchant',
   description: 'Brainchant\'s official website, providing useful resources and study material to all IPU students.',
-  keywords: "notes, instagram notes ideas, instagram notes, ipu notes, btech notes ipu, ipu btech notes, btech notes,",
+  keywords: "notes, instagram notes ideas, instagram notes, ipu notes, btech notes ipu, ipu btech notes, btech notes, brainchant, brain chant, brainchant ipu notes",
 }
 
 export default function RootLayout({
