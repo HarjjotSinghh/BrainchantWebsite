@@ -29,12 +29,6 @@ const SignUpSchema = Yup.object().shape({
   semester: Yup.number().required("Required").min(1).max(8)
 });
 
-const colleges : Object = {
-  0 : "Guru Tegh Bahadur Institute of Technology",
-  1 : "Bhagwan Parshuram Institute of Technology",
-  2 : ""
-}
-
 const SignUp = () => {
   const supabase = createClientComponentClient();
   const [errorMsg, setErrorMsg] = useState("");
@@ -42,18 +36,19 @@ const SignUp = () => {
   const router = useRouter();
 
   async function signUp(formData: {email: string, password: string, college: string, name: string, semester: number}) {
-    const { error } = await supabase.auth.signUp({
+    const { error, data } = await supabase.auth.signUp({
       email: formData.email,
       password: formData.password,
       options: {data: {
-        'college': formData.college,
         'full_name': formData.name,
-        'semester': formData.semester
+        'college': formData.college,
+        'semester': formData.semester,
       }, emailRedirectTo: `${location.origin}/auth/callback`}
     });
-
     if (error) {
       setErrorMsg(error.message);
+      console.error(error);
+      throw error;
     } else {
       setSuccessMsg('Please check your email for further instructions.');
       // window.location = window.location.origin + "/login";
@@ -80,7 +75,7 @@ const SignUp = () => {
             password: '',
             college: '',
             name: '',
-            semester: 1,
+            semester: 1
           }}
           validationSchema={SignUpSchema}
           onSubmit={signUp}

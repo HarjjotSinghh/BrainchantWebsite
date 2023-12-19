@@ -13,7 +13,6 @@ export default function AccountForm({ session }: { session: Session | null }) {
   const [fullname, setFullname] = useState<string | null>(null)
   const [username, setUsername] = useState<string | null>(null)
   const [website, setWebsite] = useState<string | null>(null)
-  const [avatar_url, setAvatarUrl] = useState<string | null>(null)
   const [college, setCollege] = useState<string | null>(null)
   const user = session?.user
 
@@ -24,7 +23,7 @@ export default function AccountForm({ session }: { session: Session | null }) {
 
       const { data, error, status } = await supabase
         .from('profiles')
-        .select(`full_name, username, website, avatar_url, college`)
+        .select(`full_name, username, website, college`)
         .eq('id', userID)
         .single()
 
@@ -36,7 +35,6 @@ export default function AccountForm({ session }: { session: Session | null }) {
         setFullname(data.full_name)
         setUsername(data.username)
         setWebsite(data.website)
-        setAvatarUrl(data.avatar_url)
         setCollege(data.college)
       }
     } catch (error) {
@@ -54,13 +52,11 @@ export default function AccountForm({ session }: { session: Session | null }) {
     username,
     fullname,
     website,
-    avatar_url,
     college
   }: {
     username: string | null
     fullname: string | null
     website: string | null
-    avatar_url: string | null
     college: string | null
   }) {
     try {
@@ -71,7 +67,6 @@ export default function AccountForm({ session }: { session: Session | null }) {
         full_name: fullname,
         username,
         website,
-        avatar_url,
         updated_at: new Date().toISOString(),
         college: college
       })
@@ -118,19 +113,10 @@ export default function AccountForm({ session }: { session: Session | null }) {
             onChange={(e) => setUsername(e.target.value)}
           />
         </div>
-        <div className='w-full'>
-          <Label htmlFor="website">Avatar URL</Label>
-          <Input
-            id="avatar_url"
-            type="url"
-            value={avatar_url || ''}
-            onChange={(e) => setAvatarUrl(e.target.value)}
-          />
-        </div>
         <div className='w-full pt-4'>
           <Button
             className="w-full"
-            onClick={() => updateProfile({ fullname, username, website, avatar_url, college })}
+            onClick={() => updateProfile({ fullname, username, website, college })}
             disabled={loading}
             variant={"default"}
           >

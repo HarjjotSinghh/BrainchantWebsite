@@ -90,7 +90,6 @@ const SignIn = () => {
             Do not have an account?
           </Button>
         </Link>
-        <br></br>
         {errorMsg && <div className="text-red-600 text-center">{errorMsg}</div>}
       </div>
     </div>

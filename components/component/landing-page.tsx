@@ -69,8 +69,8 @@ export default function LandingPage() {
               </div>
             </div>
           </div>
-        </section>
-        <section className="w-full py-12 md:py-24 lg:py-32">
+        </section> */}
+        {/* <section className="w-full py-12 md:py-24 lg:py-32">
           <div className="container px-4 md:px-6">
             <h2 className="text-3xl font-bold tracking-tighter lg:text-5xl">Testimonials</h2>
           </div>

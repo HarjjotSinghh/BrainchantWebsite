@@ -21,7 +21,7 @@ export default function HeaderClient({ session }: { session: Session | null }) {
               className="w-10 h-10 invert dark:invert-0 select-none"
             ></Image>
           </Link>
-          {/* <div className="hidden gap-8 lg:flex">
+          <div className="hidden gap-8 lg:flex">
             <Link
               className="text-sm font-medium hover:underline underline-offset-4"
               href="/"
@@ -30,17 +30,17 @@ export default function HeaderClient({ session }: { session: Session | null }) {
             </Link>
             <Link
               className="text-sm font-medium hover:underline underline-offset-4"
-              href="/courses"
+              href="/about-us"
             >
-              Courses
+              About Us
             </Link>
             <Link
               className="text-sm font-medium hover:underline underline-offset-4"
-              href="/contact"
+              href="/search"
             >
-              Contact
+              Search
             </Link>
-          </div> */}
+          </div>
         </div>
 
         <nav className="ml-auto flex justify-center items-center gap-6 sm:gap-6">
