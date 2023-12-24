@@ -42,7 +42,7 @@ export default function SearchBarClient({session} : {session: Session | null}) {
         // Delay hiding the results to give time for a click on the results
         setTimeout(() => {
             setShow(false);
-        }, 100);
+        }, 500);
     };
     const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         setSubjectName(event.target.value)
