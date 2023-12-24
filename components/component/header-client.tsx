@@ -6,6 +6,7 @@ import BrainchantLogoPNG from '@/public/logo_cropped.png';
 import { Button } from '@/components/ui/button';
 import type { Session } from '@supabase/supabase-js';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
+import { SiLinktree } from 'react-icons/si';
 
 export default function HeaderClient({ session }: { session: Session | null }) {
   const user = session?.user;
@@ -39,6 +40,13 @@ export default function HeaderClient({ session }: { session: Session | null }) {
               href="/search"
             >
               Search
+            </Link>
+            <Link
+              className=" font-medium hover:text-accent transition-all duration-200 ease-in-out underline-offset-4"
+              href="https://linktr.ee/BrainChant"
+              target="_blank"
+            >
+              <SiLinktree className="w-6 h-6"/>
             </Link>
           </div>
         </div>

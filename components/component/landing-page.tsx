@@ -17,14 +17,14 @@ export default function LandingPage() {
               <h1 className="text-3xl font-normal tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl">
                 Welcome to <span className="font-bold ">Brainchant</span>.
               </h1>
-              <p className="mx-auto max-w-[700px] text-zinc-500 md:text-xl dark:text-zinc-400">
+              <p className="mx-auto max-w-[700px] text-zinc-500 md:text-xl dark:text-zinc-400 lg:text-inherit text-sm">
                 Learn from the best, become the best.
               </p>
               <div className="w-full flex justify-center items-center pt-4">
                 <SearchBar></SearchBar>
               </div>
               <Link href={"https://linktr.ee/BrainChant"} target="_blank" rel="noopener">
-              <Button variant={"link"} className="text-accent mt-2 text-lg"><FaWhatsapp className="w-6 h-6 mr-2"/>Join Brainchant{"'"}s Official Whatsapp Group</Button>
+              <Button variant={"link"} className="text-accent mt-2 lg:text-lg text-sm"><FaWhatsapp className="lg:w-6 w-5 lg:h-6 h-5 mr-2"/>Join Brainchant{"'"}s Official Whatsapp Group</Button>
               </Link>
             </div>
           </div>

@@ -24,7 +24,9 @@ export default function Footer() {
           <div> 
               <h2 className="font-bold text-lg mb-2">Contact Information</h2>
               {/* <p className="mb-2">New Delhi, India</p> */}
-              <p className="mb-2"><span className='font-bold'>Email:</span> <Link href={"mailto:brainchantofficial@gmail.com"}>brainchantofficial@gmail.com</Link></p>
+              <p className="mb-2">
+                {/* <span className='font-bold'>Email:</span>  */}
+              <Link href={"mailto:brainchantofficial@gmail.com"}>brainchantofficial@gmail.com</Link></p>
             </div>
 
 
