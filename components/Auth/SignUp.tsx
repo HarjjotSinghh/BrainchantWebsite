@@ -129,14 +129,14 @@ const SignUp = () => {
                 <div className="text-red-600 text-xs w-full text-right">{errors.semester}</div>
               ) : null}
 
-              <label htmlFor="branchStream">Branch/Stream</label>
+              <label htmlFor="branchStream">Branch</label>
               <Field
                 as="select"
                 className={cn('input p-2 rounded-lg border-1 border-primary/30 border', errors.branchStream && touched.branchStream && 'bg-red-50')}
                 id="branchStream"
                 name="branchStream"
               >
-                <option value="" label="Select Branch/Stream"/>
+                <option value="" label="Select Your Branch"/>
                 {branchStreamOptions.map(option => (
                   <option key={option.value} className='max-w-full' value={option.value}>{option.label}</option>
                 ))}
