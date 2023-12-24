@@ -10,7 +10,7 @@ import { SiLinktree } from "react-icons/si";
 
 export default function Footer() {
   return (
-    <footer className="flex flex-col justify-center items-center gap-2 py-6 w-full shrink-0 border-t">
+    <footer className="flex flex-col justify-center items-center gap-2 py-6 pb-4 w-full shrink-0 border-t">
       <div className="w-full md:px-0 px-8 flex flex-col gap-8">
         <div className="flex justify-center items-start md:flex-row flex-col md:gap-24 gap-8">
 
@@ -26,7 +26,7 @@ export default function Footer() {
               {/* <p className="mb-2">New Delhi, India</p> */}
               <p className="mb-2">
                 {/* <span className='font-bold'>Email:</span>  */}
-              <Link href={"mailto:brainchantofficial@gmail.com"}>brainchantofficial@gmail.com</Link></p>
+              <Link href={"mailto:brainchantofficial@gmail.com"} className='select-all cursor'>brainchantofficial@gmail.com</Link></p>
             </div>
 
 
@@ -139,14 +139,15 @@ export default function Footer() {
               </Link>
               <Link target='_blank' rel={"norefferer"} href="https://www.youtube.com/channel/UCEljKeBT4nQiJZeNX4C3ljA">
                 <li className="flex items-center space-x-2">
-                  <FaYoutube className="text-foreground/90 w-6 h-6 hover:text-accent/90 transition-all ease-in-out duration-200" />
+                  <FaYoutube className="text-foreground/90 w-6 h-6 " />
                 </li>
               </Link>
             </ul>
           </div>
         </div>
-        <div className="text-sm text-foreground/80 flex flex-col items-center gap-4 justify-center">
+        <div className="text-sm text-foreground/80 flex flex-col items-center gap-2 justify-center">
           <span>© 2023 Brainchant. All rights reserved.</span>
+          <span className='text-xs'>Developed with 💜 by <Link href={"https://solo.to/harjjot"} className='underline hover:text-accent/90 transition-all ease-in-out duration-200' target='_blank' rel="noopener">Harjot Singh</Link></span>
           {/* <div className="flex space-x-4">
             <Link className="hover:text-gray-800" href="#">
               Privacy Policy

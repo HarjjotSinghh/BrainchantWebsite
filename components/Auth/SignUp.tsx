@@ -22,7 +22,13 @@ const branchStreamOptions = [
   { value: 'ICE', label: 'Instrumentation and Control Engineering' },
   { value: 'ME', label: 'Mechanical Engineering' },
   { value: 'CE', label: 'Civil Engineering' },
+  { value: 'RA', label: 'Robotics and Automation' },
+  { value: 'AIML', label: 'Artificial Intelligence and Machine Learning' },
+  { value: 'AIDS', label: 'Artificial Intelligence and Data Science' },
+  { value: 'IOT', label: 'Internet of Things' },
+  { value: 'OTHER', label: 'Other' },
 ];
+
 
 const SignUpSchema = Yup.object().shape({
   email: Yup.string().email('Invalid email').required('Required'),

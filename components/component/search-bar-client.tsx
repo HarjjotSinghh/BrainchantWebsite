@@ -18,11 +18,13 @@ export default function SearchBarClient({session} : {session: Session | null}) {
     const [subjectsData, setSubjcetsData] = useState<any[]>([]);
     const [searchResults, setSearchResults] = useState(subjectsData);
     const [subjectName, setSubjectName] = useState<string | null>()
+    const [show, setShow] = useState(true);
     const options = {
         includeScore: true,
         includeMatches: true,
-        threshold: 0.4,
+        threshold: 0.8,
         keys: ["name"],
+        minMatchCharLength: 2
     }
     const fuse = new Fuse(subjectsData, options);
     const router = useRouter();
@@ -32,9 +34,18 @@ export default function SearchBarClient({session} : {session: Session | null}) {
         }
         router.push(`/search/${subjectName === undefined ? '' : subjectName}`)
     }
+    const handleInputFocus = () => {
+        setShow(true);
+      };
+      
+    const handleInputBlur = () => {
+        // Delay hiding the results to give time for a click on the results
+        setTimeout(() => {
+            setShow(false);
+        }, 100);
+    };
     const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         setSubjectName(event.target.value)
-
         if (event.target.value.length === 0) {
             setSearchResults([])
         }
@@ -61,6 +72,7 @@ export default function SearchBarClient({session} : {session: Session | null}) {
         getSubjects();
     }, [supabase])
     
+    
 
     return (
     <>
@@ -68,10 +80,14 @@ export default function SearchBarClient({session} : {session: Session | null}) {
     {supabase ? (
         <div className=' relative flex justify-center items-center flex-col gap-0 z-10'>
             <div className="flex w-full items-center">
-                <Input type="text" className="rounded-r-[0px] focus-visible:ring-0 " placeholder="Search for subjects..." onChange={handleChange} />
+                <Input type="text" className="rounded-r-[0px] focus-visible:ring-0 " placeholder="Search for subjects..." 
+                onChange={handleChange} 
+                onFocus={handleInputFocus}
+                onBlur={handleInputBlur}
+                />
                 <Button type="submit" variant={"default"} className="rounded-l-[0px] ring-0 text-foreground" onClick={handleClick}>Search</Button>
             </div>
-            {searchResults.length !== 0 && (
+            {searchResults.length !== 0 && show && (
                 <div className={cn('group-["search"] absolute w-full shadow-lg shadow-foreground/5 top-[100%] bg-background', (subjectName?.length === 0 ? 'hidden' : ''))}>
                 {searchResults.map((subject, index) => (
                     <Link href={`/subject/${subject.name}`} key={index}>                    
