@@ -120,8 +120,8 @@ export default function Subject({
           )}
         </div>
       ) : (
-        <div className='flex min-w-screen justify-center items-center flex-col'>
-            <h1 className="md:text-5xl text-2xl py-24 font-semibold tracking-tighter">
+        <div className='flex min-w-screen justify-center items-center flex-col py-24 pb-96'>
+            <h1 className="md:text-5xl text-2xl  font-semibold tracking-tighter">
             Please <Link href={'/signin'} className="underline">Sign In</Link> to see notes.
             </h1>
         </div>

@@ -66,16 +66,16 @@ export default function SearchBarClient({session} : {session: Session | null}) {
     <>
     
     {supabase ? (
-        <div className=' relative flex justify-center items-center flex-col gap-0'>
+        <div className=' relative flex justify-center items-center flex-col gap-0 z-10'>
             <div className="flex w-full items-center">
                 <Input type="text" className="rounded-r-[0px] focus-visible:ring-0 " placeholder="Search for subjects..." onChange={handleChange} />
                 <Button type="submit" variant={"default"} className="rounded-l-[0px] ring-0 text-foreground" onClick={handleClick}>Search</Button>
             </div>
             {searchResults.length !== 0 && (
-                <div className={cn('group-["search"] absolute w-full shadow-lg shadow-foreground/5 top-[100%] z-auto', (subjectName?.length === 0 ? 'hidden' : ''))}>
+                <div className={cn('group-["search"] absolute w-full shadow-lg shadow-foreground/5 top-[100%] bg-background', (subjectName?.length === 0 ? 'hidden' : ''))}>
                 {searchResults.map((subject, index) => (
                     <Link href={`/subject/${subject.name}`} key={index}>                    
-                        <div className='flex-col justify-center items-center w-full border-b-primary border-b-[1px]'>
+                        <div className='flex-col justify-center items-center w-full border-b-primary border-b-[1px] bg-background'>
                             <p className='text-left ml-3 mt-2'>{subject.name}</p>
                             <p className="text-xs ml-3 mb-2 text-left">Semester {subject.semester}</p>
                         </div>

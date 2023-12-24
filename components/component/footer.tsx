@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { FaYoutube, FaLinkedin, FaInstagramSquare } from "react-icons/fa"
 import { FaXTwitter } from "react-icons/fa6";
 import { GrInstagram } from "react-icons/gr";
+import { SiLinktree } from "react-icons/si";
 
 
 export default function Footer() {
@@ -24,7 +25,6 @@ export default function Footer() {
               <h2 className="font-bold text-lg mb-2">Contact Information</h2>
               {/* <p className="mb-2">New Delhi, India</p> */}
               <p className="mb-2"><span className='font-bold'>Email:</span> <Link href={"mailto:brainchantofficial@gmail.com"}>brainchantofficial@gmail.com</Link></p>
-              <p className="mb-2"><span className='font-bold'>Phone:</span> 123-456-7890</p>
             </div>
 
 
@@ -34,7 +34,7 @@ export default function Footer() {
             <li>
                 <Link
                   className="block text-foreground hover:text-accent/90 transition-all ease-in-out duration-200"
-                  href="/search"
+                  href="/about-us"
                 >
                   About Us
                 </Link>
@@ -115,6 +115,11 @@ export default function Footer() {
           <div>
             <h3 className="font-bold text-lg mb-2">Follow us</h3>
             <ul className="gap-4 flex justify-center items-center [&_li]:scale-105">
+              <Link target='_blank' rel={"norefferer"} href="https://linktr.ee/BrainChant">
+                <li className="flex items-center space-x-2">
+                  <SiLinktree className="text-foreground/90 w-6 h-6 hover:text-accent/90 transition-all ease-in-out duration-200" />
+                </li>
+              </Link>
               <Link target='_blank' rel={"norefferer"} href="https://www.instagram.com/brainchant.in/">
                 <li className="flex items-center space-x-2">
                   <GrInstagram className="text-foreground/90 w-6 h-6 hover:text-accent/90 transition-all ease-in-out duration-200" />

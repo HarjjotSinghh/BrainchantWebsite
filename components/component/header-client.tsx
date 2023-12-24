@@ -21,21 +21,21 @@ export default function HeaderClient({ session }: { session: Session | null }) {
               className="w-10 h-10 invert dark:invert-0 select-none"
             ></Image>
           </Link>
-          <div className="hidden gap-8 lg:flex">
+          <div className="hidden gap-8 lg:flex text-lg">
             <Link
-              className="text-sm font-medium hover:underline underline-offset-4"
+              className=" font-medium hover:underline underline-offset-4"
               href="/"
             >
               Home
             </Link>
             <Link
-              className="text-sm font-medium hover:underline underline-offset-4"
+              className=" font-medium hover:underline underline-offset-4"
               href="/about-us"
             >
               About Us
             </Link>
             <Link
-              className="text-sm font-medium hover:underline underline-offset-4"
+              className=" font-medium hover:underline underline-offset-4"
               href="/search"
             >
               Search

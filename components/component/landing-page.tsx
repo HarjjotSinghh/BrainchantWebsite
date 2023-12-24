@@ -3,6 +3,8 @@ import Image from "next/image"
 import LandingPageLottie from "./landing-page-lottie"
 import SearchBar from "./search-bar"
 import { Skeleton } from "../ui/skeleton"
+import { FaWhatsapp } from "react-icons/fa"
+import Link from "next/link"
 
 export default function LandingPage() {
   return (
@@ -21,6 +23,9 @@ export default function LandingPage() {
               <div className="w-full flex justify-center items-center pt-4">
                 <SearchBar></SearchBar>
               </div>
+              <Link href={"https://linktr.ee/BrainChant"} target="_blank" rel="noopener">
+              <Button variant={"link"} className="text-accent mt-2 text-lg"><FaWhatsapp className="w-6 h-6 mr-2"/>Join Brainchant{"'"}s Official Whatsapp Group</Button>
+              </Link>
             </div>
           </div>
           <div className=" flex justify-center items-center">
