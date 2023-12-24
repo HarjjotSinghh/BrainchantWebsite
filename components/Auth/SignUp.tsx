@@ -54,7 +54,7 @@ const SignUp = () => {
         'college': formData.college,
         'semester': formData.semester,
         'branch': formData.branchStream
-      }, emailRedirectTo: `${location.origin}/auth/callback`}
+      }, emailRedirectTo: `${location.origin}/signin`}
     });
     if (error) {
       setErrorMsg(error.message);
