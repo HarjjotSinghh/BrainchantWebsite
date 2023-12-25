@@ -33,14 +33,6 @@ export default function Footer() {
           <div>
             <h3 className="font-bold text-lg mb-2">Get Started</h3>
             <ul className="space-y-2">
-            <li>
-                <Link
-                  className="block text-foreground hover:text-accent/90 transition-all ease-in-out duration-200"
-                  href="/about-us"
-                >
-                  About Us
-                </Link>
-              </li>
               <li>
                 <Link
                   className="block text-foreground hover:text-accent/90 transition-all ease-in-out duration-200"
@@ -67,6 +59,35 @@ export default function Footer() {
               </li>
               
               
+            </ul>
+          </div>
+          <div>
+            <h3 className="font-bold text-lg mb-2">Legal</h3>
+            <ul className="space-y-2">
+            <li>
+                <Link
+                  className="block text-foreground hover:text-accent/90 transition-all ease-in-out duration-200"
+                  href="/about-us"
+                >
+                  About Us
+                </Link>
+              </li>
+              <li>
+                <Link
+                  className="block text-foreground hover:text-accent/90 transition-all ease-in-out duration-200"
+                  href="/privacy-policy"
+                >
+                  Privacy Policy
+                </Link>
+              </li>
+              <li>
+                <Link
+                  className="block text-foreground hover:text-accent/90 transition-all ease-in-out duration-200"
+                  href="/copyright"
+                >
+                  Copyright Info
+                </Link>
+              </li>
             </ul>
           </div>
           {/* <div>

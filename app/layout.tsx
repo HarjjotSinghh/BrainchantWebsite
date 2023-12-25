@@ -6,6 +6,7 @@ import Footer from '@/components/component/footer';
 import Header from '@/components/component/header';
 import Script from 'next/script';
 
+
 const outfit = Outfit({variable: "--font-outfit", subsets:["latin"]});
 
 export const metadata: Metadata = {
@@ -23,7 +24,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-      <meta name="google-adsense-account" content="ca-pub-9527505327551646"/>
+      <script async src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${process.env.NEXT_PUBLIC_GOOGLE_ADSENSE}`}
+     crossOrigin="anonymous"></script>
       </head>
       <body className={cn(
           "min-h-screen antialiased bg-background text-foreground",
