@@ -1,5 +1,4 @@
-// pages/copyright.tsx
-import React from 'react';
+"use server";
 
 const Copyright = () => {
   return (

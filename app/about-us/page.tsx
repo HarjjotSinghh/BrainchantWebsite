@@ -1,5 +1,5 @@
+"use server";
 import Link from 'next/link';
-import React from 'react';
 
 const AboutUs = () => {
   return (

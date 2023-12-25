@@ -1,6 +1,4 @@
-// pages/privacy-policy.tsx
-import React from 'react';
-
+"use server";
 const PrivacyPolicy = () => {
   return (
     <div className="min-w-screen flex justify-center items-center py-24 pb-48 flex-col gap-8 md:px-16 px-4">
