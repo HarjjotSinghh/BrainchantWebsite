@@ -23,14 +23,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-      <Script
-        id="Adsense-id"
-        data-ad-client="ca-pub-9527505327551646"
-        async
-        strategy="afterInteractive"
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
-          crossOrigin='anonymous'
-      />
+      <meta name="google-adsense-account" content="ca-pub-9527505327551646"/>
       </head>
       <body className={cn(
           "min-h-screen antialiased bg-background text-foreground",
