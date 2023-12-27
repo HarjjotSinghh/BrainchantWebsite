@@ -10,7 +10,6 @@ export default function LandingPageLottie() {
         className:'xl:w-[550px] lg:w-[300px] w-full h-auto hue-rotate-[20deg] -z-10',
         loop:true
     }
-    const { View } = useLottie(options);
 
 
     return (

@@ -5,6 +5,8 @@ import { cn } from '@/lib/utils';
 import Footer from '@/components/component/footer';
 import Header from '@/components/component/header';
 import Script from 'next/script';
+import { SpeedInsights } from '@vercel/speed-insights/next';
+import { Analytics } from '@vercel/analytics/react';
 
 
 const outfit = Outfit({variable: "--font-outfit", subsets:["latin"]});
@@ -34,6 +36,8 @@ export default function RootLayout({
           <Header></Header>
             {children}
           <Footer></Footer>
+          <SpeedInsights />
+          <Analytics />
       </body>
     </html>
   )
