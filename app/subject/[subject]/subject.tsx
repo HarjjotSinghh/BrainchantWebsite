@@ -71,10 +71,7 @@ export default function Subject({
         <div className="flex min-w-screen justify-center items-center flex-col">
           {subjectsData.length !== 0 && !loading ? (
             <>
-              {/* Subject: {decodeURI(params.subject)}
-        <br/>
-        {JSON.stringify(subjectsData)} */}
-              <div className="min-w-screen max-w-[1800px] lg:px-4 flex justify-center items-center flex-col py-24">
+              <div className="min-w-screen lg:px-4 flex justify-center items-center flex-col py-24">
                 <h1 className="lg:text-5xl text-3xl tracking-tighter font-bold">
                   {decodeURI(params.subject)} Notes
                 </h1>

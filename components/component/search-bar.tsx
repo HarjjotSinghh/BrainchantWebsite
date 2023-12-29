@@ -7,12 +7,11 @@ import SearchBarClient from './search-bar-client'
 
 export default async function SearchBar() {
   const supabase = createServerComponentClient<Database>({ cookies })
+  const {data:subjects, error} = await supabase.from("subjects").select("*");
 
-  const {
-    data: { session },
-  } = await supabase.auth.getSession()
+  // const {
+  //   data: { session },
+  // } = await supabase.auth.getSession()
   
-  return (
-    <SearchBarClient session={session}></SearchBarClient>
-  )
+  return ( <SearchBarClient subjects={error ? [] : subjects}></SearchBarClient> )
 }
