@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useCallback, useState } from 'react';
 import { createClientComponentClient } from '@supabase/auth-helpers-nextjs';
 import { cn } from '@/lib/utils';
 import { Field, Form, Formik } from 'formik';
@@ -10,12 +10,8 @@ import { redirect } from 'next/navigation';
 import { Button } from '../ui/button';
 import { FcGoogle } from 'react-icons/fc';
 import { useRouter } from 'next/navigation';
-import ReCAPTCHA, { ReCAPTCHAProps } from 'react-google-recaptcha';
-import { useRef } from 'react';
-
-interface ReCAPTCHARef {
-  getValue(): string | null;
-}
+import { useEffect } from 'react';
+import { ReCaptcha } from "next-recaptcha-v3";
 
 const branchStreamOptions = [
   { value: 'CSE', label: 'Computer Science and Engineering' },
@@ -51,7 +47,7 @@ const SignUp = () => {
   const [errorMsg, setErrorMsg] = useState('');
   const [successMsg, setSuccessMsg] = useState('');
   const router = useRouter();
-  const recaptchaRef = useRef<ReCAPTCHARef | null>(null);
+  const [token, setToken] = useState<string | null>(null);
 
   async function signUp(formData: {
     email: string;
@@ -61,8 +57,7 @@ const SignUp = () => {
     semester: number;
     branchStream: string;
   }) {
-    const recaptchaValue = recaptchaRef.current?.getValue();
-    if (!recaptchaValue) {
+    if (!token) {
       setErrorMsg('Please complete the reCAPTCHA verification.');
       return;
     }
@@ -103,16 +98,30 @@ const SignUp = () => {
         throw error;
       });
   }
-  // @ts-ignore
-  const disableTypeCheckingForThisLine = (<ReCAPTCHA ref={recaptchaRef} sitekey={ process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY ?? '6LcLbD8pAAAAAF9U5_KpK4QUhFU9iIxyTvK5wzpw'} size="normal"/>);
+  
+  useEffect(() => {
+    async function validateToken(token : string) {
+      fetch("/api/validate-captcha", {
+        method: "POST",
+        body: JSON.stringify({ token: token }),
+      }).then((res) => {
+        if (res.ok) {
+          setErrorMsg("");
+        } else {
+          setErrorMsg(`ReCaptcha validation failed`);
+        }
+      })
+    }
+    if (typeof token === "string") {
+      // Validate token and make some actions if it's a bot
+      validateToken(token)
+    }
+  }, [token]);
+
+  
   return (
     <div className="flex justify-center items-center flex-col min-w-screen lg:p-16 lg:py-24 py-16 px-0">
       <div className="w-full lg:w-[400px] flex flex-col items-center justify-center shadow-2xl shadow-foreground/5 lg:px-12 lg:py-6 px-4 py-8 rounded-[1em]">
-        {/* <Button variant={"outline"} onClick={signUpGoogle} className='w-full flex flex-row gap-2 hover:bg-background '>
-          <FcGoogle className="w-6 h-6"/>
-          Sign up with Google
-        </Button>
-        <br/> */}
         <Formik
           initialValues={{
             email: '',
@@ -235,13 +244,14 @@ const SignUp = () => {
                 </div>
               ) : null}
               <br />
-              {disableTypeCheckingForThisLine}
+              {/* ReCaptcha implementation */}
+              <ReCaptcha onValidate={setToken} action="page_view"/>
               <br />
               <Button
                 variant={'outline'}
                 className="w-full hover:text-background hover:bg-primary"
                 type="submit"
-                disabled={isSubmitting}
+                disabled={isSubmitting || !token}
               >
                 Submit
               </Button>
