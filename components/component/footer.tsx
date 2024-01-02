@@ -167,8 +167,8 @@ export default function Footer() {
           </div>
         </div>
         <div className="text-sm text-foreground/80 flex flex-col items-center gap-2 justify-center">
-          <span>© 2023 Brainchant. All rights reserved.</span>
-          <span className='text-xs text-center'>Developed with 💜 by <Link href={"https://solo.to/harjjot"} className='underline hover:text-accent/90 transition-all ease-in-out duration-200' target='_blank' rel="noopener">@HarjjotSinghh</Link></span>
+          <span>© 2024 Brainchant. All rights reserved.</span>
+          {/*<span className='text-xs text-center'>Developed with 💜 by <Link href={"https://solo.to/harjjot"} className='underline hover:text-accent/90 transition-all ease-in-out duration-200' target='_blank' rel="noopener">@HarjjotSinghh</Link></span>*/}
           {/* <div className="flex space-x-4">
             <Link className="hover:text-gray-800" href="#">
               Privacy Policy
