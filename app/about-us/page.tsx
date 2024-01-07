@@ -51,8 +51,7 @@ const AboutUs = () => {
           Talking about our achievements, we have
           <ul className="list-disc">
             <li>
-              Secured our position in <b>top 10 startups</b> in shark tank held by
-              ggsiup.
+              Secured our position in <b>Top 10 Startups</b> in Shark Tank held by GGSIPU.
             </li>
 
             <li>Secured <b>1st position</b> in shark tank at BVCOE (IEEE)</li>
