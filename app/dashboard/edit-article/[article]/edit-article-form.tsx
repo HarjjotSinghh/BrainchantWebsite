@@ -16,7 +16,6 @@ import {
 } from '@/components/ui/form';
 import { Input } from '@/components/ui/input';
 import React, { useState } from 'react';
-import ReactQuill from 'react-quill';
 import ReactQuillContainer from './react-quill-container';
 import { createClientComponentClient } from '@supabase/auth-helpers-nextjs';
 import { Database } from '@/types/supabase';
@@ -45,7 +44,11 @@ const formSchema = z.object({
         .max(5, { message: 'Article must have at most 5 tags.' }),
 });
 
-export default function EditArticleForm({ articleData }: { articleData: any }) {
+export default function EditArticleForm({ articleData, articleTags }: { articleData: any, articleTags: any[] }) {
+    const tags = articleTags.map((item) => ({
+        value: item.tag,
+        label: item.tag,
+    }));
     const [loading, setLoading] = useState(false);
     const supabase = createClientComponentClient<Database>();
     const [message, setMessage] = useState('');
@@ -147,7 +150,7 @@ export default function EditArticleForm({ articleData }: { articleData: any }) {
                                     Article Tags
                                 </FormLabel>
                                 <FormControl className="">
-                                    <ReactSelectContainer {...field} />
+                                    <ReactSelectContainer articleTags={tags} {...field} />
                                 </FormControl>
                                 <FormMessage />
                             </FormItem>

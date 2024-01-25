@@ -8,7 +8,7 @@ import { cn } from '@/lib/utils';
 import CreatableSelect from 'react-select/creatable';
 export default function ReactSelectContainer(props: any) {
     const supabase = createClientComponentClient<Database>();
-    const [tags, setTags] = useState<Array<any>>([]);
+    const [tags, setTags] = useState<Array<any>>(props.articleTags ?? []);
     const [loading, setLoading] = useState(false);
     const loadingComponent = ({ className }: { className: string }) => {
         return (
@@ -49,32 +49,32 @@ export default function ReactSelectContainer(props: any) {
             setLoading(false);
         }
     }
-    useEffect(() => {
-        async function getTags() {
-            try {
-                setLoading(true);
-                const { data: tagsData, error: tagsError } = await supabase
-                    .from('article_tags')
-                    .select('*');
-                if (typeof tagsError === (null || undefined)) {
-                    alert('Failed to fetch current tags.');
-                    setTags([]);
-                } else {
-                    const tags_ = tagsData?.map((item) => ({
-                        value: item.tag,
-                        label: item.tag,
-                    }));
-                    setTags(tags_ ?? []);
-                }
-            } catch (error: any) {
-                console.error(error);
-                throw error;
-            } finally {
-                setLoading(false);
-            }
-        }
-        getTags();
-    }, [supabase]);
+    // useEffect(() => {
+    //     async function getTags() {
+    //         try {
+    //             setLoading(true);
+    //             const { data: tagsData, error: tagsError } = await supabase
+    //                 .from('article_tags')
+    //                 .select('*');
+    //             if (typeof tagsError === (null || undefined)) {
+    //                 alert('Failed to fetch current tags.');
+    //                 setTags([]);
+    //             } else {
+    //                 const tags_ = tagsData?.map((item) => ({
+    //                     value: item.tag,
+    //                     label: item.tag,
+    //                 }));
+    //                 setTags(tags_ ?? []);
+    //             }
+    //         } catch (error: any) {
+    //             console.error(error);
+    //             throw error;
+    //         } finally {
+    //             setLoading(false);
+    //         }
+    //     }
+    //     getTags();
+    // }, [supabase]);
     return (
         <CreatableSelect
             onCreateOption={addTag}

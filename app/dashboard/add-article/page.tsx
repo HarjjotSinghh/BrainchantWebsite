@@ -16,13 +16,14 @@ async function AddArticle() {
         .select()
         .eq('id', session?.user.id ?? '')
         .single();
-    // const { data: articlesData, error: articlesError } = await supabase
-    //     .from('articles')
-    //     .select("*")
+    const { data: articleTagsData, error: articleTagsError } = await supabase
+        .from('article_tags')
+        .select("*")
 
     return (
         <AddArticleForm
             userProfile={userProfileError ? null : userProfile}
+            articleTags={articleTagsError ? [] : articleTagsData}
         ></AddArticleForm>
     );
 }
