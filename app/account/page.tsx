@@ -7,13 +7,19 @@ import Link from 'next/link';
 
 export default async function Account() {
   const supabase = createServerComponentClient<Database>({ cookies });
-
   const {
     data: { session },
   } = await supabase.auth.getSession();
-
+  const { data: userProfile, error: userProfileError } = await supabase
+    .from('profiles')
+    .select()
+    .eq('id', session?.user.id ?? '')
+    .single();
   return session ? (
-    <AccountForm session={session} />
+    <AccountForm
+      session={session}
+      userProfile={userProfileError ? null : userProfile}
+    />
   ) : (
     <>
       <div className="flex min-w-screen justify-center items-center flex-col py-24 pb-96">

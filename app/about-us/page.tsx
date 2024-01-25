@@ -19,7 +19,7 @@ const AboutUs = () => {
           <h1 className="font-semibold text-2xl mb-2 capitalize">
             What do we provide you?
           </h1>
-          <ul className="list-disc">
+          <ul className="list-disc list-inside">
             <li>
               We provide <b>authentic notes</b> by university toppers.
             </li>
@@ -31,7 +31,10 @@ const AboutUs = () => {
 
             <li>
               We have <b>WhatsApp groups</b> wherein you can collaborate with
-              others to seek guidance and clear your doubts. We provide PYQs and
+              others to seek guidance and clear your doubts.
+            </li>
+            <li>
+            We provide PYQs and
               important information on the daily basis.{' '}
               <Link href={'https://linktr.ee/BrainChant'} className="underline">
                 <b>Click here</b>
@@ -49,7 +52,7 @@ const AboutUs = () => {
             Our Achievements
           </h1>
           Talking about our achievements, we have
-          <ul className="list-disc">
+          <ul className="list-disc list-inside">
             <li>
               Secured our position in <b>Top 10 Startups</b> in Shark Tank held by GGSIPU.
             </li>

@@ -11,22 +11,25 @@ import { SiLinktree } from "react-icons/si";
 export default function Footer() {
   return (
     <footer className="flex flex-col justify-center items-center gap-2 py-6 pb-4 w-full shrink-0 border-t">
-      <div className="w-full md:px-0 px-8 flex flex-col gap-8">
-        <div className="flex justify-center items-start md:flex-row flex-col md:gap-24 gap-8">
+      <div className="w-full lg:px-0 px-8 flex flex-col gap-8">
+        <div className="flex justify-center items-start lg:flex-row flex-col lg:gap-16 gap-8">
 
           <div className='flex justify-center items-center flex-row'>
-            <Image alt="Brainchant Logo" src="/logo_cropped.png" width={50} height={50} className='invert dark:invert-0 '/>
+            
             {/* <p className="text-xl font-bold">
               Brainchant
             </p> */}
           </div>
 
-          <div> 
-              <h2 className="font-bold text-lg mb-2">Contact Information</h2>
-              {/* <p className="mb-2">New Delhi, India</p> */}
-              <p className="mb-2">
-                {/* <span className='font-bold'>Email:</span>  */}
-              <Link href={"mailto:brainchantofficial@gmail.com"} className='select-all cursor'>brainchantofficial@gmail.com</Link></p>
+          <div className='flex flex-row gap-4'> 
+          <Image alt="Brainchant Logo" src="/logo_cropped.png" width={50} height={50} className='invert dark:invert-0 '/>
+              <div>
+                <h2 className="font-bold text-lg mb-0">Contact Information</h2>
+                {/* <p className="mb-2">New Delhi, India</p> */}
+                <p className="">
+                  {/* <span className='font-bold'>Email:</span>  */}
+                <Link href={"mailto:brainchantofficial@gmail.com"} className='select-all cursor'>brainchantofficial@gmail.com</Link></p>
+              </div>
             </div>
 
 

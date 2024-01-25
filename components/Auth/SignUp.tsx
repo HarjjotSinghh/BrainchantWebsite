@@ -246,14 +246,13 @@ const SignUp = () => {
               <br />
               {/* ReCaptcha implementation */}
               <ReCaptcha onValidate={setToken} action="page_view"/>
-              <br />
               <Button
                 variant={'outline'}
                 className="w-full hover:text-background hover:bg-primary"
                 type="submit"
                 disabled={isSubmitting || !token}
               >
-                Submit
+                Create Account
               </Button>
             </Form>
           )}

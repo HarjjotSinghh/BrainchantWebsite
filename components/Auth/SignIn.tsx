@@ -38,7 +38,7 @@ const SignIn = () => {
 
   return (
     <div className='flex justify-center items-center flex-col min-w-screen lg:px-12 px-4 lg:py-24 py-12'>
-      <div className="w-full lg:w-[400px] flex flex-col items-center justify-center shadow-2xl shadow-foreground/5 p-12 rounded-[1em]">
+      <div className="w-full lg:w-[400px] flex flex-col items-center justify-center shadow-2xl shadow-foreground/5 p-12 rounded-2xl">
         {/* <Button variant={"outline"} onClick={signUpGoogle} className='w-full flex flex-row gap-2 hover:bg-background '>
           <FcGoogle className="w-6 h-6"/>
           Sign in with Google
@@ -57,7 +57,7 @@ const SignIn = () => {
             <Form className="w-full flex flex-col gap-2">
               <label htmlFor="email">Email</label>
               <Field
-                className={cn('input p-2 rounded-lg', errors.email && touched.email && 'bg-red-50')}
+                className={cn('input p-2 rounded-lg border border-primary/50', errors.email && touched.email && 'bg-red-50')}
                 id="email"
                 name="email"
                 placeholder="hello@gmail.com"
@@ -68,7 +68,7 @@ const SignIn = () => {
               ) : null}
               <label htmlFor="email">Password</label>
               <Field
-                className={cn('input p-2 rounded-lg', errors.password && touched.password && 'bg-red-50')}
+                className={cn('input p-2 rounded-lg border border-primary/50', errors.password && touched.password && 'bg-red-50')}
                 id="password"
                 name="password"
                 type="password"
@@ -79,7 +79,7 @@ const SignIn = () => {
               ) : null}
               <br/>
               <Button variant={"outline"} className="w-full hover:text-background hover:bg-primary" type="submit" disabled={isSubmitting}>
-                Submit
+                Sign In
               </Button>
             </Form>
           )}
