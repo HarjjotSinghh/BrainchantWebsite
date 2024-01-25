@@ -45,13 +45,15 @@ const formSchema = z.object({
 });
 
 export default function EditArticleForm({ articleData, articleTags }: { articleData: any, articleTags: any[] }) {
-    const tags = articleTags.map((item) => ({
-        value: item.tag,
-        label: item.tag,
-    }));
     const [loading, setLoading] = useState(false);
     const supabase = createClientComponentClient<Database>();
     const [message, setMessage] = useState('');
+    const [tags, setTags] = useState(
+        articleTags.map((item) => ({
+            value: item.tag,
+            label: item.tag,
+        }))
+    );
     const form = useForm<z.infer<typeof formSchema>>({
         resolver: zodResolver(formSchema),
         defaultValues: {

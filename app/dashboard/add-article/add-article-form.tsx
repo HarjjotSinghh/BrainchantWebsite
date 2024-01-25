@@ -55,10 +55,12 @@ export default function AddArticleForm({
     const [loading, setLoading] = useState(false);
     const supabase = createClientComponentClient<Database>();
     const [message, setMessage] = useState('');
-    const tags = articleTags.map((item) => ({
-        value: item.tag,
-        label: item.tag,
-    }));
+    const [tags, setTags] = useState(
+        articleTags.map((item) => ({
+            value: item.tag,
+            label: item.tag,
+        }))
+    );
     const form = useForm<z.infer<typeof formSchema>>({
         resolver: zodResolver(formSchema),
         defaultValues: {
@@ -167,7 +169,10 @@ export default function AddArticleForm({
                                     Article Tags
                                 </FormLabel>
                                 <FormControl className="">
-                                    <ReactSelectContainer articleTags={tags} {...field} />
+                                    <ReactSelectContainer
+                                        articleTags={tags}
+                                        {...field}
+                                    />
                                 </FormControl>
                                 <FormMessage />
                             </FormItem>
