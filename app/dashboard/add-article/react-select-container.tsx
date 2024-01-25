@@ -74,7 +74,7 @@ export default function ReactSelectContainer(props: any) {
             }
         }
         getTags();
-    }, []);
+    }, [supabase]);
     return (
         <CreatableSelect
             onCreateOption={addTag}

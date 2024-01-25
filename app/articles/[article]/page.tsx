@@ -9,7 +9,7 @@ async function ArticleServer({ params }: { params: { article: string } }) {
     const { error: articleError, data: articleData } = await supabase
         .from('articles')
         .select()
-        .eq('article_slug', params.article);
+        .eq('article_slug', params.article).single();
     // const articles = await fetch(
     //     `${process.env.NEXT_PUBLIC_SUPABASE_URL}/rest/v1/articles?select`,
     //     {
