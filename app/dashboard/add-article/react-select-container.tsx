@@ -28,30 +28,6 @@ export default function ReactSelectContainer(props: any) {
             </svg>
         );
     };
-    const getTags = useCallback(async () => {
-        try {
-            setLoading(true);
-            const { data: tagsData, error: tagsError } = await supabase
-                .from('article_tags')
-                .select('*');
-            if (typeof tagsError === (null || undefined)) {
-                alert('Failed to fetch current tags.');
-                setTags([]);
-            } else {
-                const tags_ = tagsData?.map((item) => ({
-                    value: item.tag,
-                    label: item.tag,
-                }));
-                setTags(tags_ ?? []);
-                console.log(tags);
-            }
-        } catch (error: any) {
-            console.error(error);
-            throw error;
-        } finally {
-            setLoading(false);
-        }
-    }, [supabase,tags])
     async function addTag(tag: string) {
         try {
             setLoading(true);
@@ -74,8 +50,31 @@ export default function ReactSelectContainer(props: any) {
         }
     }
     useEffect(() => {
+        async function getTags() {
+            try {
+                setLoading(true);
+                const { data: tagsData, error: tagsError } = await supabase
+                    .from('article_tags')
+                    .select('*');
+                if (typeof tagsError === (null || undefined)) {
+                    alert('Failed to fetch current tags.');
+                    setTags([]);
+                } else {
+                    const tags_ = tagsData?.map((item) => ({
+                        value: item.tag,
+                        label: item.tag,
+                    }));
+                    setTags(tags_ ?? []);
+                }
+            } catch (error: any) {
+                console.error(error);
+                throw error;
+            } finally {
+                setLoading(false);
+            }
+        }
         getTags();
-    }, [getTags]);
+    }, []);
     return (
         <CreatableSelect
             onCreateOption={addTag}
@@ -86,6 +85,7 @@ export default function ReactSelectContainer(props: any) {
             options={tags || []}
             {...props}
             className="hue-rotate-[55deg] z-10"
+            loadingMessage={"Loading..."}
         />
     );
 }
