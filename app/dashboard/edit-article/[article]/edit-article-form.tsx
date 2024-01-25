@@ -20,7 +20,7 @@ import ReactQuill from 'react-quill';
 import ReactQuillContainer from './react-quill-container';
 import { createClientComponentClient } from '@supabase/auth-helpers-nextjs';
 import { Database } from '@/types/supabase';
-import ReactSelectContainer from './react-select-container';
+import ReactSelectContainer from '../../add-article/react-select-container';
 import Link from 'next/link';
 import { IoMdArrowRoundBack } from 'react-icons/io';
 
