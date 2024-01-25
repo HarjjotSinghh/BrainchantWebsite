@@ -7,7 +7,7 @@ import React from 'react';
 import MainDashboardPage from './main-dashboard-page';
 
 async function ArticlesDashboard() {
-  const supabase = await createServerComponentClient({ cookies });
+  const supabase = createServerComponentClient({ cookies });
   const {
     data: { session },
   } = await supabase.auth.getSession();
@@ -47,7 +47,7 @@ async function ArticlesDashboard() {
     );
   }
   return (
-    <MainDashboardPage articles={articles ?? []} userProfile={userProfile}/>
+    <MainDashboardPage articles={articlesError ? [] : articles} userProfile={userProfileError ? null : userProfile}/>
   );
 }
 
