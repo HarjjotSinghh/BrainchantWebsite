@@ -12,7 +12,7 @@ html {
 
 * {
   scrollbar-width: thin;
-  scrollbar-color: hsl(var(--background)) hsl(var(--foreground));
+  scrollbar-color: hsl(var(--primary)) hsl(var(--background));
 }
 
 
@@ -22,7 +22,7 @@ html {
 
 *::-webkit-scrollbar-track {
   background: hsl(var(--background));
-  border-radius: 5px;
+  border-radius: 12px;
 }
 
 *::-webkit-scrollbar-thumb {
