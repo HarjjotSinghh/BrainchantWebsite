@@ -11,9 +11,14 @@ export default async function SubjectPage({ params }: { params: { subject: strin
   const {
     data: { session },
   } = await supabase.auth.getSession()
+  console.log("in subject, session is: ", session)
   
   return (
-    session ? <Subject params={params} session={session}></Subject> : <SubjectUnprotected params={params}></SubjectUnprotected>
+    // TO LET SIGNED IN USERS SEE NOTES
+    // session ? <Subject params={params} session={session}></Subject> : <SubjectUnprotected params={params}></SubjectUnprotected>
+
+    // to let everyone view notes:
+    <Subject params={params} session={session}></Subject>
     )
 }
 
