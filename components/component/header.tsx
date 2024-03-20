@@ -14,9 +14,9 @@ import { SiLinktree } from 'react-icons/si';
 import { Avatar, AvatarFallback, AvatarImage } from '../ui/avatar';
 
 export const createServerSupabaseClient = cache(() => {
-  const cookieStore = cookies()
-  return createServerComponentClient({ cookies: () => cookieStore })
-})
+    const cookieStore = cookies();
+    return createServerComponentClient({ cookies: () => cookieStore });
+});
 
 export default async function Header() {
     const supabase = createServerSupabaseClient();
@@ -24,6 +24,7 @@ export default async function Header() {
         data: { session },
     } = await supabase.auth.getSession();
     if (!session) {
+        
         return (
             <header className="sticky top-0 bg-background/80 backdrop-blur-xl">
                 <div className="px-8 lg:px-12 h-16 py-2 flex items-center">
@@ -65,6 +66,20 @@ export default async function Header() {
                             >
                                 <SiLinktree className="w-6 h-6" />
                             </Link>
+
+                            <Link
+                            className="font-medium hover:text-accent transition-all duration-200 ease-in-out underline-offset-4"
+                            href="https://bit.ly/BXN8"
+                            target="_blank"
+                            style={{
+                                background:
+                                    '-webkit-linear-gradient(45deg, red, blue)',
+                                WebkitBackgroundClip: 'text',
+                                WebkitTextFillColor: 'transparent',
+                            }}
+                        >
+                            Join our FREE Blockchain Cohort in Solana!
+                        </Link>
                         </div>
                     </div>
 
