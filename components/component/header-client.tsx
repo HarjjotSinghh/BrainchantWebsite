@@ -29,7 +29,7 @@ export default function HeaderClient({ session }: { session: Session | null }) {
     const user = session?.user;
     return (
         <header className="sticky top-0 bg-background/80 backdrop-blur-xl">
-            <div className="px-8 lg:px-12 h-16 py-2 flex items-center justify-between">
+            <div className="px-8 lg:px-12 h-16 py-2 flex items-center">
                 <div className="flex gap-16 items-center">
                     <Link className="flex items-center justify-center" href="/">
                         <Image
@@ -77,8 +77,8 @@ export default function HeaderClient({ session }: { session: Session | null }) {
                                 >
                                     {user?.user_metadata.full_name}
                                 </Button> */}
-                            <DropdownMenu>
-                                <DropdownMenuTrigger className="rounded-full border-2 border-primary">
+                            <DropdownMenu >
+                                <DropdownMenuTrigger className='rounded-full border-2 border-primary'>
                                     <Avatar className="select-none">
                                         <AvatarImage
                                             draggable="false"
@@ -101,17 +101,17 @@ export default function HeaderClient({ session }: { session: Session | null }) {
                                         {user?.user_metadata.full_name}
                                     </DropdownMenuLabel>
                                     <DropdownMenuSeparator />
-                                    <Link href={'/'}>
-                                        <DropdownMenuItem className="flex items-center gap-1 text-base hover:cursor-pointer">
-                                            <RiHome3Line className="w-5 h-5" />
-                                            Home
-                                        </DropdownMenuItem>
+                                    <Link href={"/"}>
+                                      <DropdownMenuItem className="flex items-center gap-1 text-base hover:cursor-pointer">
+                                          <RiHome3Line className="w-5 h-5" />
+                                          Home
+                                      </DropdownMenuItem>
                                     </Link>
-                                    <Link href={'/search'}>
-                                        <DropdownMenuItem className="flex items-center gap-1 text-base hover:cursor-pointer">
-                                            <RiStickyNoteLine className="w-5 h-5" />
-                                            Notes
-                                        </DropdownMenuItem>
+                                    <Link href={"/search"}>
+                                      <DropdownMenuItem className="flex items-center gap-1 text-base hover:cursor-pointer">
+                                          <RiStickyNoteLine className="w-5 h-5" />
+                                          Notes
+                                      </DropdownMenuItem>
                                     </Link>
                                     {/* <Link href={"/articles"}>
                                       <DropdownMenuItem className="flex items-center gap-1 text-base hover:cursor-pointer">
@@ -120,11 +120,11 @@ export default function HeaderClient({ session }: { session: Session | null }) {
                                       </DropdownMenuItem>
                                     </Link> */}
 
-                                    <Link href={'/account'}>
-                                        <DropdownMenuItem className="flex items-center gap-1 text-base hover:cursor-pointer">
-                                            <RiSettings4Line className="w-5 h-5" />
-                                            Settings
-                                        </DropdownMenuItem>
+                                    <Link href={"/account"}>
+                                      <DropdownMenuItem className="flex items-center gap-1 text-base hover:cursor-pointer">
+                                          <RiSettings4Line className="w-5 h-5" />
+                                          Settings
+                                      </DropdownMenuItem>
                                     </Link>
                                 </DropdownMenuContent>
                             </DropdownMenu>

@@ -14,9 +14,9 @@ import { SiLinktree } from 'react-icons/si';
 import { Avatar, AvatarFallback, AvatarImage } from '../ui/avatar';
 
 export const createServerSupabaseClient = cache(() => {
-    const cookieStore = cookies();
-    return createServerComponentClient({ cookies: () => cookieStore });
-});
+  const cookieStore = cookies()
+  return createServerComponentClient({ cookies: () => cookieStore })
+})
 
 export default async function Header() {
     const supabase = createServerSupabaseClient();
@@ -24,7 +24,6 @@ export default async function Header() {
         data: { session },
     } = await supabase.auth.getSession();
     if (!session) {
-        
         return (
             <header className="sticky top-0 bg-background/80 backdrop-blur-xl">
                 <div className="px-8 lg:px-12 h-16 py-2 flex items-center">
