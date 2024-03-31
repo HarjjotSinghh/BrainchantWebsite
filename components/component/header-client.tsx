@@ -65,20 +65,6 @@ export default function HeaderClient({ session }: { session: Session | null }) {
                         >
                             <SiLinktree className="w-6 h-6" />
                         </Link>
-
-                        <Link
-                            className="font-medium hover:text-accent transition-all duration-200 ease-in-out underline-offset-4"
-                            href="https://bit.ly/BXN8"
-                            target="_blank"
-                            style={{
-                                background:
-                                    '-webkit-linear-gradient(45deg, red, blue)',
-                                WebkitBackgroundClip: 'text',
-                                WebkitTextFillColor: 'transparent',
-                            }}
-                        >
-                            Join our FREE Blockchain Cohort in Solana!
-                        </Link>
                     </div>
                 </div>
 
