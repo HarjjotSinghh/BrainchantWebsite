@@ -14,9 +14,9 @@ import { SiLinktree } from 'react-icons/si';
 import { Avatar, AvatarFallback, AvatarImage } from '../ui/avatar';
 
 export const createServerSupabaseClient = cache(() => {
-  const cookieStore = cookies()
-  return createServerComponentClient({ cookies: () => cookieStore })
-})
+    const cookieStore = cookies();
+    return createServerComponentClient({ cookies: () => cookieStore });
+});
 
 export default async function Header() {
     const supabase = createServerSupabaseClient();
@@ -64,6 +64,19 @@ export default async function Header() {
                                 target="_blank"
                             >
                                 <SiLinktree className="w-6 h-6" />
+                            </Link>
+                            <Link
+                                className="font-medium hover:text-accent transition-all duration-200 ease-in-out underline-offset-4"
+                                href="https://lms.narra8ive.com/"
+                                target="_blank"
+                                style={{
+                                    background:
+                                        '-webkit-linear-gradient(45deg, red, blue)',
+                                    WebkitBackgroundClip: 'text',
+                                    WebkitTextFillColor: 'transparent',
+                                }}
+                            >
+                                Join our FREE Blockchain Cohort in Solana!
                             </Link>
                         </div>
                     </div>

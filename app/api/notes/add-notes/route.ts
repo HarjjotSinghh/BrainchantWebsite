@@ -2,11 +2,19 @@ import { createServerComponentClient } from '@supabase/auth-helpers-nextjs';
 import { Database } from '@/types/supabase';
 import { cookies } from 'next/headers';
 
+// subject names for sem 4:
+// Database Management Systems
+// Technical writing
+// Probability statistics and linear programming
+// Programming in java
+// Theory of computation
+// Circuits and Systems
+
 // add notes
 export async function POST() {
     // remember to adjust the semester and notes_id accordingly!
-    let semester = 4;
-    let notes_id = 46;
+    let semester = 2;
+    let notes_id = 94;
 
     // Regex pattern to match everything after the last '/'
     let regex = /\/([^/]+)$/;
@@ -27,46 +35,25 @@ export async function POST() {
                 {
                     id: notes_id++,
                     semester,
-                    subject: 'Theory of computation',
-                    title: 'Unit 1 & Unit 2',
+                    subject: 'Power Systems',
+                    title: 'Handwritten notes',
                     link: appendLink(
-                        'https://drive.google.com/file/d/15AZF_CD6nxxYKHCpGbaH6xjkTQYkd-u7/view?usp=drive_link'
+                        'https://drive.google.com/file/d/1C5__YUSPXLDedQuTZWq7xMCvh5ss_h04/view?usp=drive_link'
                     ),
                 },
                 {
                     id: notes_id++,
                     semester,
-                    subject: 'Theory of computation',
-                    title: 'Unit 1',
+                    subject: 'Power Systems',
+                    title: 'Complete notes',
                     link: appendLink(
-                        'https://drive.google.com/file/d/156FTBy39ZT6W2azFk5smAm6asrWfhBGM/view?usp=drive_link'
-                    ),
-                },
-                {
-                    id: notes_id++,
-                    semester,
-                    subject: 'Theory of computation',
-                    title: 'Unit 2',
-                    link: appendLink(
-                        'https://drive.google.com/file/d/156QLfMRnS8GkarDLllrMo-abmP83p60S/view?usp=drive_link'
-                    ),
-                },
-                {
-                    id: notes_id++,
-                    semester,
-                    subject: 'Theory of computation',
-                    title: 'Unit 3 & Unit 4',
-                    link: appendLink(
-                        'https://drive.google.com/file/d/15THSgGGP0oeOZhVx2sRH02fxtOrh_Jzn/view?usp=drive_link'
+                        'https://drive.google.com/file/d/1C5aCewKIqtXW6T2xkxDrffqV7j33uGrZ/view?usp=drive_link'
                     ),
                 },
             ])
             .select();
         if (data) {
-            console.log(
-                'The notes created in /add-notes are: ',
-                data
-            );
+            console.log('The notes created in /add-notes are: ', data);
             return Response.json({
                 'The notes created are': data,
             });

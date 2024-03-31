@@ -65,6 +65,19 @@ export default function HeaderClient({ session }: { session: Session | null }) {
                         >
                             <SiLinktree className="w-6 h-6" />
                         </Link>
+                        <Link
+                            className="font-medium hover:text-accent transition-all duration-200 ease-in-out underline-offset-4"
+                            href="https://lms.narra8ive.com/"
+                            target="_blank"
+                            style={{
+                                background:
+                                    '-webkit-linear-gradient(45deg, red, blue)',
+                                WebkitBackgroundClip: 'text',
+                                WebkitTextFillColor: 'transparent',
+                            }}
+                        >
+                            Join our FREE Blockchain Cohort in Solana!
+                        </Link>
                     </div>
                 </div>
 
@@ -77,8 +90,8 @@ export default function HeaderClient({ session }: { session: Session | null }) {
                                 >
                                     {user?.user_metadata.full_name}
                                 </Button> */}
-                            <DropdownMenu >
-                                <DropdownMenuTrigger className='rounded-full border-2 border-primary'>
+                            <DropdownMenu>
+                                <DropdownMenuTrigger className="rounded-full border-2 border-primary">
                                     <Avatar className="select-none">
                                         <AvatarImage
                                             draggable="false"
@@ -101,17 +114,17 @@ export default function HeaderClient({ session }: { session: Session | null }) {
                                         {user?.user_metadata.full_name}
                                     </DropdownMenuLabel>
                                     <DropdownMenuSeparator />
-                                    <Link href={"/"}>
-                                      <DropdownMenuItem className="flex items-center gap-1 text-base hover:cursor-pointer">
-                                          <RiHome3Line className="w-5 h-5" />
-                                          Home
-                                      </DropdownMenuItem>
+                                    <Link href={'/'}>
+                                        <DropdownMenuItem className="flex items-center gap-1 text-base hover:cursor-pointer">
+                                            <RiHome3Line className="w-5 h-5" />
+                                            Home
+                                        </DropdownMenuItem>
                                     </Link>
-                                    <Link href={"/search"}>
-                                      <DropdownMenuItem className="flex items-center gap-1 text-base hover:cursor-pointer">
-                                          <RiStickyNoteLine className="w-5 h-5" />
-                                          Notes
-                                      </DropdownMenuItem>
+                                    <Link href={'/search'}>
+                                        <DropdownMenuItem className="flex items-center gap-1 text-base hover:cursor-pointer">
+                                            <RiStickyNoteLine className="w-5 h-5" />
+                                            Notes
+                                        </DropdownMenuItem>
                                     </Link>
                                     {/* <Link href={"/articles"}>
                                       <DropdownMenuItem className="flex items-center gap-1 text-base hover:cursor-pointer">
@@ -120,11 +133,11 @@ export default function HeaderClient({ session }: { session: Session | null }) {
                                       </DropdownMenuItem>
                                     </Link> */}
 
-                                    <Link href={"/account"}>
-                                      <DropdownMenuItem className="flex items-center gap-1 text-base hover:cursor-pointer">
-                                          <RiSettings4Line className="w-5 h-5" />
-                                          Settings
-                                      </DropdownMenuItem>
+                                    <Link href={'/account'}>
+                                        <DropdownMenuItem className="flex items-center gap-1 text-base hover:cursor-pointer">
+                                            <RiSettings4Line className="w-5 h-5" />
+                                            Settings
+                                        </DropdownMenuItem>
                                     </Link>
                                 </DropdownMenuContent>
                             </DropdownMenu>
