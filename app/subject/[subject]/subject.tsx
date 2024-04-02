@@ -4,7 +4,7 @@ import {
     Session,
     createClientComponentClient,
 } from '@supabase/auth-helpers-nextjs';
-import { TailSpin } from 'react-loader-spinner';
+// import { TailSpin } from 'react-loader-spinner';
 import { Button } from '@/components/ui/button';
 import { emitKeypressEvents } from 'readline';
 import Link from 'next/link';
@@ -136,7 +136,7 @@ export default function Subject({
                                 {decodeURI(params.subject)} Notes
                             </h1>
                             <div className="flex flex-wrap lg:[&_button]:flex-[0_0_calc(33%-20px)] md:[&_button]:flex-[0_0_calc(50%-20px)] [&_button]:flex-[0_0_calc(100%-20px)] lg:p-16 md:p-12 p-4 shadow-2xl rounded-3xl shadow-foreground/5 gap-8 justify-center items-center">
-                                <TailSpin
+                                {/* <TailSpin
                                     height="40"
                                     width="40"
                                     color="purple"
@@ -144,7 +144,7 @@ export default function Subject({
                                     radius="1"
                                     wrapperClass=""
                                     visible={loading}
-                                />
+                                /> */}
                                 {subjectsData.length === 0 && !loading && (
                                     <h1 className="lg:text-2xl text-xl tracking-tighter">
                                         Could not find the subject{' '}
