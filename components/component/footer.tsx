@@ -28,7 +28,7 @@ export default function Footer() {
                 {/* <p className="mb-2">New Delhi, India</p> */}
                 <p className="">
                   {/* <span className='font-bold'>Email:</span>  */}
-                <Link href={"mailto:brainchantofficial@gmail.com"} className='select-all cursor'>brainchantofficial@gmail.com</Link></p>
+                <Link href={"mailto:info@brainchant.in"} className='select-all cursor'>info@brainchant.in</Link></p>
               </div>
             </div>
 
