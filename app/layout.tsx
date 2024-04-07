@@ -31,11 +31,11 @@ export default function RootLayout({
                     src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${process.env.NEXT_PUBLIC_GOOGLE_ADSENSE}`}
                     crossOrigin="anonymous"
                 ></script>
-                <script
+                {/* <script
                     defer
                     src="https://eu.umami.is/script.js"
                     data-website-id="ba6b3833-dad3-4e3c-a62f-85196e010689"
-                ></script>
+                ></script> */}
             </head>
             <body
                 className={cn(
@@ -48,6 +48,7 @@ export default function RootLayout({
                 <Footer></Footer>
                 {/* <SpeedInsights /> */}
                 {/* <Analytics /> */}
+                <script async defer src="https://scripts.withcabin.com/hello.js"></script>
             </body>
         </html>
     );
