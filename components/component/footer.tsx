@@ -10,8 +10,8 @@ import { SiLinktree } from "react-icons/si";
 
 export default function Footer() {
   return (
-    <footer className="flex flex-col justify-center items-center gap-2 py-6 pb-4 w-full shrink-0 border-t">
-      <div className="w-full lg:px-0 px-8 flex flex-col gap-8">
+    <footer className="flex flex-col justify-center items-center gap-2 py-8 w-full shrink-0 border-t">
+      <div className="w-full lg:px-0 px-8 flex flex-col gap-12">
         <div className="flex justify-center items-start lg:flex-row flex-col lg:gap-16 gap-8">
 
           <div className='flex justify-center items-center flex-row'>
