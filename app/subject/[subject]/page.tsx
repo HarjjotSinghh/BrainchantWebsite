@@ -11,6 +11,7 @@ export default async function SubjectPage({ params }: { params: { subject: strin
   const {
     data: { session },
   } = await supabase.auth.getSession()
+  //checks if user is logged in
   console.log("in subject, session is: ", session)
   
   return (
@@ -22,6 +23,7 @@ export default async function SubjectPage({ params }: { params: { subject: strin
     )
 }
 
+//TODO: can we delete this?
 // export async function generateStaticParams() {
 //   const subjects = await fetch(`${process.env.NEXT_PUBLIC_SUPABASE_URL}/rest/v1/subjects?select=*`, {
 //     cache: "default",

@@ -3,7 +3,7 @@
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import React from 'react';
-
+// to not let anonymous users see notes
 export default async function SubjectUnprotected({
   params,
 }: {

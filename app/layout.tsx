@@ -3,10 +3,14 @@ import { Outfit } from 'next/font/google';
 import './globals.css';
 import { cn } from '@/lib/utils';
 import Footer from '@/components/component/footer';
-import Header from '@/components/component/header';
+// import Header, { createServerSupabaseClient } from '@/components/component/header';
 import Script from 'next/script';
 // import { SpeedInsights } from '@vercel/speed-insights/next';
 // import { Analytics } from '@vercel/analytics/react';
+import { cookies } from 'next/headers';
+import { cache } from 'react';
+import { createServerComponentClient } from '@supabase/auth-helpers-nextjs';
+import Header from '@/components/component/header';
 
 const outfit = Outfit({ variable: '--font-outfit', subsets: ['latin'] });
 
@@ -18,11 +22,19 @@ export const metadata: Metadata = {
         'notes, instagram notes ideas, instagram notes, ipu notes, btech notes ipu, ipu btech notes, btech notes, brainchant, brain chant, brainchant ipu notes',
 };
 
-export default function RootLayout({
+export const createServerSupabaseClient = cache(() => {
+    const cookieStore = cookies();
+    return createServerComponentClient({ cookies: () => cookieStore });
+});
+
+export default async function RootLayout({
     children,
 }: {
     children: React.ReactNode;
 }) {
+    // prettier-ignore
+    const supabase = createServerSupabaseClient(); // prettier-ignore
+    const {data: { session },} = await supabase.auth.getSession(); // prettier-ignore
     return (
         <html lang="en">
             <head>
@@ -43,12 +55,17 @@ export default function RootLayout({
                     outfit.className
                 )}
             >
-                <Header></Header>
+                {/* <Header></Header> */}
+                <Header session={session}></Header>
                 {children}
                 <Footer></Footer>
                 {/* <SpeedInsights /> */}
                 {/* <Analytics /> */}
-                <script async defer src="https://scripts.withcabin.com/hello.js"></script>
+                <script
+                    async
+                    defer
+                    src="https://scripts.withcabin.com/hello.js"
+                ></script>
             </body>
         </html>
     );
