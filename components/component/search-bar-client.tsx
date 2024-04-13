@@ -62,7 +62,7 @@ export default function SearchBarClient({
     //                 throw error
     //             }
     //             if (data) {
-    //                 setSubjectData(data);
+    //                 setSubjcetsData(data);
     //             }
     //         } catch (error) {
     //             alert(error)

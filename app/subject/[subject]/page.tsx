@@ -4,14 +4,16 @@ import { cookies } from "next/headers";
 import { Database } from "@/types/supabase";
 import Subject from "./subject";
 import SubjectUnprotected from "./unprotected-subject";
-
 export default async function SubjectPage({ params }: { params: { subject: string } }) {
+
   const supabase = createServerComponentClient<Database>({ cookies })
+
   const {
     data: { session },
   } = await supabase.auth.getSession()
   //checks if user is logged in
   console.log("in subject, session is: ", session)
+  
   return (
     // TO LET SIGNED IN USERS SEE NOTES
     // session ? <Subject params={params} session={session}></Subject> : <SubjectUnprotected params={params}></SubjectUnprotected>
@@ -20,16 +22,6 @@ export default async function SubjectPage({ params }: { params: { subject: strin
     <Subject params={params} session={session}></Subject>
     )
 }
-
-
-
-
-
-
-
-
-
-
 
 //TODO: can we delete this?
 // export async function generateStaticParams() {
