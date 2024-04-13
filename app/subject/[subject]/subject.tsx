@@ -9,6 +9,7 @@ import { Button } from '@/components/ui/button';
 import { emitKeypressEvents } from 'readline';
 import Link from 'next/link';
 
+//TODO: can we delete this?
 // import { cookies } from 'next/headers'
 // import { createServerActionClient } from '@supabase/auth-helpers-nextjs'
 // export async function generateStaticParams() {
@@ -33,9 +34,10 @@ export default function Subject({
     session: Session | null;
 }) {
     const supabase = createClientComponentClient();
-    const [subjectsData, setSubjcetsData] = useState<any[]>([]);
+    const [subjectData, setSubjectData] = useState<any[]>([]);
     const [searchResults, setSearchResults] = useState<any[]>([]);
     const [loading, setLoading] = useState(true);
+    const [currentTab, setCurrentTab] = useState('notes');
 
     useEffect(() => {
         const getSubjects = async () => {
@@ -53,7 +55,7 @@ export default function Subject({
                     throw error;
                 }
                 if (data) {
-                    setSubjcetsData(data);
+                    setSubjectData(data);
                 }
             } catch (error) {
                 console.error(error);
@@ -64,13 +66,12 @@ export default function Subject({
         };
         getSubjects();
     }, [supabase, params]);
-
     return (
         // TO LET SIGNED IN USERS VISIT
         // <>
         //   {session ? (
         //     <div className="flex min-w-screen justify-center items-center flex-col">
-        //       {subjectsData.length !== 0 && !loading ? (
+        //       {subjectData.length !== 0 && !loading ? (
         //         <>
         //           <div className="min-w-screen lg:px-4 flex justify-center items-center flex-col py-24">
         //             <h1 className="lg:text-5xl text-3xl tracking-tighter font-bold">
@@ -86,12 +87,12 @@ export default function Subject({
         //                 wrapperClass=""
         //                 visible={loading}
         //               />
-        //               {subjectsData.length === 0 && !loading && (
+        //               {subjectData.length === 0 && !loading && (
         //                 <h1 className="lg:text-2xl text-xl tracking-tighter">
         //                   Could not find the subject <b>{params.subject}</b>
         //                 </h1>
         //               )}
-        //               {subjectsData.map((element, index) => (
+        //               {subjectData.map((element, index) => (
         //                 <div
         //                   key={index}
         //                   className="flex justify-center items-center flex-col lg:p-10 p-4 rounded-md bg-primary/[4%]"
@@ -126,16 +127,43 @@ export default function Subject({
         //   )}
         // </>
 
-        // TO LET EVERYONE USERS VISIT
+        // TO LET EVERYONE VISIT
         <>
             <div className="flex min-w-screen justify-center items-center flex-col">
-                {subjectsData.length !== 0 && !loading ? (
+                {subjectData.length !== 0 && !loading ? (
                     <>
                         <div className="min-w-screen lg:px-4 flex justify-center items-center flex-col py-24">
                             <h1 className="lg:text-5xl text-3xl tracking-tighter font-bold">
                                 {decodeURI(params.subject)} Notes
                             </h1>
-                            <div className="flex flex-wrap lg:[&_button]:flex-[0_0_calc(33%-20px)] md:[&_button]:flex-[0_0_calc(50%-20px)] [&_button]:flex-[0_0_calc(100%-20px)] lg:p-16 md:p-12 p-4 shadow-2xl rounded-3xl shadow-foreground/5 gap-8 justify-center items-center">
+                            <div className="mt-20 flex justify-between space-x-4 sm:space-x-8">
+                                <Button
+                                    className="bg-black text-white px-6 py-2 rounded-md text-xl"
+                                    onClick={() => {
+                                        setCurrentTab('videos');
+                                    }}
+                                >
+                                    Videos
+                                </Button>
+                                <Button
+                                    className="bg-black text-white px-6 py-2 rounded-md text-xl"
+                                    onClick={() => {
+                                        setCurrentTab('notes');
+                                    }}
+                                >
+                                    Notes
+                                </Button>
+                                <Button
+                                    className="bg-black text-white px-6 py-2 rounded-md text-xl"
+                                    onClick={() => {
+                                        setCurrentTab('pyqs');
+                                    }}
+                                >
+                                    PYQs
+                                </Button>
+                            </div>
+
+                            <div>
                                 {/* <TailSpin
                                     height="40"
                                     width="40"
@@ -145,27 +173,31 @@ export default function Subject({
                                     wrapperClass=""
                                     visible={loading}
                                 /> */}
-                                {subjectsData.length === 0 && !loading && (
+                                {subjectData.length === 0 && !loading && (
                                     <h1 className="lg:text-2xl text-xl tracking-tighter">
                                         Could not find the subject{' '}
                                         <b>{params.subject}</b>
                                     </h1>
                                 )}
-                                {subjectsData.map((element, index) => (
-                                    <div
-                                        key={index}
-                                        className="flex justify-center items-center flex-col lg:p-10 p-4 rounded-md bg-primary/[4%]"
-                                    >
-                                        <div className="lg:text-2xl text-xl lg:pb-8 pb-4">
-                                            {element.title}
-                                        </div>
-                                        <iframe
-                                            src={element.link}
-                                            className="md:w-[550px] md:h-[500px] w-[330px] h-[400px]"
-                                            allow="autoplay"
-                                        ></iframe>
+                
+                                {currentTab == 'notes' && (
+                                    <div className="flex flex-wrap lg:[&_button]:flex-[0_0_calc(33%-20px)] md:[&_button]:flex-[0_0_calc(50%-20px)] [&_button]:flex-[0_0_calc(100%-20px)] lg:p-16 md:p-12 p-4 shadow-2xl rounded-3xl shadow-foreground/5 gap-8 justify-center items-center">
+                                        {subjectData.map((element, index) => (
+                                            <div
+                                                key={index}
+                                                className="flex justify-center items-center flex-col lg:p-10 p-4 rounded-md bg-primary/[10%] border-2 border-primary/[20%] hover:border-primary"
+                                            >
+                                                <div className="lg:text-2xl text-xl lg:pb-8 pb-4">
+                                                    {element.title}
+                                                </div>
+                                                <iframe
+                                                    src={element.link}
+                                                    className="md:w-[550px] md:h-[500px] w-[330px] h-[400px]"
+                                                ></iframe>
+                                            </div>
+                                        ))}
                                     </div>
-                                ))}
+                                )}
                             </div>
                         </div>
                     </>
