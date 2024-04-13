@@ -23,6 +23,7 @@ import {
     RiUser3Line,
     RiUserLine,
 } from 'react-icons/ri';
+import { MdOutlineLogout } from "react-icons/md";
 
 export default function Header({ session }: { session: Session | null }) {
     const user = session?.user;
@@ -125,6 +126,10 @@ export default function Header({ session }: { session: Session | null }) {
                                             Settings
                                         </DropdownMenuItem>
                                     </Link>
+                                    <DropdownMenuItem className="flex items-center gap-1 text-base hover:cursor-pointer">
+                                            <MdOutlineLogout className="w-5 h-5" />
+                                            Logout
+                                        </DropdownMenuItem>
                                 </DropdownMenuContent>
                             </DropdownMenu>
                         </div>
