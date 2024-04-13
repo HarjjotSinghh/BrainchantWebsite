@@ -5,7 +5,7 @@ import Fuse from "fuse.js"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 
-export default function SearchSlugClient({ params, subjectsData }: { params: { slug: string }, subjectsData: any[] }) {
+export default function SearchSlugClient({ params, subjectData }: { params: { slug: string }, subjectData: any[] }) {
     const [searchResults, setSearchResults] = useState<any[]>([]);
     const [loading, setLoading] = useState(true);
     useEffect(() => {
@@ -17,12 +17,12 @@ export default function SearchSlugClient({ params, subjectsData }: { params: { s
                 threshold: 0.4,
                 keys: ["name"],
             }
-            const fuse = new Fuse(subjectsData, options);
+            const fuse = new Fuse(subjectData, options);
             const results = fuse.search(params.slug || "");
             const items = results.map((result) => result.item);
             setSearchResults(items);
             setLoading(false);
-    }, [params.slug, subjectsData])
+    }, [params.slug, subjectData])
     return (
         <div className="flex justify-center items-center lg:py-0 py-24">
             <div className="min-w-screen max-w-[1800px] h-screen px-4 flex justify-center items-center flex-col">
