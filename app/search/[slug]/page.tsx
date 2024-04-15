@@ -1,10 +1,8 @@
-
-import { createServerComponentClient } from "@supabase/auth-helpers-nextjs"
-import { cookies } from "next/headers"
-import SearchSlugClient from "./search-slug-client"
+import supabaseServer from '@/utils/supabase/supabaseServer';
+import SearchSlugClient from './search-slug-client';
 
 export default async function Search({ params }: { params: { slug: string } }) {
-    const supabase = createServerComponentClient({cookies});
-    const {data: subjectData} = await supabase.from("subjects").select()
-    return <SearchSlugClient params={params} subjectData={subjectData ?? []}/>
-  }
+	const supabase = supabaseServer();
+	const { data: subjectData } = await supabase.from('subjects').select();
+	return <SearchSlugClient params={params} subjectData={subjectData ?? []} />;
+}

@@ -1,19 +1,18 @@
-import { createServerComponentClient } from '@supabase/auth-helpers-nextjs';
-import { cookies } from 'next/headers';
 import { redirect } from 'next/navigation';
 
 import UpdatePassword from '@/components/Auth/UpdatePassword';
+import supabaseServer from '@/utils/supabase/supabaseServer';
 
 export default async function UpdatePasswordPage() {
-  const supabase = createServerComponentClient({ cookies });
+	const supabase = supabaseServer();
 
-  const {
-    data: { session },
-  } = await supabase.auth.getSession();
+	const {
+		data: { user }
+	} = await supabase.auth.getUser();
 
-  if (!session) {
-    redirect('/sign-in');
-  }
+	if (!user) {
+		redirect('/signin');
+	}
 
-  return <UpdatePassword />;
+	return <UpdatePassword />;
 }
