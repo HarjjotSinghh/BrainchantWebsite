@@ -90,51 +90,6 @@ export default function Footer() {
 							</li>
 						</ul>
 					</div>
-					{/* <div>
-            <h3 className="font-bold text-lg mb-2">Column Two</h3>
-            <ul className="space-y-2">
-              <li>
-                <Link
-                  className="block text-foreground hover:text-primary/90 transition-all ease-in-out duration-200"
-                  href="#"
-                >
-                  Link Six
-                </Link>
-              </li>
-              <li>
-                <Link
-                  className="block text-foreground hover:text-primary/90 transition-all ease-in-out duration-200"
-                  href="#"
-                >
-                  Link Seven
-                </Link>
-              </li>
-              <li>
-                <Link
-                  className="block text-foreground hover:text-primary/90 transition-all ease-in-out duration-200"
-                  href="#"
-                >
-                  Link Eight
-                </Link>
-              </li>
-              <li>
-                <Link
-                  className="block text-foreground hover:text-primary/90 transition-all ease-in-out duration-200"
-                  href="#"
-                >
-                  Link Nine
-                </Link>
-              </li>
-              <li>
-                <Link
-                  className="block text-foreground hover:text-primary/90 transition-all ease-in-out duration-200"
-                  href="#"
-                >
-                  Link Ten
-                </Link>
-              </li>
-            </ul>
-          </div> */}
 					<div>
 						<h3 className="font-bold text-xl mb-2">Follow us</h3>
 						<ul className="gap-4 flex justify-center items-center [&_li]:scale-105">
@@ -194,17 +149,6 @@ export default function Footer() {
 				<div className="text-sm text-foreground/80 flex flex-col items-center gap-2 justify-center">
 					<span>© {new Date().getFullYear().toString()} Brainchant. All rights reserved.</span>
 					{/*<span className='text-xs text-center'>Developed with 💜 by <Link href={"https://solo.to/harjjot"} className='underline hover:text-primary/90 transition-all ease-in-out duration-200' target='_blank' rel="noopener">@HarjjotSinghh</Link></span>*/}
-					{/* <div className="flex space-x-4">
-            <Link className="hover:text-gray-800" href="#">
-              Privacy Policy
-            </Link>
-            <Link className="hover:text-gray-800" href="#">
-              Terms of Service
-            </Link>
-            <Link className="hover:text-gray-800" href="#">
-              Cookies Settings
-            </Link>
-          </div> */}
 				</div>
 			</div>
 		</footer>
