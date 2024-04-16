@@ -66,11 +66,14 @@ dependencies:
     specifier: ^0.7.0
     version: 0.7.0
   clsx:
-    specifier: ^2.0.0
+    specifier: ^2.1.0
     version: 2.1.0
   formik:
     specifier: ^2.4.5
     version: 2.4.5(react@18.2.0)
+  framer-motion:
+    specifier: ^11.0.28
+    version: 11.0.28(react-dom@18.2.0)(react@18.2.0)
   fuse.js:
     specifier: ^7.0.0
     version: 7.0.0
@@ -80,12 +83,21 @@ dependencies:
   lucide-react:
     specifier: ^0.292.0
     version: 0.292.0(react@18.2.0)
+  mini-svg-data-uri:
+    specifier: ^1.4.4
+    version: 1.4.4
   next:
     specifier: 14.3.0-canary.0
     version: 14.3.0-canary.0(@babel/core@7.24.3)(react-dom@18.2.0)(react@18.2.0)
   next-recaptcha-v3:
     specifier: ^1.3.0
     version: 1.3.0(next@14.3.0-canary.0)(react-dom@18.2.0)(react@18.2.0)
+  next-themes:
+    specifier: ^0.3.0
+    version: 0.3.0(react-dom@18.2.0)(react@18.2.0)
+  next-view-transitions:
+    specifier: ^0.1.1
+    version: 0.1.1(next@14.3.0-canary.0)(react-dom@18.2.0)(react@18.2.0)
   quill:
     specifier: ^1.3.7
     version: 1.3.7
@@ -120,7 +132,7 @@ dependencies:
     specifier: ^0.33.2
     version: 0.33.3
   tailwind-merge:
-    specifier: ^2.0.0
+    specifier: ^2.2.2
     version: 2.2.2
   tailwindcss-animate:
     specifier: ^1.0.7
@@ -3245,6 +3257,25 @@ packages:
     resolution: {integrity: sha512-ZsDfxO51wGAXREY55a7la9LScWpwv9RxIrYABrlvOFBlH/ShPnrtsXeuUIfXKKOVicNxQ+o8JTbJvjS4M89yew==}
     dev: true
 
+  /framer-motion@11.0.28(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-j/vNYTCH5MX5sY/3dwMs00z1+qAqKX3iIHF762bwqlU814ooD5dDbuj3pA0LmIT5YqyryCkXEb/q+zRblin0lw==}
+    peerDependencies:
+      '@emotion/is-prop-valid': '*'
+      react: ^18.0.0
+      react-dom: ^18.0.0
+    peerDependenciesMeta:
+      '@emotion/is-prop-valid':
+        optional: true
+      react:
+        optional: true
+      react-dom:
+        optional: true
+    dependencies:
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
+      tslib: 2.6.2
+    dev: false
+
   /fs-minipass@2.1.0:
     resolution: {integrity: sha512-V/JgOLFCS+R6Vcq0slCuaeWEdNC3ouDlJMNIsacH2VtALiu9mV4LPrHc5cDl8k5aw6J8jwgWWpiTo5RYhmIzvg==}
     engines: {node: '>= 8'}
@@ -3934,6 +3965,11 @@ packages:
       mime-db: 1.52.0
     dev: false
 
+  /mini-svg-data-uri@1.4.4:
+    resolution: {integrity: sha512-r9deDe9p5FJUPZAk3A59wGH7Ii9YrjjWw0jmw/liSbHl2CHiyXj6FcDXDu2K3TjVAXqiJdaw3xxwlZZr9E6nHg==}
+    hasBin: true
+    dev: false
+
   /minimatch@3.1.2:
     resolution: {integrity: sha512-J7p63hRiAjw1NDEww1W7i37+ByIrOWO5XQQAzZ3VOcL0PNybwpfmV/N05zFAzwQ9USyEcX6t3UO+K5aqBQOIHw==}
     dependencies:
@@ -4020,6 +4056,28 @@ packages:
     peerDependenciesMeta:
       react-dom:
         optional: true
+    dependencies:
+      next: 14.3.0-canary.0(@babel/core@7.24.3)(react-dom@18.2.0)(react@18.2.0)
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
+    dev: false
+
+  /next-themes@0.3.0(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-/QHIrsYpd6Kfk7xakK4svpDI5mmXP0gfvCoJdGpZQ2TOrQZmsW0QxjaiLn8wbIKjtm4BTSqLoix4lxYYOnLJ/w==}
+    peerDependencies:
+      react: ^16.8 || ^17 || ^18
+      react-dom: ^16.8 || ^17 || ^18
+    dependencies:
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
+    dev: false
+
+  /next-view-transitions@0.1.1(next@14.3.0-canary.0)(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-1rpXhWF8j0VJwJG52c8WeeAYpr1K7o3ub82lahbSoUwAry54TEm1d3mqBbSLLIMl85c3OewkZjxncTHwYFk+IA==}
+    peerDependencies:
+      next: ^14.0.0
+      react: ^18.2.0
+      react-dom: ^18.2.0
     dependencies:
       next: 14.3.0-canary.0(@babel/core@7.24.3)(react-dom@18.2.0)(react@18.2.0)
       react: 18.2.0

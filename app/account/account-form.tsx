@@ -5,7 +5,7 @@ import { User, createClientComponentClient } from '@supabase/auth-helpers-nextjs
 import { Label } from '@/components/ui/label';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
-import Link from 'next/link';
+import { Link } from 'next-view-transitions';
 import { MdOutlineDashboardCustomize } from 'react-icons/md';
 
 export default function AccountForm({ user, userProfile }: { user: User | null; userProfile: any | null }) {
@@ -45,7 +45,7 @@ export default function AccountForm({ user, userProfile }: { user: User | null; 
 
 	return (
 		<div className="flex flex-wrap flex-row justify-center lg:items-start items-center min-w-screen gap-16 px-8 py-24">
-			<div className="flex justify-center items-center flex-col lg:w-[450px] w-full gap-4 p-12 rounded-2xl shadow-2xl shadow-foreground/5">
+			<div className="flex justify-center items-center flex-col lg:w-[450px] w-full gap-4 p-12 rounded-2xl border-border/50 border-2 hover:border-border/70 transition-all duration-300 ease-in-out">
 				<h1 className="md:text-4xl text-3xl  font-bold tracking-tighter">Your Account</h1>
 				<div className="w-full">
 					<Label htmlFor="email">Email</Label>
@@ -98,14 +98,14 @@ export default function AccountForm({ user, userProfile }: { user: User | null; 
 			</div>
 			{userProfile?.articles_admin && (
 				<>
-					<div className="flex justify-center items-center flex-col lg:w-[450px] w-full gap-4 p-12 rounded-2xl shadow-2xl shadow-foreground/5">
+					<div className="flex justify-center items-center flex-col lg:w-[450px] w-full gap-4 p-12 rounded-2xl border-border/50 border-2 hover:border-border/70 transition-all duration-300 ease-in-out">
 						<h1 className="md:text-4xl text-3xl  font-bold tracking-tighter">Admin Panel</h1>
 						<Link
 							href={'/dashboard'}
-							className="p-4 lg:text-2xl text-xl rounded-lg border-solid border-2 border-primary hover:bg-primary/10 bg-primary/5 hover:text-secondary transition-all ease-in-out duration-300 px-12 font-semibold inline-flex flex-row-reverse gap-2"
+							className="p-4 lg:text-2xl text-xl rounded-lg border-solid border-2 border-primary hover:bg-primary/10 bg-primary/5 hover:text-secondary transition-all ease-in-out duration-300 px-12 font-semibold inline-flex flex-row-reverse gap-2 items-center justify-center"
 						>
-							Articles Dashboard
-							<MdOutlineDashboardCustomize className="w-8 h-8" />
+							<h1 className="flex-1 w-full text-lg">Articles Dashboard</h1>
+							<MdOutlineDashboardCustomize className="w-6 h-6" />
 						</Link>
 					</div>
 				</>

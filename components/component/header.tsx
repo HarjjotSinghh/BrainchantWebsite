@@ -1,12 +1,11 @@
 'use client';
 import React from 'react';
-import Link from 'next/link';
+import { Link } from 'next-view-transitions';
 import Image from 'next/image';
 import BrainchantLogoPNG from '@/public/logo_cropped.png';
 import { Button } from '@/components/ui/button';
 import type { User } from '@supabase/supabase-js';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
-import { SiLinktree } from 'react-icons/si';
 import {
 	DropdownMenu,
 	DropdownMenuContent,
@@ -15,60 +14,74 @@ import {
 	DropdownMenuSeparator,
 	DropdownMenuTrigger
 } from '@/components/ui/dropdown-menu';
-import { RiArticleLine, RiHome3Line, RiSettings4Line, RiStickyNoteLine, RiUser3Line, RiUserLine } from 'react-icons/ri';
+import { RiHome3Line, RiSettings4Line, RiStickyNoteLine, RiUserLine } from 'react-icons/ri';
 import { MdOutlineLogout } from 'react-icons/md';
+import ThemeSwitcher from './theme-switcher';
+import { LuLogIn } from 'react-icons/lu';
 
 export default function Header({ user }: { user: User | null }) {
 	return (
-		<header className="sticky top-0 bg-background/80 backdrop-blur-xl">
-			<div className="px-8 lg:px-12 h-16 py-2 flex items-center">
+		<header className="sticky top-0 bg-background/90 backdrop-blur-md border-b border-border/50 z-50">
+			<div className="px-4 lg:px-12 h-24 py-4 flex items-center">
 				<div className="flex gap-16 items-center">
-					<Link className="flex items-center justify-center" href="/">
+					<Link
+						className="flex items-center justify-center p-2 md:pr-4 pr-2 rounded-lg border-2 border-border/50 hover:border-border/70 transition-all duration-300 ease-in-out"
+						href="/"
+					>
 						<Image
 							src={BrainchantLogoPNG}
 							draggable={false}
 							alt="Brainchant Logo"
 							className="w-10 h-10 invert dark:invert-0 select-none"
-						></Image>
+						/>
+						<h1 className="text-2xl tracking-tighter font-bold md:block hidden">Brainchant</h1>
 					</Link>
 					<div className="hidden gap-8 lg:flex text-lg">
 						<Link className=" font-medium hover:underline underline-offset-4" href="/">
-							Home
+							<Button variant={'linkHover2'} className="px-0 text-base">
+								Home
+							</Button>
 						</Link>
 						<Link className=" font-medium hover:underline underline-offset-4" href="/about-us">
-							About Us
+							<Button variant={'linkHover2'} className="px-0 text-base">
+								About Us
+							</Button>
 						</Link>
 						<Link className=" font-medium hover:underline underline-offset-4" href="/search">
-							Search
+							<Button variant={'linkHover2'} className="px-0 text-base">
+								Search
+							</Button>
 						</Link>
-						<Link
+						{/* <Link
 							className=" font-medium hover:text-accent transition-all duration-200 ease-in-out underline-offset-4"
 							href="https://linktr.ee/BrainChant"
 							target="_blank"
 						>
 							<SiLinktree className="w-6 h-6" />
-						</Link>
+						</Link> */}
 					</div>
 				</div>
 
 				<nav className="ml-auto flex justify-center items-center gap-6 sm:gap-6">
 					{user ? (
-						<div className="flex">
+						<div className="flex flex-row flex-wrap gap-2">
 							{/* <Button
                                     variant={'link'}
                                     className="text-foreground hover:underline underline-offset-4"
                                 >
                                     {user?.user_metadata.full_name}
                                 </Button> */}
-							<DropdownMenu>
-								<DropdownMenuTrigger className="rounded-full border-2 border-primary">
-									<Avatar className="select-none">
+
+							<ThemeSwitcher />
+							<DropdownMenu modal={false}>
+								<DropdownMenuTrigger className="rounded-lg border-2 border-border/50 hover:border-border/70 focus-visible:outline-none focus-visible:ring-0 transition-all duration-300 ease-in-out">
+									<Avatar className="select-none rounded-lg">
 										<AvatarImage
 											draggable="false"
 											src={user?.user_metadata.avatar_url}
 											alt={user?.user_metadata.full_name}
 										/>
-										<AvatarFallback>
+										<AvatarFallback className="text-lg font-semibold tracking-tight">
 											{user?.user_metadata.full_name
 												.split(' ')
 												.map((word: string) => word[0].toUpperCase())
@@ -76,7 +89,7 @@ export default function Header({ user }: { user: User | null }) {
 										</AvatarFallback>
 									</Avatar>
 								</DropdownMenuTrigger>
-								<DropdownMenuContent className="">
+								<DropdownMenuContent className="w-56 md:mr-[60px] mr-5 mt-2 bg-background/90 backdrop-blur-sm">
 									<DropdownMenuLabel className="flex items-center gap-1 text-base">
 										<RiUserLine className="w-5 h-5" />
 										{user?.user_metadata.full_name}
@@ -100,38 +113,40 @@ export default function Header({ user }: { user: User | null }) {
                                           Articles
                                       </DropdownMenuItem>
                                     </Link> */}
-
 									<Link href={'/account'}>
 										<DropdownMenuItem className="flex items-center gap-1 text-base hover:cursor-pointer">
 											<RiSettings4Line className="w-5 h-5" />
 											Settings
 										</DropdownMenuItem>
 									</Link>
-									<DropdownMenuItem className="flex items-center gap-1 text-base hover:cursor-pointer">
+									<DropdownMenuItem className="flex items-center gap-1 text-base hover:cursor-pointer text-foreground hover:text-background group">
 										<MdOutlineLogout className="w-5 h-5" />
-										Logout
+										<form action="/auth/signout" method="post">
+											<Button
+												variant={'default'}
+												className="w-full bg-transparent text-base text-foreground  p-0 mt-0 pt-0 hover:bg-transparent font-normal h-fit group-hover:text-background dark:group-hover:text-foreground"
+												type="submit"
+											>
+												Sign Out
+											</Button>
+										</form>
 									</DropdownMenuItem>
 								</DropdownMenuContent>
 							</DropdownMenu>
 						</div>
 					) : (
 						<div className="flex gap-2">
-							<Link className="text-sm font-medium hover:underline underline-offset-4" href="/signin">
+							<Link className="text-lg font-medium hover:underline underline-offset-4" href="/signin">
 								<Button
-									variant={'outline'}
-									className="hover:bg-primary px-5 bg-background/0 hover:text-background"
+									variant={'expandIcon'}
+									Icon={LuLogIn}
+									iconPlacement="right"
+									className="gap-0 mdLtext-lg text-base tracking-tight [&_svg]:hover:ml-0 py-6 rounded-lg border-border/50 border-2 hover:border-border/70 transition-all duration-300 ease-in-out bg-transparent hover:bg-transparent text-foreground font-bold"
 								>
-									Sign In
+									Get Started
 								</Button>
 							</Link>
-							<Link className="text-sm font-medium hover:underline underline-offset-4" href="/signup">
-								<Button
-									variant={'outline'}
-									className="hover:bg-primary px-5 bg-background/0 hover:text-background"
-								>
-									Sign Up
-								</Button>
-							</Link>
+							<ThemeSwitcher />
 						</div>
 					)}
 				</nav>

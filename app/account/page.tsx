@@ -1,6 +1,6 @@
 import supabaseServer from '@/utils/supabase/supabaseServer';
 import AccountForm from './account-form';
-import Link from 'next/link';
+import { Link } from 'next-view-transitions';
 
 export default async function Account() {
 	const supabase = supabaseServer();

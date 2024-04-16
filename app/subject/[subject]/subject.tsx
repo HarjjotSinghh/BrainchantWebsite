@@ -2,6 +2,7 @@
 import { useState, useEffect } from 'react';
 import { User, createClientComponentClient } from '@supabase/auth-helpers-nextjs';
 import { Button } from '@/components/ui/button';
+import { LuBook, LuBookCopy, LuBookOpen, LuVideo } from 'react-icons/lu';
 
 //TODO: can we delete this?
 // export async function generateStaticParams() {
@@ -60,7 +61,7 @@ export default function Subject({ params, user }: { params: { subject: string };
 		//             <h1 className="lg:text-5xl text-3xl tracking-tighter font-bold">
 		//               {decodeURI(params.subject)} Notes
 		//             </h1>
-		//             <div className="flex flex-wrap lg:[&_button]:flex-[0_0_calc(33%-20px)] md:[&_button]:flex-[0_0_calc(50%-20px)] [&_button]:flex-[0_0_calc(100%-20px)] lg:p-16 md:p-12 p-4 shadow-2xl rounded-3xl shadow-foreground/5 gap-8 justify-center items-center">
+		//             <div className="flex flex-wrap lg:[&_button]:flex-[0_0_calc(33%-20px)] md:[&_button]:flex-[0_0_calc(50%-20px)] [&_button]:flex-[0_0_calc(100%-20px)] lg:p-16 md:p-12 p-4 border-border/50 border-2 hover:border-border/70 transition-all duration-300 ease-in-out gap-8 justify-center items-center">
 		//               <TailSpin
 		//                 height="40"
 		//                 width="40"
@@ -112,39 +113,14 @@ export default function Subject({ params, user }: { params: { subject: string };
 
 		// TO LET EVERYONE VISIT
 		<>
-			<div className="flex min-w-screen justify-center items-center flex-col">
+			<div className="flex w-full mx-auto max-w-7xl justify-center items-center flex-col">
 				{subjectData.length !== 0 && !loading ? (
 					<>
-						<div className="min-w-screen lg:px-4 flex justify-center items-center flex-col py-24">
-							<h1 className="lg:text-5xl text-3xl tracking-tighter font-bold">
+						<div className="min-w-screen lg:px-4 flex gap-8 justify-center items-center flex-col py-24">
+							<h1 className="lg:text-5xl text-3xl tracking-tighter font-bold capitalize px-4">
 								{decodeURI(params.subject)} Notes
 							</h1>
-							<div className="mt-20 flex justify-between space-x-4 sm:space-x-8">
-								<Button
-									className="bg-black text-white px-6 py-2 rounded-md text-xl"
-									onClick={() => {
-										setCurrentTab('videos');
-									}}
-								>
-									Videos
-								</Button>
-								<Button
-									className="bg-black text-white px-6 py-2 rounded-md text-xl"
-									onClick={() => {
-										setCurrentTab('notes');
-									}}
-								>
-									Notes
-								</Button>
-								<Button
-									className="bg-black text-white px-6 py-2 rounded-md text-xl"
-									onClick={() => {
-										setCurrentTab('pyqs');
-									}}
-								>
-									PYQs
-								</Button>
-							</div>
+
 							<div>
 								{subjectData.length === 0 && !loading && (
 									<h1 className="lg:text-2xl text-xl tracking-tighter">
@@ -152,32 +128,93 @@ export default function Subject({ params, user }: { params: { subject: string };
 									</h1>
 								)}
 
-								{currentTab == 'notes' && (
-									<div className="flex flex-wrap lg:[&_button]:flex-[0_0_calc(33%-20px)] md:[&_button]:flex-[0_0_calc(50%-20px)] [&_button]:flex-[0_0_calc(100%-20px)] lg:p-16 md:p-12 p-4 shadow-2xl rounded-3xl shadow-foreground/5 gap-8 justify-center items-center">
-										{subjectData.map((element, index) => (
-											<div
-												key={index}
-												className="flex justify-center items-center flex-col lg:p-10 p-4 rounded-md bg-primary/[10%] border-2 border-primary/[20%] hover:border-primary"
+								{
+									<div className="flex flex-col lg:p-12 md:p-6 p-4 md:border-border/50 md:border-2 md:hover:border-border/70 transition-all duration-300 ease-in-out gap-8 justify-center items-center rounded-lg">
+										<div className="flex w-full flex-1 flex-row flex-wrap justify-between gap-4 mb-4">
+											<Button
+												variant={'expandIcon'}
+												Icon={LuVideo}
+												iconPlacement="left"
+												className={`${
+													currentTab === 'videos'
+														? 'bg-primary/90 border-border/50 border-2'
+														: 'dark:bg-primary/10 bg-primary/60 border-border/50 border-2'
+												} px-8 lg:w-[calc(33%-20px)] md:w-[calc(50%-20px)] w-full py-6 rounded-lg text-xl gap-2 dark:text-foreground text-background`}
+												onClick={() => {
+													setCurrentTab('videos');
+												}}
 											>
-												<div className="lg:text-2xl text-xl lg:pb-8 pb-4">{element.title}</div>
-												<iframe
-													src={element.link}
-													className="md:w-[550px] md:h-[500px] w-[330px] h-[400px]"
-												></iframe>
-											</div>
-										))}
+												Videos
+											</Button>
+											<Button
+												variant={'expandIcon'}
+												Icon={LuBook}
+												iconPlacement="left"
+												className={`${
+													currentTab === 'notes'
+														? 'bg-primary/90 border-border/50 border-2'
+														: 'dark:bg-primary/10 bg-primary/60 border-border/50 border-2'
+												} px-8 lg:w-[calc(33%-20px)] md:w-[calc(50%-20px)] w-full py-6 rounded-lg text-xl gap-2 dark:text-foreground text-background`}
+												onClick={() => {
+													setCurrentTab('notes');
+												}}
+											>
+												Notes
+											</Button>
+											<Button
+												variant={'expandIcon'}
+												Icon={LuBookOpen}
+												iconPlacement="left"
+												className={`${
+													currentTab === 'pyqs'
+														? 'bg-primary/90 border-border/50 border-2'
+														: 'dark:bg-primary/10 bg-primary/60 border-border/50 border-2'
+												} px-8 lg:w-[calc(33%-20px)] md:w-[calc(50%-20px)] w-full py-6 rounded-lg text-xl gap-2 dark:text-foreground text-background`}
+												onClick={() => {
+													setCurrentTab('pyqs');
+												}}
+											>
+												PYQs
+											</Button>
+										</div>
+										<div className="flex flex-wrap lg:[&_button]:flex-[0_0_calc(33%-20px)] md:[&_button]:flex-[0_0_calc(50%-20px)] [&_button]:flex-[0_0_calc(100%-20px)] p-0 gap-8 justify-center items-center rounded-lg">
+											{currentTab == 'notes' &&
+												subjectData.map((element, index) => (
+													<div
+														key={index}
+														className="flex justify-center items-center flex-col lg:p-10 p-0 rounded-md bg-primary/[5%] border-2 border-primary/[20%] hover:border-primary transition-all duration-300 ease-in-out w-full"
+													>
+														<div className="lg:text-2xl text-xl lg:pb-8 pb-4">
+															{element.title}
+														</div>
+														<iframe
+															src={element.link}
+															className="md:w-[550px] md:h-[500px] w-full h-[400px]"
+														></iframe>
+													</div>
+												))}
+										</div>
 									</div>
-								)}
+								}
 							</div>
 						</div>
 					</>
 				) : (
 					<>
-						<h1 className="md:text-5xl text-2xl py-24 font-semibold tracking-tighter">Subject Not Found</h1>
+						{subjectData.length === 0 && !loading && (
+							<h1 className="lg:text-2xl text-xl tracking-tighter py-24">
+								Could not find the subject{' '}
+								<b>
+									{'"'}
+									{decodeURI(params.subject)}
+									{'"'}
+								</b>
+							</h1>
+						)}
+						{loading && <h1 className="lg:text-2xl text-xl tracking-tighter py-24">Loading...</h1>}
 					</>
 				)}
 			</div>
-			)
 		</>
 	);
 }

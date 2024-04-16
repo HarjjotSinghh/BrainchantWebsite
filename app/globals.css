@@ -6,8 +6,8 @@ html {
 }
 
 ::selection {
-  color: hsl(var(--background));
-  background: hsl(var(--primary));
+  color: hsl(var(--foreground));
+  background: hsl(var(--primary) / 0.3);
 }
 
 * {
@@ -18,11 +18,12 @@ html {
 
 *::-webkit-scrollbar {
   width: 10px;
+  border-radius: var(--radius);
 }
 
 *::-webkit-scrollbar-track {
   background: hsl(var(--background));
-  border-radius: 12px;
+  border-radius: var(--radius);
 }
 
 *::-webkit-scrollbar-thumb {
@@ -35,81 +36,80 @@ html {
 @tailwind utilities;
  
 @layer base {
- 
   :root {
-
-    --background: 270 100% 100%; 
-    --foreground: 261 100% 3%;
+    --background: 0 0% 100%;
+    --foreground: 0 0% 5%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
- 
+    --card-foreground: 0 0% 5%;
+
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
- 
-    --primary: 275 90% 71%;
-    --primary-foreground: var(--foreground);
- 
-    --secondary: 260 62% 11%;
-    --secondary-foreground: var(--background);
- 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
- 
-    --accent: 271 80% 46%;
-    --accent-foreground: var(--foreground);
- 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --popover-foreground: 0 0% 5%;
 
-    --border: var(--accent);
+    --primary: 260 86% 46%;
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 0 0% 96%;
+    --secondary-foreground: 0 0% 5%;
+
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 45%;
+
+    --accent: 261 84% 55%;
+    --accent-foreground: 0 0% 5%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: var(--primary);
     --input: var(--primary);
-    --ring: var(--accent);
-    --radius: 0.7rem;
+    --ring: var(--primary);
 
+    --radius: 0.75rem;
   }
-
+  
+  
   .dark {
-    
-    --background: 261 100% 3%; 
-    --foreground: 263 100% 97%;
+    --background: 264 20% 5%;
+    --foreground: 240 60% 99%;
 
-    --card: var(--secondary);
-    --card-foreground: var(--foreground);
- 
-    --popover: var(--secondary);
+    --card: 0 0% 100%;
+    --card-foreground: 240 7% 3%;
+
+    --popover: var(--background);
     --popover-foreground: var(--foreground);
- 
-    --primary: 269 91% 40%;
-    --primary-foreground: var(--foreground);
- 
-    --secondary: 259 61% 11%;
-    --secondary-foreground: var(--foreground);
- 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
- 
-    --accent: 265 91% 59%;
-    --accent-foreground: var(--foreground);
- 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
 
-    --border: var(--accent);
+    --primary: 256 69% 50%;
+    --primary-foreground: 356 100% 97%;
+
+    --secondary: 240 100% 97%;
+    --secondary-foreground: 262 35% 6%;
+
+    --muted: 240 4% 6%;
+    --muted-foreground: 262 7% 55%;
+
+    --accent: 261 84% 55%;
+    --accent-foreground: 0 0% 85%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: var(--primary);
     --input: var(--primary);
-    --ring: var(--accent);
-    --radius: 0.5rem;
+    --ring: var(--primary);
+
+    --radius: 0.75rem;
   }
-   
+  
 }
  
 @layer base {
-  * {
+  /* * {
     @apply border-border;
   }
   body {
     @apply bg-background text-foreground;
-  }
+  } */
   /* h2 {
     @apply py-4 text-4xl font-black text-gray-800;
   }

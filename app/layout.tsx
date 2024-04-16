@@ -1,12 +1,21 @@
 import type { Metadata } from 'next';
-import { Outfit } from 'next/font/google';
+import { Lexend } from 'next/font/google';
 import './globals.css';
 import { cn } from '@/lib/utils';
 import Footer from '@/components/component/footer';
 import Header from '@/components/component/header';
 import supabaseServer from '@/utils/supabase/supabaseServer';
+import { ThemeProvider } from 'next-themes';
+import { ViewTransitions } from 'next-view-transitions';
 
-const outfit = Outfit({ variable: '--font-outfit', subsets: ['latin'] });
+const outfit = Lexend({
+	variable: '--font-outfit',
+	subsets: ['latin'],
+	// weight: ['400', '500', '600', '700', '800'],
+	// weight: ['400', '700'],
+	weight: 'variable',
+	display: 'swap'
+});
 
 export const metadata: Metadata = {
 	title: 'Brainchant',
@@ -21,20 +30,29 @@ export default async function RootLayout({ children }: { children: React.ReactNo
 		data: { user }
 	} = await supabase.auth.getUser();
 	return (
-		<html lang="en">
-			<head>
-				<script
-					async
-					src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${process.env.NEXT_PUBLIC_GOOGLE_ADSENSE}`}
-					crossOrigin="anonymous"
-				></script>
-			</head>
-			<body className={cn('min-h-screen antialiased bg-background text-foreground', outfit.className)}>
-				<Header user={user}></Header>
-				{children}
-				<Footer></Footer>
-				<script async defer src="https://scripts.withcabin.com/hello.js"></script>
-			</body>
-		</html>
+		<ViewTransitions>
+			<html lang="en">
+				<head>
+					<script
+						async
+						src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${process.env.NEXT_PUBLIC_GOOGLE_ADSENSE}`}
+						crossOrigin="anonymous"
+					></script>
+				</head>
+				<body
+					className={cn(
+						'min-h-screen antialiased bg-background text-foreground border-border transition-all duration-300 ease-in-out',
+						outfit.className
+					)}
+				>
+					<ThemeProvider attribute="class" themes={['dark', 'light']} defaultTheme="dark" enableSystem={true}>
+						<Header user={user}></Header>
+						<main>{children}</main>
+						<Footer></Footer>
+						<script async defer src="https://scripts.withcabin.com/hello.js"></script>
+					</ThemeProvider>
+				</body>
+			</html>
+		</ViewTransitions>
 	);
 }

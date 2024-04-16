@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import { Link } from 'next-view-transitions';
 import React from 'react';
 import MainDashboardPage from './main-dashboard-page';
 import supabaseServer from '@/utils/supabase/supabaseServer';
