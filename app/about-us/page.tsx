@@ -14,7 +14,7 @@ const AboutUs = () => {
 					</span>
 					<br />
 				</p>
-				<p>
+				<div>
 					<h1 className="font-semibold text-2xl mb-2 capitalize">What do we provide you?</h1>
 					<ul className="list-disc list-inside">
 						<li>
@@ -42,7 +42,7 @@ const AboutUs = () => {
 							We provide <b>one-to-one assistance</b> if needed.
 						</li>
 					</ul>
-				</p>
+				</div>
 				<div>
 					<h1 className="font-semibold text-2xl mb-2 capitalize">Our Achievements</h1>
 					Talking about our achievements, we have

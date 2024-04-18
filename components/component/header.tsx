@@ -22,7 +22,7 @@ import { LuLogIn } from 'react-icons/lu';
 export default function Header({ user }: { user: User | null }) {
 	return (
 		<header className="sticky top-0 bg-background/90 backdrop-blur-md border-b border-border/50 z-50">
-			<div className="px-4 lg:px-12 h-24 py-4 flex items-center">
+			<div className="px-4 lg:px-12 h-24 py-4 flex items-center mx-auto max-w-7xl">
 				<div className="flex gap-16 items-center">
 					<Link
 						className="flex items-center justify-center p-2 md:pr-4 pr-2 rounded-lg border-2 border-border/50 hover:border-border/70 transition-all duration-300 ease-in-out"
@@ -49,7 +49,7 @@ export default function Header({ user }: { user: User | null }) {
 						</Link>
 						<Link className=" font-medium hover:underline underline-offset-4" href="/search">
 							<Button variant={'linkHover2'} className="px-0 text-base">
-								Search
+								Notes
 							</Button>
 						</Link>
 						{/* <Link
@@ -141,7 +141,7 @@ export default function Header({ user }: { user: User | null }) {
 									variant={'expandIcon'}
 									Icon={LuLogIn}
 									iconPlacement="right"
-									className="gap-0 mdLtext-lg text-base tracking-tight [&_svg]:hover:ml-0 py-6 rounded-lg border-border/50 border-2 hover:border-border/70 transition-all duration-300 ease-in-out bg-transparent hover:bg-transparent text-foreground font-bold"
+									className="gap-0 [&_svg]:hover:ml-0 py-6 rounded-lg border-border/50 border-2 hover:border-border/70 transition-all duration-300 ease-in-out bg-transparent text-foreground px-6 hover:bg-primary/10 text-sm font-medium tracking-tight"
 								>
 									Get Started
 								</Button>

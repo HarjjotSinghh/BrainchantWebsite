@@ -25,7 +25,7 @@ export const ThemeSwitcher = () => {
 		return (
 			<div className="w-fit lg:scale-110">
 				<Button
-					className="md:px-4 md:py-7 px-4 py-6 rounded-lg lg:scale-90 bg-transparent border-2 border-primary/50 text-foreground hover:bg-primary/20 transition-all duration-300 ease-in-out-sine"
+					className="md:px-4 md:py-7 px-4 py-6 rounded-lg lg:scale-90 bg-transparent border-2 border-primary/50 text-foreground hover:bg-primary/10 transition-all duration-300 ease-in-out-sine"
 					variant={'outline'}
 					onClick={toggleTheme}
 					aria-label="Toggle theme"
@@ -38,7 +38,7 @@ export const ThemeSwitcher = () => {
 	return (
 		<div className="w-fit lg:scale-110">
 			<Button
-				className="md:px-3 md:py-6 px-3 py-6 rounded-lg lg:scale-90 bg-transparent border-2 border-primary/50 text-foreground hover:bg-primary/20 transition-all duration-300 ease-in-out-sine group"
+				className="md:px-3 md:py-6 px-3 py-6 rounded-lg lg:scale-90 bg-transparent border-2 border-primary/50 text-foreground hover:bg-primary/10 transition-all duration-300 ease-in-out-sine group"
 				variant={'outline'}
 				onClick={toggleTheme}
 				aria-label="Toggle theme"

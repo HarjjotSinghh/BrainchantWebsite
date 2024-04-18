@@ -7,6 +7,8 @@ import Header from '@/components/component/header';
 import supabaseServer from '@/utils/supabase/supabaseServer';
 import { ThemeProvider } from 'next-themes';
 import { ViewTransitions } from 'next-view-transitions';
+import FooterNew from '@/components/component/footer-new';
+import { BackgroundBeams } from '@/components/ui/background-beams';
 
 const outfit = Lexend({
 	variable: '--font-outfit',
@@ -41,14 +43,21 @@ export default async function RootLayout({ children }: { children: React.ReactNo
 				</head>
 				<body
 					className={cn(
-						'min-h-screen antialiased bg-background text-foreground border-border transition-all duration-300 ease-in-out',
+						'min-h-screen antialiased bg-background text-foreground border-border',
 						outfit.className
 					)}
 				>
-					<ThemeProvider attribute="class" themes={['dark', 'light']} defaultTheme="dark" enableSystem={true}>
-						<Header user={user}></Header>
+					<ThemeProvider
+						attribute="class"
+						themes={['dark', 'light']}
+						defaultTheme="dark"
+						enableSystem={true}
+						// disableTransitionOnChange
+					>
+						<Header user={user} />
 						<main>{children}</main>
-						<Footer></Footer>
+						{/* <Footer></Footer> */}
+						<FooterNew />
 						<script async defer src="https://scripts.withcabin.com/hello.js"></script>
 					</ThemeProvider>
 				</body>
