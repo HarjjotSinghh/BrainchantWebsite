@@ -107,7 +107,7 @@ export default function LandingPageFAQ() {
 					>
 						{letters.map((letter, index) => (
 							<motion.span
-								className={`inline-block text-6xl tracking-tight font-bold ${
+								className={`inline-block md:text-6xl text-3xl tracking-tight font-bold ${
 									letter.toLowerCase() === 'asked'
 										? 'dark:bg-primary/20 bg-primary/10 py-3 pl-2 rounded-lg rounded-r-none'
 										: ''
@@ -159,7 +159,7 @@ export default function LandingPageFAQ() {
 						{faq.map((faq, index) => (
 							<motion.div key={index} variants={child_faq} className="">
 								<AccordionItem value={faq.question} key={index} className="bg-background">
-									<AccordionTrigger className="underline decoration-primary decoration-[1.5px] underline-offset-4 lg:text-lg text-base">
+									<AccordionTrigger className="underline decoration-primary decoration-[1.5px] underline-offset-4 lg:text-lg text-base items-center justify-between text-left">
 										{faq.question}
 									</AccordionTrigger>
 									<AccordionContent className="lg:text-base text-sm">{faq.answer}</AccordionContent>
@@ -169,7 +169,7 @@ export default function LandingPageFAQ() {
 					</motion.div>
 				</Accordion>
 			</div>
-			<div className="absolute pointer-events-none inset-0 bg-[radial-gradient(circle_at_50%_50%,_transparent_55%,_hsl(var(--background)/0.7))] w-full h-full"></div>
+			<div className="absolute pointer-events-none inset-0 md:bg-[radial-gradient(circle_at_50%_50%,_transparent_55%,_hsl(var(--background)/0.7))] w-full h-full"></div>
 		</section>
 	);
 }

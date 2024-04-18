@@ -56,7 +56,7 @@ export default function LandingPageTestimonials() {
 				>
 					{letters.map((letter, index) => (
 						<motion.span
-							className={`inline-block text-6xl tracking-tight font-bold ${
+							className={`inline-block md:text-6xl text-3xl tracking-tight font-bold ${
 								letter.toLowerCase() === 'greatest'
 									? 'dark:bg-primary/20 bg-primary/10 py-3 pl-2 rounded-lg rounded-r-none'
 									: ''
@@ -679,7 +679,7 @@ export default function LandingPageTestimonials() {
 					</motion.div>
 				</motion.div>
 			</div>
-			<div className="absolute pointer-events-none inset-0 bg-[radial-gradient(circle_at_50%_50%,_transparent_55%,_hsl(var(--background)/0.7))] w-full h-full"></div>
+			<div className="absolute pointer-events-none inset-0 md:bg-[radial-gradient(circle_at_50%_50%,_transparent_55%,_hsl(var(--background)/0.7))] w-full h-full"></div>
 		</section>
 	);
 }

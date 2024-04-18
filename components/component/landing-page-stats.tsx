@@ -2,6 +2,21 @@
 import { Variants, motion } from 'framer-motion';
 import Counter from './counter';
 
+const stats = [
+	{
+		title: 'WhatsApp Community',
+		number: 6900
+	},
+	{
+		title: 'Students Taught',
+		number: 8600
+	},
+	{
+		title: 'Youtube Subscribers',
+		number: 1100
+	}
+];
+
 export default function LandingPageStats() {
 	const heading = 'Trusted by Students';
 	const letters = heading.split(' ');
@@ -88,7 +103,7 @@ export default function LandingPageStats() {
 					>
 						{letters.map((letter, index) => (
 							<motion.span
-								className={`inline-block text-6xl tracking-tight font-bold ${
+								className={`inline-block md:text-6xl text-3xl tracking-tight font-bold ${
 									letter.toLowerCase() === 'by'
 										? 'dark:bg-primary/20 bg-primary/10 py-3 pl-2 rounded-lg rounded-r-none'
 										: ''
@@ -127,49 +142,29 @@ export default function LandingPageStats() {
 				</div>
 
 				<div className="mt-8 sm:mt-12">
-					<motion.dl
+					<motion.div
 						className="grid grid-cols-1 gap-8 md:grid-cols-3"
 						variants={container_}
 						initial="hidden"
 						whileInView="visible"
 						viewport={{ once: true }}
 					>
-						<motion.div
-							variants={child_}
-							key={1}
-							className="flex flex-col rounded-lg border-border/50 border-2 hover:border-border/70 transition-all ease-in-out duration-300 px-4 py-8 text-center bg-background"
-						>
-							<dt className="order-last text-base font-normal text-foreground/80">WhatsApp Community</dt>
-							<dd className="text-4xl font-extrabold text-foreground md:text-5xl flex flex-row items-center justify-center gap-2">
-								<Counter from={0} to={6900} duration={3} />
-							</dd>
-						</motion.div>
-
-						<motion.div
-							variants={child_}
-							key={1}
-							className="flex flex-col rounded-lg border-border/50 border-2 hover:border-border/70 transition-all ease-in-out duration-300 px-4 py-8 text-center bg-background"
-						>
-							<dt className="order-last text-base font-normal text-foreground/80">Youtube Subscribers</dt>
-							<dd className="text-4xl font-extrabold text-foreground md:text-5xl flex flex-row items-center justify-center gap-2">
-								<Counter from={0} to={1100} duration={3} />
-							</dd>
-						</motion.div>
-
-						<motion.div
-							variants={child_}
-							key={1}
-							className="flex flex-col rounded-lg border-border/50 border-2 hover:border-border/70 transition-all ease-in-out duration-300 px-4 py-8 text-center bg-background"
-						>
-							<dt className="order-last text-base font-normal text-foreground/80">Students Taught</dt>
-							<dd className="text-4xl font-extrabold text-foreground md:text-5xl flex flex-row items-center justify-center gap-2">
-								<Counter from={0} to={8600} duration={3} />
-							</dd>
-						</motion.div>
-					</motion.dl>
+						{stats.map((stat, index) => (
+							<motion.div
+								variants={child_}
+								key={index}
+								className="flex flex-col rounded-lg border-border/50 border-2 hover:border-border/70 transition-all ease-in-out duration-300 px-4 py-8 text-center bg-background"
+							>
+								<div className="order-last text-base font-normal text-foreground/80">{stat.title}</div>
+								<div className="text-4xl font-extrabold text-foreground md:text-5xl flex flex-row items-center justify-center gap-2">
+									{stat.number}+
+								</div>
+							</motion.div>
+						))}
+					</motion.div>
 				</div>
 			</div>
-			<div className="absolute pointer-events-none inset-0 bg-[radial-gradient(circle_at_50%_50%,_transparent_55%,_hsl(var(--background)/0.7))] w-full h-full"></div>
+			<div className="absolute pointer-events-none inset-0 md:bg-[radial-gradient(circle_at_50%_50%,_transparent_55%,_hsl(var(--background)/0.7))] w-full h-full"></div>
 		</section>
 	);
 }

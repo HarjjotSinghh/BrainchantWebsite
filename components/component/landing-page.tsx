@@ -61,6 +61,11 @@ export default function LandingPage() {
 					<BackgroundBeams className="-z-50" />
 				</section>
 				<LandingPageFeatures />
+				<LandingPageTestimonials />
+				<LandingPageStats />
+				<LandingPageFAQ />
+				{/*
+				 */}
 				{/* <section className="w-full py-12 md:py-24 lg:py-32 px-4 lg:px-12 bg-foreground/[1%]">
 					<div className="container px-4 md:px-6 space-y-12">
 						<h2 className="text-3xl font-bold tracking-tighter lg:text-5xl">Featured Courses</h2>
@@ -163,9 +168,7 @@ export default function LandingPage() {
 						<StickyScroll content={content}></StickyScroll>
 					</div>
 				</section> */}
-				<LandingPageTestimonials />
-				<LandingPageStats />
-				<LandingPageFAQ />
+
 				{/* <section className="w-full py-12 md:py-24 lg:py-32">
                 <div className="container px-4 md:px-6">
                   <h2 className="text-3xl font-bold tracking-tighter lg:text-5xl">Testimonials</h2>
