@@ -184,7 +184,7 @@ export default function Subject({ params, user }: { params: { subject: string };
 														key={index}
 														className="flex justify-center items-center flex-col lg:p-10 p-0 rounded-md bg-primary/[5%] border-2 border-primary/[20%] hover:border-primary transition-all duration-300 ease-in-out w-full"
 													>
-														<div className="lg:text-2xl text-xl lg:pb-8 pb-4">
+														<div className="lg:text-2xl text-xl lg:py-8 py-4">
 															{element.title}
 														</div>
 														<iframe
@@ -193,6 +193,28 @@ export default function Subject({ params, user }: { params: { subject: string };
 														></iframe>
 													</div>
 												))}
+
+											{currentTab == 'videos' &&
+												subjectData.map(
+													(element, index) =>
+														element.videos && (
+															<div
+																key={index}
+																className="flex justify-center items-center flex-col lg:p-10 p-8 rounded-md bg-primary/[5%] border-2 border-primary/[20%] hover:border-primary transition-all duration-300 ease-in-out w-full gap-8"
+															>
+																{element.videos.map((e: any, i: number) => (
+																	<div key={i}>
+																		<iframe
+																			src={e}
+																			className="lg:w-[650px] lg:h-full w-full h-full aspect-video"
+																		></iframe>
+																	</div>
+																))}
+
+																{/* {JSON.stringify(element)} */}
+															</div>
+														)
+												)}
 										</div>
 									</div>
 								}
