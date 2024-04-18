@@ -165,7 +165,7 @@ export default function LandingPageFeatures() {
 								}
 							}
 						}}
-						className="mt-4 text-foreground/80 max-w-2xl text-center mx-auto text-lg"
+						className="mt-4 text-foreground/80 max-w-2xl text-center mx-auto lg:text-lg text-base"
 					>
 						Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consequuntur aliquam doloribus
 						nesciunt eos fugiat. Vitae aperiam fugit consequuntur saepe laborum.

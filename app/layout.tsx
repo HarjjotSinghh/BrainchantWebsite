@@ -43,7 +43,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
 				</head>
 				<body
 					className={cn(
-						'min-h-screen antialiased bg-background text-foreground border-border',
+						'min-h-full antialiased bg-background text-foreground border-border',
 						outfit.className
 					)}
 				>

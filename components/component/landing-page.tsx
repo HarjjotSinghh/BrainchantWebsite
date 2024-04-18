@@ -18,15 +18,15 @@ export default function LandingPage() {
 	return (
 		<div className="flex flex-col">
 			<main className="flex-1">
-				<section className="h-fit lg:pt-0 mt-0 flex justify-center items-center lg:flex-row flex-col xl:gap-8 gap-4 px-0">
+				<section className="h-full mt-0 flex justify-center items-center lg:flex-row flex-col xl:gap-8 gap-4 px-0">
 					<HeroHighlight className="w-full">
 						<div className="w-full max-w-7xl mx-auto ">
-							<div className="min-w-screen lg:px-12 sm:px-4 px-4 z-[-49] flex justify-center items-center lg:flex-row flex-col xl:gap-24 gap-4  lg:pt-0 sm:pt-0">
+							<div className="min-w-screen lg:px-12 sm:px-4 px-4 z-[-49] flex justify-center items-center lg:flex-row flex-col xl:gap-8 gap-4  lg:pt-0 sm:pt-0">
 								<div className="flex flex-col items-start gap-2 text-left lg:w-[calc(fit-content+40px)] w-full">
 									<h1 className="font-light tracking-tighter text-xl md:text-2xl lg:text-4xl">
 										Acing university exams has
 										<br />
-										<span className="font-bold text-3xl md:text-4xl lg:text-6xl before:block before:absolute before:-inset-1 before:rounded-lg px-1 py-0.5 dark:before:bg-primary/30 before:bg-primary/10 transition-all duration-300 ease-in-out relative inline-block text-foreground before:-z-20 text-pretty">
+										<span className="font-bold text-3xl md:text-4xl lg:text-6xl before:block before:absolute before:-inset-1 before:rounded-lg px-1 py-0.5 dark:before:bg-primary/30 before:bg-primary/10 transition-all duration-300 ease-in-out relative inline-block text-foreground before:-z-20 text-balance">
 											Never been easier
 										</span>
 									</h1>
@@ -37,12 +37,12 @@ export default function LandingPage() {
 									<div className="md:max-w-md sm:max-w-sm w-full flex justify-center items-center mt-4">
 										<SearchBar></SearchBar>
 									</div>
-									<Link href={'https://linktr.ee/BrainChant'} target="_blank" rel="noopener">
+									{/* <Link href={'https://linktr.ee/BrainChant'} target="_blank" rel="noopener">
 										<Button variant={'link'} className="text-accent mt-2 lg:text-lg text-sm">
 											<FaWhatsapp className="lg:w-6 w-5 lg:h-6 h-5 mr-2" />
 											Join Brainchant{"'"}s Official Whatsapp Group
 										</Button>
-									</Link>
+									</Link> */}
 								</div>
 								<div className="hidden lg:flex justify-center items-center w-full max-w-3xl">
 									{/* <LandingPageLottie /> */}
