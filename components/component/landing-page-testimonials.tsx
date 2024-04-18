@@ -140,9 +140,9 @@ export default function LandingPageTestimonials() {
 							</div>
 
 							<p className="mt-4 text-foreground/80">
-								Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa sit rerum incidunt, a
-								consequuntur recusandae ab saepe illo est quia obcaecati neque quibusdam eius accusamus
-								error officiis atque voluptates magnam!
+								Working with Brainchant has been a great experience. The instructors are very
+								knowledgeable and passionate about their field. The course content is well-structured
+								and easy to understand.
 							</p>
 						</blockquote>
 					</motion.div>

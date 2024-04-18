@@ -6,16 +6,16 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '..
 
 const faq = [
 	{
-		question: 'When was Brainchant launched?',
-		answer: 'Brainchant was launched on December 1, 2023. It is a one stop solution for all your academic problems.'
-	},
-	{
 		question: 'What is Brainchant?',
-		answer: 'Brainchant is an E-Learning platform, and a one stop solution for all your academic problems.'
+		answer: 'Brainchant is an E-Learning platform, and a one stop solution for all your academic problems in B. Tech.'
 	},
 	{
-		question: 'Who were the founders of Brainchant?',
-		answer: 'Brainchant was founded by 4 anonymous students of GGSIPU university.'
+		question: 'How can I get the latests updates?',
+		answer: 'You can join our WhatsApp group to get the latest updates, where we frequently post new features, updates, notes, and other useful information.'
+	},
+	{
+		question: 'Who founded Brainchant?',
+		answer: 'Brainchant is a student-run initiative, and it was founded by 4 anonymous students of GGSIPU university.'
 	}
 ];
 
@@ -124,7 +124,7 @@ export default function LandingPageFAQ() {
 							</motion.span>
 						))}
 					</motion.div>
-					<motion.p
+					{/* <motion.p
 						initial="hidden"
 						whileInView="visible"
 						viewport={{ once: true }}
@@ -146,7 +146,7 @@ export default function LandingPageFAQ() {
 					>
 						Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consequuntur aliquam doloribus
 						nesciunt eos fugiat. Vitae aperiam fugit consequuntur saepe laborum.
-					</motion.p>
+					</motion.p> */}
 				</div>
 				<Accordion type="single" collapsible>
 					<motion.div
@@ -154,7 +154,7 @@ export default function LandingPageFAQ() {
 						initial="hidden"
 						whileInView="visible"
 						viewport={{ once: true }}
-						className="mt-4 w-full max-w-2xl mx-auto"
+						className="mt-8 w-full max-w-2xl mx-auto"
 					>
 						{faq.map((faq, index) => (
 							<motion.div key={index} variants={child_faq} className="">

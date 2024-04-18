@@ -61,7 +61,7 @@ export default function LandingPage() {
 					<BackgroundBeams className="-z-50" />
 				</section>
 				<LandingPageFeatures />
-				<LandingPageTestimonials />
+				{/* <LandingPageTestimonials /> */}
 				<LandingPageStats />
 				<LandingPageFAQ />
 				{/*

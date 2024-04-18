@@ -17,7 +17,7 @@ export default function FooterNew() {
 					</strong>
 
 					<Button className="inline-flex items-center gap-2 rounded-lg border-2 border-border/50 bg-background px-8 py-3 text-foreground hover:bg-primary/10 transition-all duration-300 ease-in-out hover:text-foreground focus:outline-none">
-						<span className="text-sm font-medium tracking-tight">Get Started </span>
+						<span className="text-sm font-medium tracking-tight">Login </span>
 
 						<svg
 							className="size-5 rtl:rotate-180"

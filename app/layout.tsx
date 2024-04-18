@@ -51,7 +51,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
 						attribute="class"
 						themes={['dark', 'light']}
 						defaultTheme="dark"
-						enableSystem={true}
+						// enableSystem={true}
 						// disableTransitionOnChange
 					>
 						<Header user={user} />

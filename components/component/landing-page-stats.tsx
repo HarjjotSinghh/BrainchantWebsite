@@ -5,15 +5,15 @@ import Counter from './counter';
 const stats = [
 	{
 		title: 'WhatsApp Community',
-		number: 6900
+		number: 20000
 	},
 	{
 		title: 'Students Taught',
-		number: 8600
+		number: 45000
 	},
 	{
-		title: 'Youtube Subscribers',
-		number: 1100
+		title: 'IPU Colleges Associated',
+		number: 25
 	}
 ];
 
@@ -120,8 +120,7 @@ export default function LandingPageStats() {
 							</motion.span>
 						))}
 					</motion.div>
-
-					<motion.div
+					{/* <motion.div
 						className="overflow-visible text-center"
 						variants={container}
 						initial="hidden"
@@ -138,7 +137,7 @@ export default function LandingPageStats() {
 							Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione dolores laborum labore
 							provident impedit esse recusandae facere libero harum sequi.
 						</motion.p>
-					</motion.div>
+					</motion.div> */}
 				</div>
 
 				<div className="mt-8 sm:mt-12">

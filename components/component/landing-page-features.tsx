@@ -5,41 +5,41 @@ import { LuBarChart2, LuBarChart4, LuBook } from 'react-icons/lu';
 
 const features = [
 	{
-		title: 'Digital campaigns',
+		title: 'Hands-On Learning Experience',
 		description:
-			'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex ut quo possimus adipisci distinctio alias voluptatum blanditiis laudantium.',
+			'Emphasize that your courses are crafted by industry experts to ensure high-quality, up-to-date content.',
 		icon: <LuBarChart4 className="size-12" />
 	},
 	{
-		title: 'Digital campaigns',
+		title: 'Expert Teachers',
 		description:
-			'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex ut quo possimus adipisci distinctio alias voluptatum blanditiis laudantium.',
+			'Our teachers are industry experts who are passionate about their field and dedicated to providing quality education.',
 		icon: <LuBarChart4 className="size-12" />
 	},
 	{
-		title: 'Digital campaigns',
+		title: 'Strong and Helpful Community',
 		description:
-			'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex ut quo possimus adipisci distinctio alias voluptatum blanditiis laudantium.',
-		icon: <LuBarChart4 className="size-12" />
-	},
-	{
-		title: 'Digital campaigns',
-		description:
-			'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex ut quo possimus adipisci distinctio alias voluptatum blanditiis laudantium.',
-		icon: <LuBarChart4 className="size-12" />
-	},
-	{
-		title: 'Digital campaigns',
-		description:
-			'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex ut quo possimus adipisci distinctio alias voluptatum blanditiis laudantium.',
-		icon: <LuBarChart4 className="size-12" />
-	},
-	{
-		title: 'Digital campaigns',
-		description:
-			'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex ut quo possimus adipisci distinctio alias voluptatum blanditiis laudantium.',
+			'Our community is made up of students and teachers who are passionate about their field and dedicated to providing quality education.',
 		icon: <LuBarChart4 className="size-12" />
 	}
+	// {
+	// 	title: 'Digital campaigns',
+	// 	description:
+	// 		'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex ut quo possimus adipisci distinctio alias voluptatum blanditiis laudantium.',
+	// 	icon: <LuBarChart4 className="size-12" />
+	// },
+	// {
+	// 	title: 'Digital campaigns',
+	// 	description:
+	// 		'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex ut quo possimus adipisci distinctio alias voluptatum blanditiis laudantium.',
+	// 	icon: <LuBarChart4 className="size-12" />
+	// },
+	// {
+	// 	title: 'Digital campaigns',
+	// 	description:
+	// 		'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex ut quo possimus adipisci distinctio alias voluptatum blanditiis laudantium.',
+	// 	icon: <LuBarChart4 className="size-12" />
+	// }
 ];
 
 export default function LandingPageFeatures() {
@@ -147,7 +147,7 @@ export default function LandingPageFeatures() {
 							</motion.span>
 						))}
 					</motion.div>
-					<motion.p
+					{/* <motion.p
 						initial="hidden"
 						whileInView="visible"
 						viewport={{ once: true }}
@@ -169,7 +169,7 @@ export default function LandingPageFeatures() {
 					>
 						Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consequuntur aliquam doloribus
 						nesciunt eos fugiat. Vitae aperiam fugit consequuntur saepe laborum.
-					</motion.p>
+					</motion.p> */}
 				</div>
 
 				<motion.div
