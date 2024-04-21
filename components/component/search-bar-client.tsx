@@ -84,7 +84,7 @@ export default function SearchBarClient({ subjects }: { subjects: any[] | null }
 					<Button
 						type="submit"
 						variant={'expandIcon'}
-						className="rounded-l-[0px] ring-0 text-foreground md:py-6 py-4 md:px-8 px-6"
+						className="rounded-l-[0px] ring-0 dark:text-foreground text-background md:py-6 py-4 md:px-8 px-6"
 						onClick={handleClick}
 						Icon={LuSearch}
 						iconPlacement="right"

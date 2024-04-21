@@ -185,9 +185,13 @@ const SignUp = () => {
 								id="branchStream"
 								name="branchStream"
 							>
-								<option value="" label="Select Your Branch" />
+								<option value="" label="Select Your Branch" className="bg-background" />
 								{branchStreamOptions.map((option) => (
-									<option key={option.value} className="max-w-full" value={option.value}>
+									<option
+										key={option.value}
+										className="max-w-full darK:text-background bg-background"
+										value={option.value}
+									>
 										{option.label}
 									</option>
 								))}

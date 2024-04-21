@@ -9,6 +9,9 @@ import { ThemeProvider } from 'next-themes';
 import { ViewTransitions } from 'next-view-transitions';
 import FooterNew from '@/components/component/footer-new';
 import { BackgroundBeams } from '@/components/ui/background-beams';
+import Spinner from '@/components/component/spinner';
+import Popup from '@/components/component/welcome-popup';
+import LoginPopup from '@/components/component/login-popup';
 
 const outfit = Lexend({
 	variable: '--font-outfit',
@@ -54,8 +57,12 @@ export default async function RootLayout({ children }: { children: React.ReactNo
 						// enableSystem={true}
 						// disableTransitionOnChange
 					>
+						{/* <Spinner /> */}
 						<Header user={user} />
-						<main>{children}</main>
+						<main>
+							<LoginPopup />
+							{children}
+						</main>
 						{/* <Footer></Footer> */}
 						<FooterNew />
 						<script async defer src="https://scripts.withcabin.com/hello.js"></script>

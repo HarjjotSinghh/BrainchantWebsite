@@ -4,7 +4,7 @@ import { FaLinkedin, FaYoutube } from 'react-icons/fa';
 import { FaXTwitter } from 'react-icons/fa6';
 import { GrInstagram } from 'react-icons/gr';
 import { SiLinktree } from 'react-icons/si';
-import { Button } from '../ui/button';
+import { Button } from '@/components/ui/button';
 
 export default function FooterNew() {
 	return (
@@ -16,117 +16,122 @@ export default function FooterNew() {
 						Start acing your university exams!{' '}
 					</strong>
 
-					<Button className="inline-flex items-center gap-2 rounded-lg border-2 border-border/50 bg-background px-8 py-3 text-foreground hover:bg-primary/10 transition-all duration-300 ease-in-out hover:text-foreground focus:outline-none">
-						<span className="text-sm font-medium tracking-tight">Login </span>
-
-						<svg
-							className="size-5 rtl:rotate-180"
-							xmlns="http://www.w3.org/2000/svg"
-							fill="none"
-							viewBox="0 0 24 24"
-							stroke="currentColor"
-						>
-							<path
-								strokeLinecap="round"
-								strokeLinejoin="round"
-								strokeWidth="2"
-								d="M17 8l4 4m0 0l-4 4m4-4H3"
-							/>
-						</svg>
-					</Button>
+					<Link href={'/signin'}>
+						<Button className="inline-flex items-center gap-2 rounded-lg border-2 border-border/50 bg-background px-8 py-3 text-foreground hover:bg-primary/10 transition-all duration-300 ease-in-out hover:text-foreground focus:outline-none group">
+							<span className="text-sm font-medium tracking-tight">Get Started </span>
+							<svg
+								className="size-5 rtl:rotate-180 group-hover:ml-1 transition-all ease-in-out duration-300"
+								xmlns="http://www.w3.org/2000/svg"
+								fill="none"
+								viewBox="0 0 24 24"
+								stroke="currentColor"
+							>
+								<path
+									strokeLinecap="round"
+									strokeLinejoin="round"
+									strokeWidth="2"
+									d="M17 8l4 4m0 0l-4 4m4-4H3"
+								/>
+							</svg>
+						</Button>
+					</Link>
 				</div>
 
 				<div className="mt-16 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
 					<div className="text-center sm:text-left">
-						<p className="text-xl tracking-tight font-medium text-foreground">About Us</p>
+						<p className="text-xl tracking-tight font-medium text-foreground">Navigation</p>
 
 						<ul className="mt-4 text-sm">
 							<li>
-								<Button
-									className="text-foreground transition-all duration-300 ease-in-out px-0 py-0 leading-[0]"
-									variant={'linkHover2'}
-								>
-									Company History
-								</Button>
+								<Link href="/">
+									<Button
+										className="text-foreground transition-all duration-300 ease-in-out px-0 py-0 leading-[0]"
+										variant={'linkHover2'}
+									>
+										Home
+									</Button>
+								</Link>
 							</li>
 
 							<li>
-								<Button
-									className="text-foreground transition-all duration-300 ease-in-out px-0 py-0 leading-[0]"
-									variant={'linkHover2'}
-								>
-									{' '}
-									Meet the Team{' '}
-								</Button>
+								<Link href="/search">
+									<Button
+										className="text-foreground transition-all duration-300 ease-in-out px-0 py-0 leading-[0]"
+										variant={'linkHover2'}
+									>
+										{' '}
+										Notes{' '}
+									</Button>
+								</Link>
 							</li>
 
 							<li>
-								<Button
-									className="text-foreground transition-all duration-300 ease-in-out px-0 py-0 leading-[0]"
-									variant={'linkHover2'}
-								>
-									Employee Handbook
-								</Button>
+								<Link href={'/signin'}>
+									<Button
+										className="text-foreground transition-all duration-300 ease-in-out px-0 py-0 leading-[0]"
+										variant={'linkHover2'}
+									>
+										Sign In
+									</Button>
+								</Link>
 							</li>
 
 							<li>
-								<Button
-									className="text-foreground transition-all duration-300 ease-in-out px-0 py-0 leading-[0]"
-									variant={'linkHover2'}
-								>
-									{' '}
-									Careers{' '}
-								</Button>
+								<Link href={'/signup'}>
+									<Button
+										className="text-foreground transition-all duration-300 ease-in-out px-0 py-0 leading-[0]"
+										variant={'linkHover2'}
+									>
+										{' '}
+										Sign Up{' '}
+									</Button>
+								</Link>
 							</li>
 						</ul>
 					</div>
 
 					<div className="text-center sm:text-left">
-						<p className="text-xl tracking-tight font-medium text-foreground">Our Services</p>
+						<p className="text-xl tracking-tight font-medium text-foreground">Legal</p>
 
 						<ul className="mt-4 text-sm">
 							<li>
-								<Button
-									className="text-foreground transition-all duration-300 ease-in-out px-0 py-0 leading-[0]"
-									variant={'linkHover2'}
-								>
-									Web Development
-								</Button>
+								<Link href="/about-us">
+									<Button
+										className="text-foreground transition-all duration-300 ease-in-out px-0 py-0 leading-[0]"
+										variant={'linkHover2'}
+									>
+										About Us
+									</Button>
+								</Link>
 							</li>
 
 							<li>
-								<Button
-									className="text-foreground transition-all duration-300 ease-in-out px-0 py-0 leading-[0]"
-									variant={'linkHover2'}
-								>
-									{' '}
-									Web Design{' '}
-								</Button>
+								<Link href="/privacy-policy">
+									<Button
+										className="text-foreground transition-all duration-300 ease-in-out px-0 py-0 leading-[0]"
+										variant={'linkHover2'}
+									>
+										{' '}
+										Privacy Policy{' '}
+									</Button>
+								</Link>
 							</li>
 
 							<li>
-								<Button
-									className="text-foreground transition-all duration-300 ease-in-out px-0 py-0 leading-[0]"
-									variant={'linkHover2'}
-								>
-									{' '}
-									Marketing{' '}
-								</Button>
-							</li>
-
-							<li>
-								<Button
-									className="text-foreground transition-all duration-300 ease-in-out px-0 py-0 leading-[0]"
-									variant={'linkHover2'}
-								>
-									{' '}
-									Google Ads{' '}
-								</Button>
+								<Link href="/copyright">
+									<Button
+										className="text-foreground transition-all duration-300 ease-in-out px-0 py-0 leading-[0]"
+										variant={'linkHover2'}
+									>
+										{' '}
+										Copyright Info{' '}
+									</Button>
+								</Link>
 							</li>
 						</ul>
 					</div>
 
-					<div className="text-center sm:text-left">
+					{/* <div className="text-center sm:text-left">
 						<p className="text-xl tracking-tight font-medium text-foreground">Resources</p>
 
 						<ul className="mt-4 text-sm">
@@ -178,30 +183,34 @@ export default function FooterNew() {
 								</Button>
 							</li>
 						</ul>
-					</div>
+					</div> */}
 
 					<div className="text-center sm:text-left">
-						<p className="text-xl tracking-tight font-medium text-foreground">Helpful Links</p>
+						<p className="text-xl tracking-tight font-medium text-foreground">Help</p>
 
 						<ul className="mt-4 text-sm">
 							<li>
-								<Button
-									className="text-foreground transition-all duration-300 ease-in-out px-0 py-0 leading-[0]"
-									variant={'linkHover2'}
-								>
-									{' '}
-									FAQs{' '}
-								</Button>
+								<Link href={'/#faq'}>
+									<Button
+										className="text-foreground transition-all duration-300 ease-in-out px-0 py-0 leading-[0]"
+										variant={'linkHover2'}
+									>
+										{' '}
+										FAQs{' '}
+									</Button>
+								</Link>
 							</li>
 
 							<li>
-								<Button
-									className="text-foreground transition-all duration-300 ease-in-out px-0 py-0 leading-[0]"
-									variant={'linkHover2'}
-								>
-									{' '}
-									Support{' '}
-								</Button>
+								<Link href={'mailto:info@brainchant.in'}>
+									<Button
+										className="text-foreground transition-all duration-300 ease-in-out px-0 py-0 leading-[0]"
+										variant={'linkHover2'}
+									>
+										{' '}
+										Support{' '}
+									</Button>
+								</Link>
 							</li>
 						</ul>
 					</div>

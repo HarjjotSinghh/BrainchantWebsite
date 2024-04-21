@@ -143,7 +143,7 @@ export default function Header({ user }: { user: User | null }) {
 									iconPlacement="right"
 									className="gap-0 [&_svg]:hover:ml-0 py-6 rounded-lg border-border/50 border-2 hover:border-border/70 transition-all duration-300 ease-in-out bg-transparent text-foreground px-6 hover:bg-primary/10 text-sm font-medium tracking-tight"
 								>
-									Login
+									Get Started
 								</Button>
 							</Link>
 							<ThemeSwitcher />

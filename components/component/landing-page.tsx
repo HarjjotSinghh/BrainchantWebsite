@@ -13,12 +13,14 @@ import LandingPageTestimonials from './landing-page-testimonials';
 import LandingPageStats from './landing-page-stats';
 import LandingPageFeatures from './landing-page-features';
 import LandingPageFAQ from './landing-page-faq';
+import WelcomePopup from './welcome-popup';
 
 export default function LandingPage() {
 	return (
 		<div className="flex flex-col">
 			<main className="flex-1">
 				<section className="h-full mt-0 flex justify-center items-center lg:flex-row flex-col xl:gap-8 gap-4 px-0">
+					<WelcomePopup />
 					<HeroHighlight className="w-full">
 						<div className="w-full max-w-7xl mx-auto ">
 							<div className="min-w-screen lg:px-12 sm:px-4 px-4 z-[-49] flex justify-center items-center lg:flex-row flex-col xl:gap-8 gap-4  lg:pt-0 sm:pt-0">
@@ -58,7 +60,7 @@ export default function LandingPage() {
 							</div>
 						</div>
 					</HeroHighlight>
-					<BackgroundBeams className="-z-50" />
+					<BackgroundBeams className="-z-50 md:block hidden" />
 				</section>
 				<LandingPageFeatures />
 				{/* <LandingPageTestimonials /> */}

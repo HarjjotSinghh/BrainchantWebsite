@@ -95,7 +95,7 @@ export default function LandingPageFAQ() {
 		}
 	};
 	return (
-		<section className="text-foreground relative dark:bg-dot-white/[0.3] bg-dot-black/[0.3]">
+		<section className="text-foreground relative dark:bg-dot-white/[0.3] bg-dot-black/[0.3]" id="faq">
 			<div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8 lg:py-16">
 				<div className="mx-auto max-w-7xl text-center">
 					<motion.div
