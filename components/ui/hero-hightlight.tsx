@@ -32,7 +32,7 @@ export const HeroHighlight = ({
 		>
 			<div className="absolute inset-0 bg-transparent  pointer-events-none" />
 			<motion.div
-				className="pointer-events-none bg-accent absolute inset-0 opacity-0 transition duration-300 dark:group-hover:opacity-70 group-hover:opacity-100 dark:mix-blend-saturation mix-blend-color-burn"
+				className="pointer-events-none bg-accent absolute inset-0 opacity-0 transition duration-300 dark:group-hover:opacity-30 group-hover:opacity-100 dark:mix-blend-saturation mix-blend-color-burn"
 				style={{
 					WebkitMaskImage: useMotionTemplate`
             radial-gradient(

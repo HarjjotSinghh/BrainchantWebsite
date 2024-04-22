@@ -1,19 +1,23 @@
 'use client';
 import { Variants, motion } from 'framer-motion';
 import Counter from './counter';
+import { FaGraduationCap, FaUniversity, FaWhatsapp } from 'react-icons/fa';
 
 const stats = [
 	{
 		title: 'WhatsApp Community',
-		number: 20000
+		number: 20000,
+		icon: <FaWhatsapp className="size-12" />
 	},
 	{
 		title: 'Students Taught',
-		number: 45000
+		number: 45000,
+		icon: <FaGraduationCap className="size-12" />
 	},
 	{
 		title: 'IPU Colleges Associated',
-		number: 25
+		number: 25,
+		icon: <FaUniversity className="size-12" />
 	}
 ];
 
@@ -151,8 +155,9 @@ export default function LandingPageStats() {
 							<motion.div
 								variants={child_}
 								key={index}
-								className="flex flex-col rounded-lg border-border/50 border-2 hover:border-border/70 transition-all ease-in-out duration-300 px-4 py-8 text-center bg-background"
+								className="flex flex-col rounded-lg border-border/50 border-2 hover:border-border/70 transition-all ease-in-out duration-300 px-4 py-8 text-center bg-background justify-center items-center gap-2"
 							>
+								{/* {stat.icon} */}
 								<div className="order-last text-base font-normal text-foreground/80">{stat.title}</div>
 								<div className="text-4xl font-extrabold text-foreground md:text-5xl flex flex-row items-center justify-center gap-2">
 									{stat.number}+

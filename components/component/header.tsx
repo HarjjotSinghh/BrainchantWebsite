@@ -21,7 +21,7 @@ import { LuLogIn } from 'react-icons/lu';
 
 export default function Header({ user }: { user: User | null }) {
 	return (
-		<header className="sticky top-0 bg-background/90 backdrop-blur-md border-b border-border/50 z-50">
+		<header className="sticky top-0 bg-background/90 backdrop-blur-md border-b-2 border-border/50 z-50">
 			<div className="px-4 lg:px-12 h-24 py-4 flex items-center mx-auto max-w-7xl">
 				<div className="flex gap-16 items-center">
 					<Link

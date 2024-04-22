@@ -1,26 +1,26 @@
 'use client';
 import { Variants, motion } from 'framer-motion';
-import { Hind_Madurai } from 'next/font/google';
-import { LuBarChart2, LuBarChart4, LuBook } from 'react-icons/lu';
+import { MdGroups } from 'react-icons/md';
+import { FaChalkboardTeacher, FaBookOpen } from 'react-icons/fa';
 
 const features = [
 	{
-		title: 'Hands-On Learning Experience',
+		title: 'Interactive Learning',
 		description:
 			'Emphasize that your courses are crafted by industry experts to ensure high-quality, up-to-date content.',
-		icon: <LuBarChart4 className="size-12" />
+		icon: <FaBookOpen className="size-12" />
 	},
 	{
 		title: 'Expert Teachers',
 		description:
-			'Our teachers are industry experts who are passionate about their field and dedicated to providing quality education.',
-		icon: <LuBarChart4 className="size-12" />
+			'Our teachers are experts who are passionate about their field and dedicated to providing quality education.',
+		icon: <FaChalkboardTeacher className="size-12" />
 	},
 	{
 		title: 'Strong and Helpful Community',
 		description:
 			'Our community is made up of students and teachers who are passionate about their field and dedicated to providing quality education.',
-		icon: <LuBarChart4 className="size-12" />
+		icon: <MdGroups className="size-12" />
 	}
 	// {
 	// 	title: 'Digital campaigns',

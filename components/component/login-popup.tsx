@@ -54,7 +54,7 @@ export default function LoginPopup() {
 			>
 				<DialogHeader>
 					<DialogTitle className="text-center lg:text-3xl text-2xl font-semibold tracking-tight">
-						Sign In To Continue...
+						Sign In To Continue
 					</DialogTitle>
 					<DialogDescription className="flex flex-col items-center justify-center gap-2 text-base text-center dark:text-foreground/70 text-foreground/90">
 						<p>

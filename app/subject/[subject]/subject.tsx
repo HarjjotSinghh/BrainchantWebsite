@@ -113,7 +113,7 @@ export default function Subject({ params, user }: { params: { subject: string };
 
 		// TO LET EVERYONE VISIT
 		<>
-			<div className="flex w-full mx-auto max-w-7xl justify-center items-center flex-col">
+			<div className="flex w-full mx-auto max-w-screen-2xl justify-center items-center flex-col">
 				{subjectData.length !== 0 && !loading ? (
 					<>
 						<div className="min-w-screen lg:px-4 flex gap-8 justify-center items-center flex-col py-24">
@@ -177,14 +177,14 @@ export default function Subject({ params, user }: { params: { subject: string };
 												PYQs
 											</Button>
 										</div>
-										<div className="flex flex-wrap lg:[&_button]:flex-[0_0_calc(33%-20px)] md:[&_button]:flex-[0_0_calc(50%-20px)] [&_button]:flex-[0_0_calc(100%-20px)] p-0 gap-8 justify-center items-center rounded-lg">
-											{currentTab == 'notes' &&
+										<div className="flex flex-row flex-wrap lg:[&_button]:flex-[0_0_calc(33%-200px)] md:[&_button]:flex-[0_0_calc(50%-200px)] [&_button]:flex-[0_0_calc(100%-200px)] p-0 gap-8 justify-center items-center rounded-lg">
+											{currentTab === 'notes' &&
 												subjectData.map((element, index) => (
 													<div
 														key={index}
-														className="flex justify-center items-center flex-col lg:p-10 p-0 rounded-md bg-primary/[5%] border-2 border-primary/[20%] hover:border-primary transition-all duration-300 ease-in-out w-full"
+														className="flex justify-center items-center flex-col lg:p-10 p-0 rounded-md bg-primary/[5%] border-2 border-primary/[20%] hover:border-primary transition-all duration-300 ease-in-out w-full lg:w-fit "
 													>
-														<div className="lg:text-2xl text-xl lg:py-8 py-4">
+														<div className="lg:text-2xl text-xl py-4 lg:pt-0">
 															{element.title}
 														</div>
 														<iframe
@@ -194,7 +194,7 @@ export default function Subject({ params, user }: { params: { subject: string };
 													</div>
 												))}
 
-											{currentTab == 'videos' &&
+											{currentTab === 'videos' &&
 												subjectData.map(
 													(element, index) =>
 														element.videos && (
