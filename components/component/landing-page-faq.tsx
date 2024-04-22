@@ -30,7 +30,7 @@ export default function LandingPageFAQ() {
 			opacity: 1,
 			transition: {
 				staggerChildren: 0.15,
-				delayChildren: 0.8 * i
+				delayChildren: 0.3 * i
 			}
 		})
 	};
@@ -68,8 +68,7 @@ export default function LandingPageFAQ() {
 			opacity: 1,
 			transition: {
 				staggerChildren: 0.25,
-				delayChildren: 1 * i,
-				delay: 1
+				delayChildren: 0.3 * i
 			}
 		})
 	};
@@ -103,7 +102,7 @@ export default function LandingPageFAQ() {
 						variants={container_heading}
 						initial="hidden"
 						whileInView="visible"
-						viewport={{ once: true }}
+						viewport={{ once: true, margin: '200px 0px 0px 0px' }}
 					>
 						{letters.map((letter, index) => (
 							<motion.span
@@ -127,7 +126,7 @@ export default function LandingPageFAQ() {
 					{/* <motion.p
 						initial="hidden"
 						whileInView="visible"
-						viewport={{ once: true }}
+						viewport={{ once: true, margin: '200px 0px 0px 0px' }}
 						variants={{
 							hidden: {
 								opacity: 0
@@ -138,7 +137,7 @@ export default function LandingPageFAQ() {
 									type: 'easeInOut',
 									stiffness: 20,
 									damping: 12,
-									delay: 1.1
+									.1
 								}
 							}
 						}}
@@ -153,7 +152,7 @@ export default function LandingPageFAQ() {
 						variants={container_faq}
 						initial="hidden"
 						whileInView="visible"
-						viewport={{ once: true }}
+						viewport={{ once: true, margin: '200px 0px 0px 0px' }}
 						className="mt-8 w-full max-w-2xl mx-auto"
 					>
 						{faq.map((faq, index) => (

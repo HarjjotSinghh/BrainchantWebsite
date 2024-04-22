@@ -53,7 +53,7 @@ export default function LandingPageFeatures() {
 			opacity: 1,
 			transition: {
 				staggerChildren: 0.15,
-				delayChildren: 0.8 * i
+				delayChildren: 0.3 * i
 			}
 		})
 	};
@@ -91,8 +91,7 @@ export default function LandingPageFeatures() {
 			opacity: 1,
 			transition: {
 				staggerChildren: 0.25,
-				delayChildren: 1 * i,
-				delay: 1
+				delayChildren: 0.3 * i
 			}
 		})
 	};
@@ -126,7 +125,7 @@ export default function LandingPageFeatures() {
 						variants={container_heading}
 						initial="hidden"
 						whileInView="visible"
-						viewport={{ once: true }}
+						viewport={{ once: true, margin: '200px 0px 0px 0px' }}
 					>
 						{letters.map((letter, index) => (
 							<motion.span
@@ -150,7 +149,7 @@ export default function LandingPageFeatures() {
 					{/* <motion.p
 						initial="hidden"
 						whileInView="visible"
-						viewport={{ once: true }}
+						viewport={{ once: true, margin: '200px 0px 0px 0px' }}
 						variants={{
 							hidden: {
 								opacity: 0
@@ -161,7 +160,7 @@ export default function LandingPageFeatures() {
 									type: 'easeInOut',
 									stiffness: 20,
 									damping: 12,
-									delay: 1.1
+									.1
 								}
 							}
 						}}
@@ -176,7 +175,7 @@ export default function LandingPageFeatures() {
 					variants={container_features}
 					initial="hidden"
 					whileInView="visible"
-					viewport={{ once: true }}
+					viewport={{ once: true, margin: '200px 0px 0px 0px' }}
 					className="mt-8 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3"
 				>
 					{features.map((feature, index) => (

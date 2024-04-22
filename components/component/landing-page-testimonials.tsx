@@ -12,7 +12,7 @@ export default function LandingPageTestimonials() {
 			opacity: 1,
 			transition: {
 				staggerChildren: 0.15,
-				delayChildren: 0.8 * i
+				delayChildren: 0.3 * i
 			}
 		})
 	};
@@ -52,7 +52,7 @@ export default function LandingPageTestimonials() {
 					variants={container}
 					initial="hidden"
 					whileInView="visible"
-					viewport={{ once: true }}
+					viewport={{ once: true, margin: '200px 0px 0px 0px' }}
 				>
 					{letters.map((letter, index) => (
 						<motion.span
@@ -77,7 +77,7 @@ export default function LandingPageTestimonials() {
 					variants={container}
 					initial="hidden"
 					whileInView="visible"
-					viewport={{ once: true }}
+					viewport={{ once: true, margin: '200px 0px 0px 0px' }}
 					className="mt-16 [column-fill:_balance] sm:columns-2 sm:gap-6 lg:columns-3 lg:gap-8 overflow-visible"
 				>
 					<motion.div className="mb-8 sm:break-inside-avoid" variants={child} key={1}>

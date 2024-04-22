@@ -28,7 +28,7 @@ export default function LandingPageStats() {
 			opacity: 1,
 			transition: {
 				staggerChildren: 0.25,
-				delayChildren: 1.5 * i
+				delayChildren: 0.3 * i
 			}
 		})
 	};
@@ -39,7 +39,6 @@ export default function LandingPageStats() {
 		visible: (i = 1) => ({
 			opacity: 1,
 			transition: {
-				delay: 2 * i,
 				ease: 'easeInOut'
 			}
 		})
@@ -72,8 +71,8 @@ export default function LandingPageStats() {
 
 	const child_: Variants = {
 		hidden: {
-			opacity: 0.01,
-			y: 20,
+			opacity: 0,
+			y: 40,
 			transition: {
 				type: 'easeInOut',
 				stiffness: 20,
@@ -99,7 +98,7 @@ export default function LandingPageStats() {
 						variants={container_}
 						initial="hidden"
 						whileInView="visible"
-						viewport={{ once: true }}
+						viewport={{ once: true, margin: '200px 0px 0px 0px' }}
 					>
 						{letters.map((letter, index) => (
 							<motion.span
@@ -125,14 +124,14 @@ export default function LandingPageStats() {
 						variants={container}
 						initial="hidden"
 						whileInView="visible"
-						viewport={{ once: true }}
+						viewport={{ once: true, margin: '200px 0px 0px 0px' }}
 					>
 						<motion.p
 							className="mt-4 text-foreground/80 sm:text-xl"
 							variants={child_}
 							initial="hidden"
 							whileInView="visible"
-							viewport={{ once: true }}
+							viewport={{ once: true, margin: '200px 0px 0px 0px' }}
 						>
 							Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione dolores laborum labore
 							provident impedit esse recusandae facere libero harum sequi.
@@ -146,7 +145,7 @@ export default function LandingPageStats() {
 						variants={container_}
 						initial="hidden"
 						whileInView="visible"
-						viewport={{ once: true }}
+						viewport={{ once: true, margin: '200px 0px 0px 0px' }}
 					>
 						{stats.map((stat, index) => (
 							<motion.div

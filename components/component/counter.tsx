@@ -25,7 +25,11 @@ const Counter = ({
 			className="py-3 px-4 bg-primary/20 rounded-lg flex flex-row flex-wrap gap-2 items-center justify-center"
 			{...props}
 		>
-			<motion.p initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }}>
+			<motion.p
+				initial={{ opacity: 0 }}
+				whileInView={{ opacity: 1 }}
+				viewport={{ once: true, margin: '200px 0px 0px 0px' }}
+			>
 				{rounded}
 			</motion.p>
 			{'+'}
