@@ -10,7 +10,7 @@ export async function GET() {
         const { data: subjects, error } = await supabase
             .from('subjects')
             .select('*')
-            .eq('semester', 4);
+            .eq('semester', 2);
 
         if (error) {
             console.error('Error fetching subjects:', error.message);

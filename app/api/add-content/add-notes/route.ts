@@ -14,7 +14,7 @@ import { cookies } from 'next/headers';
 export async function POST() {
     // remember to adjust the semester and notes_id accordingly!
     let semester = 2;
-    let notes_id = 94;
+    let notes_id = 97;
 
     // Regex pattern to match everything after the last '/'
     let regex = /\/([^/]+)$/;
@@ -35,19 +35,10 @@ export async function POST() {
                 {
                     id: notes_id++,
                     semester,
-                    subject: 'Power Systems',
-                    title: 'Handwritten notes',
+                    subject: 'Applied Physics – II',
+                    title: 'test video',
                     link: appendLink(
                         'https://drive.google.com/file/d/1C5__YUSPXLDedQuTZWq7xMCvh5ss_h04/view?usp=drive_link'
-                    ),
-                },
-                {
-                    id: notes_id++,
-                    semester,
-                    subject: 'Power Systems',
-                    title: 'Complete notes',
-                    link: appendLink(
-                        'https://drive.google.com/file/d/1C5aCewKIqtXW6T2xkxDrffqV7j33uGrZ/view?usp=drive_link'
                     ),
                 },
             ])

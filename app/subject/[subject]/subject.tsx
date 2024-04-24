@@ -34,7 +34,7 @@ export default function Subject({ params, user }: { params: { subject: string };
 					data: data,
 					error,
 					status
-				} = await supabase.from('notes').select().eq('subject', decodeURI(params.subject)).eq('notes', true);
+				} = await supabase.from('notes').select().eq('subject', decodeURI(params.subject)).is('notes', true);
 				if (error && status !== 406) {
 					throw error;
 				}
