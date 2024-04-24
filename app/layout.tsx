@@ -43,6 +43,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
 						src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${process.env.NEXT_PUBLIC_GOOGLE_ADSENSE}`}
 						crossOrigin="anonymous"
 					></script>
+					<meta name="google-adsense-account" content="ca-pub-3695494476762561" />
 				</head>
 				<body
 					className={cn(
