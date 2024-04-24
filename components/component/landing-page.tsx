@@ -19,16 +19,16 @@ export default function LandingPage() {
 	return (
 		<div className="flex flex-col">
 			<main className="flex-1">
-				<section className="h-full mt-0 flex justify-center items-center lg:flex-row flex-col xl:gap-8 gap-4 px-0">
+				<section className="lg:min-h-screen h-full mt-0 flex justify-center items-center lg:flex-row flex-col xl:gap-8 gap-4 px-0">
 					<WelcomePopup />
-					<HeroHighlight className="w-full">
+					<HeroHighlight className="w-full lg:min-h-screen flex lg:-mt-48 justify-center items-center flex-col">
 						<div className="w-full max-w-7xl mx-auto ">
 							<div className="min-w-screen lg:px-12 sm:px-4 px-4 z-[-49] flex justify-center items-center lg:flex-row flex-col xl:gap-8 gap-4  lg:pt-0 sm:pt-0">
 								<div className="flex flex-col items-start gap-2 text-left lg:w-[calc(fit-content+40px)] w-full">
 									<h1 className="font-light tracking-tighter text-xl md:text-2xl lg:text-4xl">
 										Acing university exams has
 										<br />
-										<span className="font-bold text-3xl md:text-4xl lg:text-6xl before:block before:absolute before:-inset-1 before:rounded-lg px-1 py-0.5 dark:before:bg-primary/30 before:bg-primary/10 transition-all duration-300 ease-in-out relative inline-block text-foreground before:-z-20 text-balance">
+										<span className="font-bold text-3xl md:text-4xl lg:text-6xl before:block before:absolute before:-inset-1 before:rounded-lg lg:px-1 lg:py-0.5 py-0 px-1.5 dark:before:bg-primary/30 before:bg-primary/10 transition-all duration-300 ease-in-out relative inline-block text-foreground before:-z-20 text-balance">
 											Never been easier
 										</span>
 									</h1>

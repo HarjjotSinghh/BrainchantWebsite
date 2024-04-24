@@ -32,7 +32,7 @@ const AboutUs = () => {
 						</li>
 						<li>
 							We provide PYQs and important information on the daily basis.{' '}
-							<Link href={'https://linktr.ee/BrainChant'} className="underline">
+							<Link href={'https://linktr.ee/BrainChant'} target="_blank" rel="noreferrer noopener">
 								<b>Click here</b>
 							</Link>{' '}
 							to get join them.

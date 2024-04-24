@@ -52,6 +52,24 @@ export default function Header({ user }: { user: User | null }) {
 								Notes
 							</Button>
 						</Link>
+						<Link
+							className=" font-medium hover:underline underline-offset-4"
+							href="https://www.youtube.com/@BrainChant"
+							target="_blank"
+						>
+							<Button variant={'linkHover2'} className="px-0 text-base">
+								YouTube
+							</Button>
+						</Link>
+						<Link
+							className=" font-medium hover:underline underline-offset-4"
+							href="https://linktr.ee/BrainChant"
+							target="_blank"
+						>
+							<Button variant={'linkHover2'} className="px-0 text-base">
+								WhatsApp
+							</Button>
+						</Link>
 						{/* <Link
 							className=" font-medium hover:text-accent transition-all duration-200 ease-in-out underline-offset-4"
 							href="https://linktr.ee/BrainChant"
