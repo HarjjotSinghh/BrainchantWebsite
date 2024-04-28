@@ -15,7 +15,7 @@ const faq = [
 	},
 	{
 		question: 'Who founded Brainchant?',
-		answer: 'Brainchant is a student-run initiative, and it was founded by 4 anonymous students of GGSIPU university.'
+		answer: 'Brainchant is a student-run initiative, and it was founded by 3 anonymous students of GGSIPU university.'
 	}
 ];
 
@@ -158,7 +158,7 @@ export default function LandingPageFAQ() {
 						{faq.map((faq, index) => (
 							<motion.div key={index} variants={child_faq} className="">
 								<AccordionItem value={faq.question} key={index} className="bg-background">
-									<AccordionTrigger className="underline decoration-primary decoration-[1.5px] underline-offset-4 lg:text-lg text-base items-center justify-between text-left">
+									<AccordionTrigger className="lg:text-lg text-base items-center justify-between text-left hover:no-underline">
 										{faq.question}
 									</AccordionTrigger>
 									<AccordionContent className="lg:text-base text-sm">{faq.answer}</AccordionContent>
